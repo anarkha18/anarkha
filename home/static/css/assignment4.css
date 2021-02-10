@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(157, 157, 230);
+}
+p{
+    font-size: large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: justify;
+}
+.id1{
+    text-align: center;
+    color: black;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+.div1{
+    margin: auto;
+    padding: 5px;
+    width: 50%;
+}
