@@ -1,0 +1,26 @@
+table{
+    width: 70%;
+}
+table, td, th{
+    border-width: 2px;
+    border-collapse: collapse; 
+    border-style: solid;
+    border-color: black;
+}
+.mainrow{
+    background: rgb(119, 117, 117);
+}
+.rwlow{
+    text-align: right;
+    font-weight: bold;
+}
+.total{
+    text-align: center;
+    font-weight: bold;
+}
+#tl{
+    font-weight: bold; 
+}
+.qn{
+    text-align: center;
+}

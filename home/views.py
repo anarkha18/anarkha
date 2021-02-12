@@ -17,3 +17,21 @@ def assignment7(request):
     return render(request, "assignment7.html")
 def assignment8(request):
     return render(request, "assignment8.html")
+def assignment9(request):
+    return render(request, "assignment9.html")
+def assignment10(request):
+    return render(request, "assignment10.html")
+def assignment11(request):
+    return render(request, "assignment11.html")
+def assignment12(request):
+    return render(request, "assignment12.html")
+def assignment13(request):
+    return render(request, "assignment13.html")
+def assignment14(request):
+    return render(request, "assignment14.html")
+def assignment15(request):
+    return render(request, "assignment15.html")
+def assignment16(request):
+    return render(request, "assignment16.html")
+def assignment17(request):
+    return render(request, "assignment17.html")

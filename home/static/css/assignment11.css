@@ -1,0 +1,33 @@
+.main{
+    background-color: white;
+    padding: 15px;
+}
+.header{
+    background-color: green;
+    width: 100%;
+    height: 100px;
+    border: 2px solid white;
+}
+.navi{
+    background-color: blue;
+    width: 30%;
+    height: 330px;
+    display: inline;
+    float: left;
+    border: 2px solid white;
+}
+.content{
+    background-color: orange;
+    width: 69%;
+    height: 330px;
+    float: right;
+    display: inline;
+    border: 2px solid white;
+}
+.foter{
+    overflow: hidden;
+    background-color: red;
+    width: 100%;
+    height: 120px;
+    border: 2px solid white;
+}
