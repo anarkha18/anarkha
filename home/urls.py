@@ -18,5 +18,5 @@ urlpatterns = [
     path('asgmnt14', views.assignment14, name="asgmnt14"),
     path('asgmnt15', views.assignment15, name="asgmnt15"),
     path('asgmnt16', views.assignment16, name="asgmnt16"),
-    path('asgmnt17', views.assignment17, name="asgmnt17"),
+    path('fbhome', views.fbhome, name="fbhome"),
 ]

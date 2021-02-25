@@ -33,5 +33,5 @@ def assignment15(request):
     return render(request, "assignment15.html")
 def assignment16(request):
     return render(request, "assignment16.html")
-def assignment17(request):
-    return render(request, "assignment17.html")
+def fbhome(request):
+    return render(request, "fbhome.html")

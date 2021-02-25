@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .logo {
+            width: 240px;
+            margin-top: 20px;
+            margin-left: 120px;
+        }
+
+        label {
+            margin-top: 13px;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #fff;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            label {
+                color: black;
+            }
+            .fp{
+                color: blue;
+            }
+        }
+
+        .form-controlsetting {
+            height: 25px !important;
+        }
+
+        select {
+            width: 60px !important;
+            height: 30px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12 col-12" style="background-color: #3C5898; height: 108px; ">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <img class="img-fluid logo" src="{% static 'images/fb.jpg' %}" alt="error" style="vertical-align: middle; ">
+                </div>
+                <div class="col-md-6 col-12">
+                    <form action="post">
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="form-group">
+                                    <label for="email">Email or Phone </label>
+                                    <input type="email" class="form-control form-controlsetting" id="email"
+                                        style="width: 100%;">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control form-controlsetting" id="password"
+                                        style="width: 100%;">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12 form-group log" style="margin-top: 44px;"><input type="button"
+                                    value="LogIn" style="background-color: #4267b2; color: white;">
+                            </div>
+                            <div class="col-12 d-block d-sm-none crac">
+                                <button class="btn btn-success btn1">Create Account</button>
+                            </div>
+                            <div class="col-md-4">
+                                <br>
+                            </div>
+                            <div class="col-md-4 d-sm-block fp" style="margin-top: -2%;">
+                                <a style="color: #9cb4d8;" href="#">Forgoten Password?</a>
+                            </div>
+                    </form>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 d-none d-sm-block" style="background-color:#f3f4f9; height: 720px; padding: 30px 154px;">
+        <div class="row">
+            <div class="col-md-6 d-none d-sm-block">
+                <div style="margin-left: 11px; top: 30px;" class="col-md-8 d-none d-sm-block">
+                    <h2 style="font-weight: bold;
+                    font-size: 22px;
+                    color: #223949;">Facebook helps you connect and share with the people in your life </h2>
+                </div>
+                <div class="col-md-8"><img src="{% static 'images/logo2.png' %}"
+                        style="margin-left: -11px; margin-top: 40px; width: 130%; height: 50%;" alt=""></div>
+            </div>
+            <div class="col-md-6  d-none d-sm-block">
+                <h1>Create a new account</h1>
+                <h5>it's free and always will be.</h5>
+                <form action="" style="margin-left: -15px;">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" placeholder="First Name" style="height: 38px;">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" placeholder="Surname" style="height: 38px;">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" placeholder="Mobile number or Email address"
+                                        style="height: 38px; margin-left: 15px;">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="password" class="form-control" placeholder="Password"
+                                        style="height: 38px; margin-left: 15px;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <h5 style="margin-top:20px; margin-left: 15px;">Birthday</h5>
+                                </div>
+                                <div class="col-md-8">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="margin-left: 15px;">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <select name="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select name="month">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select name="year">
+                                                <option>1991</option>
+                                                <option>1992</option>
+                                                <option>1993</option>
+                                                <option>1994</option>
+                                                <option>1995</option>
+                                                <option>1996</option>
+                                                <option>1997</option>
+                                                <option>1998</option>
+                                                <option>1999</option>
+                                                <option>2000</option>
+                                                <option>2001</option>
+                                                <option>2002</option>
+                                                <option>2003</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <a href="#"></a>
+                                            <p style="color: #365899; font-size: 12px;">Why do i need to provide my date
+                                                of birth?</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8" style="margin-left: 27px;">
+                                    <div class="row">
+                                        <label class="radio-inline" style="color: black;">
+                                            <input type="radio" name="fbradio"> Male</label>
+                                        <label class="radio-inline" style="color: black; margin-left: 2%;">
+                                            <input type="radio" name="fbradio"> Female
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-10" style="margin-left: 27px;">
+                                    <div class="row">
+                                        <a style="color: #777; font-size: 15px;" href="#">
+                                            <p>By clicking sign up you agree to our terms Data policy and cooke policy.
+                                                You may recieve SMS notifications from us and can opt out any time.
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-success btn1"
+                                            style="margin-left: 27px;width: 100%">Create Account</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <hr style="margin-left: 27px;">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 style="margin-left: 27px;">Create a page for celebrity or Bussiness</h6>
+                                    </div>
+                                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <p>Developed for non-commercial purpose &nbsp; &copy;</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
