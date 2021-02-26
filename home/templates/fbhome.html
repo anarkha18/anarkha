@@ -27,21 +27,29 @@
         }
 
         @media only screen and (max-width: 600px) {
+
             label {
                 color: black;
             }
-            .fp{
+
+            #em {
+                margin-top: 48px;
+            }
+            #ps {
+                margin-top: 0px;
+            }
+
+            .fp {
                 color: blue;
             }
-        }
 
-        .form-controlsetting {
-            height: 25px !important;
-        }
-
-        select {
-            width: 60px !important;
-            height: 30px !important;
+            .login {
+                margin-top: -31px;
+            }
+            select {
+                width: 60px !important;
+                height: 30px !important;
+            }
         }
     </style>
 </head>
@@ -51,27 +59,28 @@
         <div class="col-md-12 col-12" style="background-color: #3C5898; height: 108px; ">
             <div class="row">
                 <div class="col-md-6 col-12">
-                    <img class="img-fluid logo" src="{% static 'images/fb.jpg' %}" alt="error" style="vertical-align: middle; ">
+                    <img class="image-responsive" src="{% static 'images/fb.jpg' %}" alt="error"
+                        style="vertical-align: middle; ">
                 </div>
                 <div class="col-md-6 col-12">
                     <form action="post">
                         <div class="row">
                             <div class="col-md-4 col-12">
                                 <div class="form-group">
-                                    <label for="email">Email or Phone </label>
+                                    <label id="em" for="email">Email or Phone </label>
                                     <input type="email" class="form-control form-controlsetting" id="email"
-                                        style="width: 100%;">
+                                        style="width: 100%; height: 25px;">
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
                                 <div class="form-group">
-                                    <label for="password">Password</label>
+                                    <label id="ps" for="password">Password</label>
                                     <input type="password" class="form-control form-controlsetting" id="password"
-                                        style="width: 100%;">
+                                        style="width: 100%; height: 25px;">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-12 form-group log" style="margin-top: 44px;"><input type="button"
-                                    value="LogIn" style="background-color: #4267b2; color: white;">
+                            <div class="col-md-4 col-12 form-group" style="margin-top: 44px;"><input type="button"
+                                    value="LogIn" class="login" style="background-color: #4267b2; color: white;">
                             </div>
                             <div class="col-12 d-block d-sm-none crac">
                                 <button class="btn btn-success btn1">Create Account</button>
