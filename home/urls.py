@@ -19,4 +19,5 @@ urlpatterns = [
     path('asgmnt15', views.assignment15, name="asgmnt15"),
     path('asgmnt16', views.assignment16, name="asgmnt16"),
     path('fbhome', views.fbhome, name="fbhome"),
+    path('myprj', views.myprj, name="myprj"),
 ]

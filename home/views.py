@@ -35,3 +35,7 @@ def assignment16(request):
     return render(request, "assignment16.html")
 def fbhome(request):
     return render(request, "fbhome.html")
+def myprj(request):
+    return render(request, "myprj.html")
+def myprj(request):
+    return render(request, "myprj.html")
