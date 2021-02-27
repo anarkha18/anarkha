@@ -1,42 +1,28 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        /* Make the image fully responsive */
-        .carousel-inner img {
-            width: 100%;
-            height: 390px;
-            object-fit: cover;
-            /* object-position: 50% 15%; */
-        }
+<style>
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 390px;
+        object-fit: cover;
+    }
 
-        .carousel-caption {
-            font-family: 'Times New Roman', Times, serif;
-            background-color: rgba(165, 156, 156, 0.90);
-            width: 70%;
-        }
-        .carousel-caption a{
-            color: white;
-        }
-        .carousel-caption a:hover{
-text-decoration: none;
-color: white;
-        }
+    .carousel-caption {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgba(165, 156, 156, 0.90);
+        width: 70%;
+    }
 
-    </style>
-</head>
+    .carousel-caption a {
+        color: white;
+    }
 
+    .carousel-caption a:hover {
+        text-decoration: none;
+        color: white;
+    }
+</style>
 <body>
-    {% include 'nav.html' %}
+    <!-- {% include 'navbar.html' %} -->
     <section>
         <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -56,7 +42,9 @@ color: white;
                     <img src="{% static 'images/img4.jpg' %}" alt="Los Angeles" width="1100" height="500"
                         style="object-position: 50% 34%;">
                     <div class="carousel-caption">
-                        <a href=""><h1>Live Score's</h1></a>
+                        <a href="">
+                            <h1>Live Score's</h1>
+                        </a>
                         <p>India Vs England, First Test</p>
                     </div>
                 </div>
@@ -64,7 +52,9 @@ color: white;
                     <img src="{% static 'images/img16.jpg' %}" alt="Chicago" width="1100" height="500"
                         style="object-position: 50% 18%;">
                     <div class="carousel-caption ">
-                        <a href=""><h1>Latest News</h1></a>
+                        <a href="">
+                            <h1>Latest News</h1>
+                        </a>
                         <p>Get Latest News and trending topics Here</p>
                     </div>
                 </div>
@@ -72,7 +62,9 @@ color: white;
                     <img src="{% static 'images/img12.jpg' %}" alt="New York" width="1100" height="500"
                         style="object-position: 50% 65%;">
                     <div class="carousel-caption">
-                       <a href=""><h1>Latest Blogs's</h1></a>
+                        <a href="">
+                            <h1>Latest Blogs's</h1>
+                        </a>
                         <p>Read statistical and awesome blogs on daily cricket</p>
                     </div>
                 </div>
@@ -80,7 +72,9 @@ color: white;
                     <img src="{% static 'images/img6.jpg' %}" alt="New York" width="1100" height="500"
                         style="object-position: 50% 90%;">
                     <div class="carousel-caption">
-                        <a href=""><h1>Watch Highlight's</h1></a>
+                        <a href="">
+                            <h1>Watch Highlight's</h1>
+                        </a>
                         <p>Watch HIghlight's of recent matches</p>
                     </div>
                 </div>
@@ -88,7 +82,9 @@ color: white;
                     <img src="{% static 'images/img3.jpg' %}" alt="New York" width="1100" height="500"
                         style="object-position: 50% 13%;">
                     <div class="carousel-caption">
-                        <a href=""><h1>Rankings's and Statistics</h1></a>
+                        <a href="">
+                            <h1>Rankings's and Statistics</h1>
+                        </a>
                         <p>See Latest ICC Player Rankings & Statistics</p>
                     </div>
                 </div>
@@ -104,9 +100,10 @@ color: white;
         </div>
         </div>
     </section>
-<section>
-    <div id="score-frame"><a rel="nofollow" href="https://www.crictimes.org/cricket-scores">Live Cricket Scores</a></div><script type="text/javascript">var params={},query = new URLSearchParams(params).toString(),html = document.getElementById('score-frame');html.innerHTML = '<iframe src="https://cwidget.crictimes.org/?'+query+'" style="width:100%;min-height: 460px;" frameborder="0" scrolling="yes"></iframe>';</script>
-</section>
+    <section>
+        <div id="score-frame"><a rel="nofollow" href="https://www.crictimes.org/cricket-scores">Live Cricket Scores</a>
+        </div>
+        <script
+            type="text/javascript">var params = {}, query = new URLSearchParams(params).toString(), html = document.getElementById('score-frame'); html.innerHTML = '<iframe src="https://cwidget.crictimes.org/?' + query + '" style="width:100%;min-height: 460px;" frameborder="0" scrolling="yes"></iframe>';</script>
+    </section>
 </body>
-
-</html>
