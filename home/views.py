@@ -33,10 +33,15 @@ def assignment15(request):
     return render(request, "assignment15.html")
 def assignment16(request):
     return render(request, "assignment16.html")
+def bootstrap1(request):
+    return render(request, "bootstrap1.html")
+def bootstrap2(request):
+    return render(request, "bootstrap2.html")
 def fbhome(request):
     return render(request, "fbhome.html")
 def home(request):
     return render(request, "home.html")
-def base(request):
-    return render(request, "base.html")
+def validate(request):
+    return render(request, "validate.html")
+
 
