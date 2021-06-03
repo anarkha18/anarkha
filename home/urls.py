@@ -21,5 +21,6 @@ urlpatterns = [
     path('bootstrap1', views.bootstrap1, name="bootstrap1"),
     path('bootstrap2', views.bootstrap2, name="bootstrap2"),
     path('fbhome', views.fbhome, name="fbhome"),
+    path('home', views.home, name="home"),
     path('validate', views.validate, name="validate"),
 ]

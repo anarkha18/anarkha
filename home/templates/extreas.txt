@@ -1,0 +1,65 @@
+Validate firstname
+    $('#fncheck').hide();
+    let fnameError = true;
+    $('#fn').keyup(function () {
+      validatefname();
+    });
+
+    function validatefname() {
+      let fnameValue = $('#fn').val();
+      if (fnameValue.length == '') {
+        $('#fncheck').show();
+        fnameError = false;
+        return false;
+      }
+      else {
+        $('#fncheck').hide();
+      }
+    }
+    Validate lasttname
+    $('#lncheck').hide();
+    let lnameError = true;
+    $('#fn').keyup(function () {
+      validatelname();
+    });
+
+    function validatelname() {
+      let lnameValue = $('#ln').val();
+      if (lnameValue.length == '') {
+        $('#lncheck').show();
+        lnameError = false;
+        return false;
+      }
+      else {
+        $('#lncheck').hide();
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+     $("#signupform").validate({
+      rules: {
+        firstname: 'required',
+        lastname: 'required',
+        u_email: {
+          required: true,
+          email: true,//add an email rule that will ensure the value entered is valid email id.
+          maxlength: 255,
+        },
+        messages: {
+          firstname: 'This field is required',
+          lastname: 'This field is required',
+          u_email: 'Enter a valid email',
+        },
+        submitHandler: function (form) {
+          Sform.submit();
+        }
+      }
+    });
