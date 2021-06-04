@@ -12,6 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="{% static 'js/fbhome.js' %}"></script>
     <style>
         .logo {
             width: 240px;
@@ -32,9 +34,11 @@
             label {
                 color: black;
             }
+
             #em {
                 margin-top: 48px;
             }
+
             #ps {
                 margin-top: 0px;
             }
@@ -46,10 +50,11 @@
             .login {
                 margin-top: -31px;
             }
+
             select {
                 width: 60px !important;
                 height: 30px !important;
-            }    
+            }
         }
     </style>
 </head>
@@ -63,13 +68,15 @@
                         style="vertical-align: middle;">
                 </div>
                 <div class="col-md-6 col-12">
-                    <form action="post">
+                    <form action="#">
                         <div class="row">
                             <div class="col-md-4 col-12">
                                 <div class="form-group">
                                     <label id="em" for="email">Email or Phone </label>
                                     <input type="email" class="form-control form-controlsetting" id="email"
                                         style="width: 100%; height: 25px;">
+                                    <label id="eruser" style="color: red; margin-top: -22px;font-size: small;"
+                                        for=""></label>
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
@@ -77,10 +84,14 @@
                                     <label id="ps" for="password">Password</label>
                                     <input type="password" class="form-control form-controlsetting" id="password"
                                         style="width: 100%; height: 25px;">
+                                    <label id="erpass" style="color: red; margin-top: -22px;font-size: small;"
+                                        for=""></label>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-12 form-group" style="margin-top: 44px;"><input type="button"
-                                    value="LogIn" class="login" style="background-color: #4267b2; color: white;">
+                            <div class="col-md-4 col-12 form-group" style="margin-top: 44px;">
+                                <button onclick="return validate()" type="submit" class="login" id="btn1"
+                                    style="background-color: #4267b2; color: white;">Log in</button>
+
                             </div>
                             <div class="col-12 d-block d-sm-none crac">
                                 <button class="btn btn-success btn1">Create Account</button>
@@ -111,23 +122,37 @@
             <div class="col-md-6  d-none d-sm-block">
                 <h1>Create a new account</h1>
                 <h5>it's free and always will be.</h5>
-                <form action="" style="margin-left: -15px;">
+                <form action="#" id="myformsignup" style="margin-left: -15px;">
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="First Name" style="height: 38px;">
+                                <input type="text" id="firstName" class="form-control" placeholder="First Name"
+                                    style="height: 38px;">
+                                <small id="firsterror"
+                                    style="padding-left: 2px; padding-top: 50px; font-family: 'Times New Roman', Times, serif; font-size: medium;"></small>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Surname" style="height: 38px;">
+                                <input type="text" id="lastName" class="form-control" placeholder="Surname"
+                                    style="height: 38px;">
+                                <small id="lasterror"
+                                    style="padding-left: 2px; padding-top: 50px; font-family: 'Times New Roman', Times, serif; font-size: medium;"></small>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 form-group">
                                     <input type="text" class="form-control" placeholder="Mobile number or Email address"
-                                        style="height: 38px; margin-left: 15px;">
+                                        style="height: 38px; margin-left: 15px;" id="mob">
+                                    <small
+                                        style="padding-left: 15px; padding-top: 50px; font-family: 'Times New Roman', Times, serif; font-size: medium;"
+                                        id="moberror"></small>
+
                                 </div>
                                 <div class="col-md-12">
                                     <input type="password" class="form-control" placeholder="Password"
-                                        style="height: 38px; margin-left: 15px;">
+                                        style="height: 38px; margin-left: 15px;" id="pass2">
+                                    <small
+                                        style="padding-left: 15px; padding-top: 50px; font-family: 'Times New Roman', Times, serif; font-size: medium;"
+                                        id="passerror"></small>
+
                                 </div>
                             </div>
                             <div class="row">
@@ -141,7 +166,7 @@
                                 <div class="col-md-12" style="margin-left: 15px;">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <select name="select">
+                                            <select name="select" required>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -162,7 +187,7 @@
                                             </select>
                                         </div>
                                         <div class="col-md-2">
-                                            <select name="month">
+                                            <select name="month" required>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -178,7 +203,7 @@
                                             </select>
                                         </div>
                                         <div class="col-md-2">
-                                            <select name="year">
+                                            <select name="year" required>
                                                 <option>1991</option>
                                                 <option>1992</option>
                                                 <option>1993</option>
@@ -222,8 +247,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button class="btn btn-success btn1"
-                                            style="margin-left: 27px;width: 100%">Create Account</button>
+                                        <button class="btn btn-success btn1" style="margin-left: 27px;width: 100%"
+                                            id="submit" type="submit">Create Account</button>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -248,5 +273,203 @@
         </div>
     </footer>
 </body>
+<script>
+    function validate() {
+
+        var username = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+        status = 1;
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        if (username.trim() == "") {
+            document.getElementById("eruser").innerHTML = "enter username";
+            username.style.border = "3px solid red";
+
+            status = 0;
+        }
+        else if (username.match(mailformat) == null) {
+
+            document.getElementById("eruser").innerHTML = "enter valid email or phone number";
+
+            status = 0;
+        }
+
+
+
+        else {
+            document.getElementById("eruser").style.visibility = "hidden";
+
+        }
+
+
+        if (username.match(phoneno) == null) {
+
+            document.getElementById("eruser").innerHTML = "enter valid email or phone number";
+            status = 0;
+        }
+
+
+        else {
+            document.getElementById("eruser").style.visibility = "hidden";
+
+        }
+
+        if (password.trim() == "") {
+            document.getElementById("erpass").innerHTML = "please enter password";
+            status = 0;
+        }
+        else if (password.trim().length < 8) {
+            document.getElementById("erpass").innerHTML = "please enter minimum 8 characters";
+            status = 0;
+        }
+
+        else {
+            document.getElementById("erpass").style.visibility = "hidden";
+
+        }
+
+        if (status == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+
+    }
+
 </script>
+
+
+<script>
+
+    $(document).ready(function () {
+        var firstName = $("#firstName");
+        var lastName = $("#lastName");
+        var moborem = $("#mob");
+        var password2 = $("#pass2");
+
+        $("#submit").click(function () {
+
+            checkFirstName()
+            checkLastName()
+            checkMobEm()
+            passwordChecking()
+            if (status == 1) {
+                return true
+            }
+            else {
+                return false
+            }
+        });
+        function checkFirstName() {
+            if (firstName.val().trim() == "") {
+                $("#firsterror").html("Please enter your first name")
+                $("#firsterror").css("color", "red")
+                firstName.css("border", "1px solid red")
+
+                return false
+            }
+            else if (firstName.val().trim().length <= 6) {
+                $("#firsterror").html("Please enter minimum 6 charactar")
+                $("#firsterror").css("color", "red")
+                firstName.css("border", "1px solid red")
+                return false
+
+            }
+            else {
+                $("#firsterror").css("visibility", "hidden")
+                firstName.css("border", "1px solid green")
+                status = 1
+                return true
+            }
+        }
+
+        function checkLastName() {
+            if (lastName.val().trim() == "") {
+                $("#lasterror").text("please enter your last name")
+                $("#lasterror").css("color", "red")
+                lastName.css("border", "1px solid red")
+                return false
+            }
+            else if (lastName.val().trim().length <= 6) {
+                $("#lasterror").text("please enter minimum 6 charactar")
+                $("#lasterror").css("color", "red")
+                lastName.css("border", "1px solid red")
+                return false
+            }
+            else {
+                $("#lasterror").css("visibility", "hidden")
+                lastName.css("border", "1px solid green")
+                status = 1
+                return true
+            }
+        }
+        function checkMobEm() {
+            if (moborem.val().trim() == "") {
+                $("#moberror").text("please enter your email or mobile number")
+                $("#moberror").css("color", "red")
+                moborem.css("border", "1px solid red")
+                return false
+
+            }
+            else if (emailChecking(moborem.val()) == false || mobileNumber(moborem.val()) == false) {
+                $("#moberror").text("please enter valid email or mobile number")
+                $("#moberror").css("color", "red")
+                moborem.css("border", "1px solid red")
+                return false
+            }
+
+            else {
+                $("#moberror").css("visibility", "hidden")
+                moborem.css("border", "1px solid green")
+                return true
+            }
+        }
+
+        function passwordChecking() {
+            if (password2.val().trim() == "") {
+                $("#passerror").text("please enter your password")
+                $("#passerror").css("color", "red")
+                password2.css("border", "1px solid red")
+                return false
+            }
+            else if (password2.val().trim().length <= 6) {
+                $("#passerror").text("Please enter minimum 6 character")
+                $("#passerror").css("color", "red")
+                password2.css("border", "1px solid red")
+                return false
+            }
+            else {
+                $("#passerror").css("visibility", "hidden")
+                password2.css("border", "1px solid green")
+                return true
+            }
+        }
+
+        function emailChecking(moborem) {
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (mailformat.test(moborem)) {
+                return true
+            } else {
+                return false
+            }
+        }
+        function mobileNumber(moborem) {
+            var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+            if (phoneno.test(moborem)) {
+                return true
+            } else {
+                return false
+            }
+
+        }
+
+    });
+</script>
+
 </html>

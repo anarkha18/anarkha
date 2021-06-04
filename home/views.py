@@ -41,6 +41,8 @@ def fbhome(request):
     return render(request, "fbhome.html")
 def home(request):
     return render(request, "home.html")
+def arhome(request):
+    return render(request, "arunfb.html")
 def validate(request):
     return render(request, "validate.html")
 

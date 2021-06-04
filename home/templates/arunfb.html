@@ -1,0 +1,481 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/fbbostrp.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12 col-12 mainbg2" style="background-color: #3C5898; ">
+            <div class="row">
+                <div class="col-md-6 col-12 mycol">
+                    <img class="fbname" src="{% static 'images/facebook-logo-2.png' %}" alt="error">
+                </div>
+                <div class="col-md-6 col-12">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="form-group">
+                                    <label for="email">Email or phone </label>
+                                    <input type="text" class="form-control my-control" id="email" style="width: 95%;">
+                                    <label id="eruser" style="color: red; margin-top: -22px;font-size: small;"
+                                        for=""></label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="form-group">
+                                    <label for="password">password</label>
+                                    <input type="password" class="form-control my-control" id="password"
+                                        style="width: 95%;">
+                                    <label id="erpass" style="color: red; margin-top: -22px;font-size: small;"
+                                        for=""></label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <button onclick="return validate()" type="submit" class="btn" id="btn1">Log in</button>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4 col-12" id="forgtn" style="margin-top: -2%;">
+                                <a href="#">forgotten account?</a>
+                            </div>
+                            <div class="col-12 d-block d-sm-none">
+                                <button class="create-accnt1">create an account</button>
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12 d-none d-sm-block" style="background-color: #cfd4e7; height: 700px;">
+            <div class="row">
+
+
+                <div class="col-md-6 d-none d-sm-block">
+                    <div style="margin-left: 125px; top: 30px;" class="col-md-8 d-none d-sm-block">
+                        <p class="p1">facebook helps you connect and share with the people in your life </p>
+                    </div>
+
+                    <div class="col-md-8"><img src="{% static 'images/picnetwork1.png' %}"
+                            style="margin-left: 92px; margin-top: 20px;width: 100%;" alt=""></div>
+
+
+
+
+
+
+
+                </div>
+                <div class="col-md-6  d-none d-sm-block">
+
+                    <H1>create an account</H1>
+                    <h5>it's free and always wii be</h5>
+
+
+
+                    <form id="myFormsignup" action="">
+                        <div class="col-md-8">
+                            <div class="row">
+
+
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control " id="firstName" placeholder="first name">
+                                    <p id="firsterror"></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control " id="lastName" placeholder="last name">
+                                    <p id="lasterror"></p>
+                                </div><br>
+                                <br>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="mob"
+                                        placeholder="Mobile number or email address">
+                                    <p id="moberror"></p>
+
+
+
+                                </div>
+                                <br> <br>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="pass2" placeholder="password">
+                                    <p id="passerror"></p>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <h5>Birthday</h5>
+                                </div>
+                                <div class="col-md-8">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <select name="" id="date">
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                            </select>
+                                            <p id="dateError"></p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select name="" id="month">
+                                                <option value="">10</option>
+                                                <option value="">11</option>
+                                                <option value="">12</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select name="" id="year">
+                                                <option value="">1996</option>
+                                                <option value="">1997</option>
+                                                <option value="">1998</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-5">
+                                    <a href="">
+                                        <p>Why do i need to provide my date of birth?</p>
+                                    </a>
+
+                                </div>
+                                <div class="col-md-1"></div>
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+                            <div class="col-md-8">
+                                <div class="row">
+
+                                    <label for="" style="color: black;margin: 0;">
+                                        <input type="radio" name="fb-radio"> Male
+                                    </label>
+                                    <label for="" style="color: black;margin: 0; padding: 2px;">
+                                        <input type="radio" name="fb-radio" style="padding: 2;"> Female
+                                    </label>
+
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <a href="">
+                                        <p>by clicking sign up you agree to our terms Data policy and cooke policy. You
+                                            may recieve SMS notifications from us and
+                                            can opt out any time
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <button id="submit" type="submit" class="btn btn-success btn1"
+                                        style="width: 60% ;margin: 0;">sign up</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+                </form>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <script>
+        function validate() {
+
+            var username = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+            status = 1;
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (username.trim() == "") {
+                document.getElementById("eruser").innerHTML = "enter username";
+                username.style.border = "3px solid red";
+
+                status = 0;
+            }
+            else if (username.match(mailformat) == null) {
+
+                document.getElementById("eruser").innerHTML = "enter valid email or phone number";
+
+                status = 0;
+            }
+
+
+
+            else {
+                document.getElementById("eruser").style.visibility = "hidden";
+
+            }
+
+
+            if (username.match(phoneno) == null) {
+
+                document.getElementById("eruser").innerHTML = "enter valid email or phone number";
+                status = 0;
+            }
+
+
+            else {
+                document.getElementById("eruser").style.visibility = "hidden";
+
+            }
+
+            if (password.trim() == "") {
+                document.getElementById("erpass").innerHTML = "please enter password";
+                status = 0;
+            }
+            else if (password.trim().length < 8) {
+                document.getElementById("erpass").innerHTML = "please enter minimum 8 characters";
+                status = 0;
+            }
+
+            else {
+                document.getElementById("erpass").style.visibility = "hidden";
+
+            }
+
+            if (status == 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+
+
+        }
+
+    </script>
+
+
+    <script>
+
+        $(document).ready(function () {
+            var firstName = $("#firstName");
+            var lastName = $("#lastName");
+            var moborem = $("#mob");
+            var password2 = $("#pass2");
+
+            $("#submit").click(function () {
+
+                // if(status==1){
+                //       return true
+                //   }
+                //   else{
+                //       return false
+                //   }
+
+
+                $("#myFormsignup").submit(function () {
+                    checkFirstName()
+                    checkLastName()
+                    checkMobEm()
+                    passwordChecking()
+                    //alert("hi")
+                    if (status == 1) {
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                });
+                function checkFirstName() {
+                    if (firstName.val().trim() == "") {
+                        $("#firsterror").html("please enter your first name")
+                        $("#firsterror").css("color", "red")
+                        firstName.css("border", "1px solid red")
+
+                        return false
+                    }
+                    else if (firstName.val().trim().length <= 6) {
+                        $("#firsterror").html("please enter minimum 6 charactar")
+                        $("#firsterror").css("color", "red")
+                        firstName.css("border", "1px solid red")
+                        return false
+
+                    }
+                    else {
+                        $("#firsterror").css("visibility", "hidden")
+                        firstName.css("border", "1px solid green")
+                        status = 1
+                        return true
+                    }
+                }
+
+                function checkLastName() {
+                    if (lastName.val().trim() == "") {
+                        $("#lasterror").text("please enter your last name")
+                        $("#lasterror").css("color", "red")
+                        lastName.css("border", "1px solid red")
+                        return false
+                    }
+                    else if (lastName.val().trim().length <= 6) {
+                        $("#lasterror").text("please enter minimum 6 charactar")
+                        $("#lasterror").css("color", "red")
+                        lastName.css("border", "1px solid red")
+                        return false
+                    }
+                    else {
+                        $("#lasterror").css("visibility", "hidden")
+                        lastName.css("border", "1px solid green")
+                        status = 1
+                        return true
+                    }
+                }
+                function checkMobEm() {
+                    if (moborem.val().trim() == "") {
+                        $("#moberror").text("please enter your email or mobile number")
+                        $("#moberror").css("color", "red")
+                        moborem.css("border", "1px solid red")
+                        return false
+
+                    }
+                    else if (emailChecking(moborem.val()) == false || mobileNumber(moborem.val()) == false) {
+                        $("#moberror").text("please enter valid email or mobile number")
+                        $("#moberror").css("color", "red")
+                        moborem.css("border", "1px solid red")
+                        return false
+                    }
+
+                    else {
+                        $("#moberror").css("visibility", "hidden")
+                        moborem.css("border", "1px solid green")
+                        return true
+                    }
+                }
+
+                function passwordChecking() {
+                    if (password2.val().trim() == "") {
+                        $("#passerror").text("please enter your password")
+                        $("#passerror").css("color", "red")
+                        password2.css("border", "1px solid red")
+                        return false
+                    }
+                    else if (password2.val().trim().length <= 6) {
+                        $("#passerror").text("please enter minimum 6 character")
+                        $("#passerror").css("color", "red")
+                        password2.css("border", "1px solid red")
+                        return false
+                    }
+                    else {
+                        $("#passerror").css("visibility", "hidden")
+                        password2.css("border", "1px solid green")
+                        return true
+                    }
+                }
+
+                //   function dateChecking(){
+                //       if()
+
+                //   }
+
+                function emailChecking(moborem) {
+                    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                    if (mailformat.test(moborem)) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                function mobileNumber(moborem) {
+                    var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+                    if (phoneno.test(moborem)) {
+                        return true
+                    } else {
+                        return false
+                    }
+
+                }
+
+            })
+
+        });
+    </script>
+
+</body>
+
+</html>
