@@ -21,6 +21,14 @@
     .footer1 {
       background-color: black;
     }
+
+    .invalid input:required:invalid {
+      background: #BE4C54;
+    }
+
+    .invalid input:required:valid {
+      background: #17D654;
+    }
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -73,38 +81,50 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
       </form>
+
       <!-- model for login -->
       <!-- Button trigger modal -->
-      <button style="margin-right: 15px" ; type="button" class="btn btn-success" data-toggle="modal"
-        data-target="#loginmdel">
-        LogIn
+      <button type="button" style="margin-right: 15px" ; class="btn btn-success" data-toggle="modal"
+        data-target="#loginmodal">
+        Log In
       </button>
+
       <!-- Modal -->
-      <div class="modal fade" id="loginmdel" tabindex="-1" aria-labelledby="loginmdel" aria-hidden="true">
-        <div class="modal-dialog">
+      <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="loginmdel">Log In</h5>
+              <h5 class="modal-title" id="loginmodal">Log In</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <form name="loginform" action="#">
+              <form class="needs-validation" novalidate action="#" name="loginform">
                 <div class="form-group">
                   <label for="loginem">Email address</label>
                   <input type="email" class="form-control" id="loginem" aria-describedby="emailHelp"
-                    placeholder="Email">
+                    placeholder="Enter email" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address
+                  </div>
+                  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small> -->
                 </div>
                 <div class="form-group">
                   <label for="loginpas">Password</label>
-                  <input type="password" class="form-control" id="loginpas" placeholder="Password" required="true">
+                  <input type="password" class="form-control" id="loginpas" placeholder="Password"
+                    required>
+                  <div class="invalid-feedback">
+                    Please enter a password
+                  </div>
                 </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <div class="form-check mb-1">
+                  <input type="checkbox" class="form-check-input" id="chkbox">
+                  <label class="form-check-label" for="chkbox">Check me out</label>
                 </div>
-                <button type="submit" class="btn btn-primary" id="loginbtn">LogIn</button>
+                <button type="submit" class="btn btn-primary" id="loginbtn">Submit</button>
               </form>
             </div>
             <div class="modal-footer">
@@ -328,6 +348,28 @@
       }
     });
   });
+</script>
+
+<script>
+
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+
 </script>
 
 </html>

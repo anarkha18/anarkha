@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <style>
+        .myform{
+            margin-top: 20px;
+            height: 50px;
+        }
+        .myform input{
+            width: 150px;
+        }
+        .formerror{
+            color: red;
+        }
+        .btn{
+            width: 40px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Form</h1>
+    <form action="#" method="POST" id="myform" onsubmit="return validateform()">
+        <div class="myform">
+            <label for="fn">First Name</label>
+            <input type="text" id="fn">
+            <span class="formerror" id="fner"></span>
+        </div>
+        <div class="myform">
+            <label for="ln">Last Name </label>
+            <input type="text" id="ln">
+            <span class="formerror" id="lner"></span>
+        </div>
+        <div class="myform">
+            <label for="em">Email  </label>
+            <input type="email" id="em">
+            <span class="formerror" id="emer"></span>
+        </div>
+        <div class="myform">
+            <label for="ph">Phone </label>
+            <input type="email" id="ph">
+            <span class="formerror" id="pher"></span>
+        </div>
+        <div class="myform">
+            <label for="pas">Password</label>
+            <input type="password" name="password" id="pas">
+            <span class="formerror" id="pser"></span>
+        </div>
+        <div class="myform">
+            <label for="cpas">Confirm Password</label>
+            <input type="password" name="cpassword" id="cpas">
+            <span class="formerror" id="cpser"></span>
+        </div>
+        <div class="myform">
+            <input type="submit" value="Submit" id="btn">
+        </div>
+    </form>
+</body>
+<script>
+
+    function validateform(){
+        var fname=document.forms["myform"]["fn"].value;
+        if(fname.len<5){
+            alert("hgj")
+            // document.getElementsByClassName("fner").innerHTML("srf");
+            return false;
+        }
+
+        
+        // return returnval;
+    }
+</script>
+</html>

@@ -39,11 +39,10 @@ def bootstrap2(request):
     return render(request, "bootstrap2.html")
 def fbhome(request):
     return render(request, "fbhome.html")
+def fblogin(request):
+    return render(request, "fblogin.html")
 def home(request):
     return render(request, "home.html")
-def arhome(request):
-    return render(request, "arunfb.html")
-def validate(request):
-    return render(request, "validate.html")
+
 
 

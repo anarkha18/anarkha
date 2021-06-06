@@ -20,8 +20,7 @@ urlpatterns = [
     path('asgmnt16', views.assignment16, name="asgmnt16"),
     path('bootstrap1', views.bootstrap1, name="bootstrap1"),
     path('bootstrap2', views.bootstrap2, name="bootstrap2"),
-    path('fbhome', views.fbhome, name="fbhome"),
     path('home', views.home, name="home"),
-    path('arhome', views.arhome, name="home"),
-    path('validate', views.validate, name="validate"),
+    path('fblogin', views.fblogin, name="fblogin"),
+    path('fbhome', views.fbhome, name="fbhome"),
 ]
