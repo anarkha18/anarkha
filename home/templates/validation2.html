@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" id="myform" onsubmit="return myvalid()">
+        <label for="fn"> First Name</label>
+        <input type="text" id="fn">
+        <span id="error"></span>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function myvalid(){
+            var name= document.getElementById("fn").value;
+            var nm= name.length;
+            if (nm < 5 ) {
+            document.getElementById("error").innerHTML = "Enter username"; 
+            }     
+        }
+    </script>
+</body>
+</html>

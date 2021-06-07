@@ -62,16 +62,70 @@
 </body>
 <script>
 
-    function validateform(){
-        var fname=document.forms["myform"]["fn"].value;
-        if(fname.len<5){
-            alert("hgj")
-            // document.getElementsByClassName("fner").innerHTML("srf");
-            return false;
+//  type 1***************************8
+    // function validateform(){
+
+    //     var fname=document.forms["myform"]["fn"].value;
+    //     var lenfn= fname.length;
+    //     if( lenfn < 4 ){
+    //         document.getElementById("fner").innerHTML="Enter first name";
+    //         return false;
+    //     }
+    //     else {
+    //         return true;
+    //     }
+    // }
+    function clearErrors(){
+        errors = document.getElementsByClassName("formerror");
+        for( let item of errors){
+            item.innerHTML= "";
         }
 
-        
-        // return returnval;
     }
+    function validateform(){
+    var returnval = true;
+    clearErrors();
+    var fname=document.forms["myform"]["fn"].value;
+    // var lenfn= fname.length;
+    if( fname.length < 4 ){
+        document.getElementById("fner").innerHTML="Length of name is too short";
+        returnval= false;
+    }
+    if( fname.trim() == "" ){
+        document.getElementById("fner").innerHTML="Enter first name";
+        returnval= false;
+    }
+    var lname=document.forms["myform"]["ln"].value;
+    if( lname.length < 4 ){
+        document.getElementById("lner").innerHTML="Length of name is too short";
+        returnval= false;
+    }
+    if( lname.trim() == "" ){
+        document.getElementById("lner").innerHTML="Enter last name";
+        returnval= false;
+    }
+    var email=document.forms["myform"]["em"].value;
+
+    if( email.length > 20 ){
+        document.getElementById("emer").innerHTML="Length of email is too long";
+        returnval= false;
+    }
+      if( email.trim() == "" ){
+        document.getElementById("emer").innerHTML="Enter Email";
+        returnval= false;
+    }
+
+    var pass=document.forms["myform"]["pas"].value;
+
+    if( pass.length > 15 ){
+        document.getElementById("pser").innerHTML="Too long password";
+        returnval= false;
+    }
+      if( pass.trim() == "" ){
+        document.getElementById("pser").innerHTML="Enter your password";
+        returnval= false;
+    }
+    return returnval;
+}
 </script>
 </html>
