@@ -42,7 +42,7 @@ def fbhome(request):
 def fblogin(request):
     return render(request, "fblogin.html")
 def home(request):
-    return render(request, "home.html")
+    return render(request, "dot.html")
 
 
 
