@@ -3,371 +3,264 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home</title>
-  <style>
-    .logo {
-      height: 35px;
-      width: 60px;
-      border-radius: 50%;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+        .logo {
+            height: 35px;
+            width: 60px;
+            border-radius: 50%;
+        }
 
-    li {
-      padding-right: 10px;
-    }
+        li {
+            padding-right: 10px;
+        }
 
-    .footer1 {
-      background-color: black;
-    }
+        .footer1 {
+            background-color: black;
+        }
 
-    .invalid input:required:invalid {
-      background: #BE4C54;
-    }
+        .invalid input:required:invalid {
+            background: #BE4C54;
+        }
 
-    .invalid input:required:valid {
-      background: #17D654;
-    }
-  </style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-  {% block css %} {% endblock%}
+        .invalid input:required:valid {
+            background: #17D654;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="{% static 'js/signup.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+    {% block css %} {% endblock%}
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
-    style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">
-    <a class="navbar-brand" href="#" style="padding-left: 10px;"> <img class="logo"
-        src="https://www.vhv.rs/dpng/d/414-4147413_white-avengers-logo-png-transparent-png.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse navi" id="navbarSupportedContent"
-      style="padding-left: 20px; padding-right: 10px; font-size: larger;">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Latest Blogs
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Contact Us
-          </a>
-        </li>
-        <li class="nav-item dropdown nav-item active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            More
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: white;">
-            <a class="dropdown-item" href="#">View Polls</a>
-            <a class="dropdown-item" href="#">About Us</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0" style="margin-right: 15px;" name="search">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
-      </form>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+        style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+        <a class="navbar-brand" href="#" style="padding-left: 10px;"> <img class="logo"
+                src="https://www.vhv.rs/dpng/d/414-4147413_white-avengers-logo-png-transparent-png.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navi" id="navbarSupportedContent"
+            style="padding-left: 20px; padding-right: 10px; font-size: larger;">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Latest Blogs
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Contact Us
+                    </a>
+                </li>
+                <li class="nav-item dropdown nav-item active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: white;">
+                        <a class="dropdown-item" href="#">View Polls</a>
+                        <a class="dropdown-item" href="#">About Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 15px;" name="search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+            </form>
 
-      <!-- model for login -->
-      <!-- Button trigger modal -->
-      <button type="button" style="margin-right: 15px" ; class="btn btn-success" data-toggle="modal"
-        data-target="#loginmodal">
-        Log In
-      </button>
+            <!-- model for login -->
+            <!-- Button trigger modal -->
+            <button type="button" style="margin-right: 15px" ; class="btn btn-success" data-toggle="modal"
+                data-target="#loginmodal">
+                Log In
+            </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="loginmodal">Log In</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="needs-validation" novalidate action="#" name="myloginform" id="loginform">
-                <div class="form-group">
-                  <label for="loginem">Email address</label>
-                  <input type="email" class="form-control" id="loginem" aria-describedby="emailHelp"
-                    placeholder="Enter email" required>
-                  <div class="invalid-feedback">
-                    Please enter a valid email address
-                  </div>
+            <!-- Modal -->
+            <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginmodal">Log In</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="needs-validation" novalidate action="#" name="myloginform" id="loginform">
+                                <div class="form-group">
+                                    <label for="loginem">Email address</label>
+                                    <input type="email" class="form-control" id="loginem" aria-describedby="emailHelp"
+                                        placeholder="Enter email" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginpas">Password</label>
+                                    <input type="password" class="form-control" id="loginpas" placeholder="Password"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input type="checkbox" class="form-check-input" id="chkbox">
+                                    <label class="form-check-label" for="chkbox">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="loginbtn">Submit</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label for="loginpas">Password</label>
-                  <input type="password" class="form-control" id="loginpas" placeholder="Password"
-                    required>
-                  <div class="invalid-feedback">
-                    Please enter a password
-                  </div>
-                </div>
-                <div class="form-check mb-1">
-                  <input type="checkbox" class="form-check-input" id="chkbox">
-                  <label class="form-check-label" for="chkbox">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary" id="loginbtn">Submit</button>
-              </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <!-- model for signup -->
+            <!-- Button trigger modal -->
+            <button style="margin-right: 15px" ; type="button" class="btn btn-danger" data-toggle="modal"
+                data-target="#signupmodel">
+                Sign Up
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="signupmodel" tabindex="-1" aria-labelledby="signupmodel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="signupmodel">Sign Up</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="signupform" action="#">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="fn">First Name</label>
+                                        <input type="text" class="form-control" placeholder="First name" id="fn">
+                                        <small id="fninvalid"></small>
+                                    </div>
+                                    <div class="col">
+                                        <label for="ln">Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Last name" id="ln">
+                                        <small id="lninvalid"></small>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="em">Email address</label>
+                                    <input type="text" class="form-control" id="em" placeholder="name@example.com">
+                                    <small id="eminvalid">
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="pas" name="pass"
+                                        placeholder="Password">
+                                    <small id="pasinvalid"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cpas"> Confirm Password</label>
+                                    <input type="password" class="form-control" id="cpas" id="cpas"
+                                        placeholder="Confirm Password">
+                                    <small id="cpasinvalid"></small>
+                                </div>
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto my-1">
+                                        <label for="birthday">Birthday</label><br>
+                                        <input type="date" id="birthday" name="birthday" required>
+                                    </div>
+                                </div>
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto my-1">
+                                        <label for="inlineFormCustomSelect">Gender</label>
+                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
+                                            <option value="">Choose</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                            <option value="3">Others</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+    </nav>
+    {% block div1 %} {% endblock %}
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark footer1">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-12 py-5 text-center">
+                    <div class="mb-5 flex-center">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic">
+                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic">
+                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
         </div>
-      </div>
-      <!-- model for signup -->
-      <!-- Button trigger modal -->
-      <button style="margin-right: 15px" ; type="button" class="btn btn-danger" data-toggle="modal"
-        data-target="#signupmodel">
-        Sign Up
-      </button>
+        <!-- Footer Elements -->
 
-      <!-- Modal -->
-      <div class="modal fade" id="signupmodel" tabindex="-1" aria-labelledby="signupmodel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="signupmodel">Sign Up</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="signupform" action="#">
-                <div class="row">
-                  <div class="col">
-                    <label for="fn">First Name</label>
-                    <input type="text" class="form-control" placeholder="First name" id="fn" required="true">
-                  </div>
-                  <div class="col">
-                    <label for="ln">Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last name" id="ln" required="true">
-                  </div>
-                </div>
-                <br>
-                <div class="form-group">
-                  <label for="em">Email address</label>
-                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required="true">
-                  <small id="emailvalid" class="form-text
-                  text-muted invalid-feedback">
-                    Your email must be a valid email
-                  </small>
-                </div>
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" name="pass" placeholder="Password">
-                  <h5 id="passcheck" style="color: red;">
-                    **Please Fill the password
-                  </h5>
-                </div>
-                <div class="form-group">
-                  <label for="cpas"> Confirm Password</label>
-                  <input type="password" class="form-control" id="cpas" id="cpas" placeholder="Confirm Password">
-                  <h5 id="conpasscheck" style="color: red;">
-                    **Password didn't match
-                  </h5>
-                </div>
-                <div class="form-row align-items-center">
-                  <div class="col-auto my-1">
-                    <label for="birthday">Birthday</label><br>
-                    <input type="date" id="birthday" name="birthday" required="true">
-                  </div>
-                </div>
-                <div class="form-row align-items-center">
-                  <div class="col-auto my-1">
-                    <label for="inlineFormCustomSelect">Gender</label>
-                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>S
-                      <option selected>Choose</option>
-                      <option value="1">Male</option>
-                      <option value="2">Female</option>
-                      <option value="3">Others</option>
-                    </select>
-                  </div>
-                </div>
-                <br>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
-                </div>
-              </form>
-            </div>
-          </div>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-white bg-dark"
+            style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">© 2020 Copyright -
+            <a href="#" style="color: white; font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+                Appleblogs.inc
+            </a>
         </div>
-      </div>
-  </nav>
-  {% block div1 %} {% endblock %}
-  <!-- Footer -->
-  <footer class="page-footer font-small bg-dark footer1">
+        <!-- Copyright -->
 
-    <!-- Footer Elements -->
-    <div class="container">
-
-      <!-- Grid row-->
-      <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-md-12 py-5 text-center">
-          <div class="mb-5 flex-center">
-
-            <!-- Facebook -->
-            <a class="fb-ic">
-              <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
-            </a>
-            <!-- Twitter -->
-            <a class="tw-ic">
-              <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
-            </a>
-            <!-- Google +-->
-            <a class="gplus-ic">
-              <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
-            </a>
-            <!--Instagram-->
-            <a class="ins-ic">
-              <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
-            </a>
-          </div>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row-->
-
-    </div>
-    <!-- Footer Elements -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 text-white bg-dark"
-      style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">© 2020 Copyright -
-      <a href="#" style="color: white; font-size: 20px; font-family: 'Times New Roman', Times, serif;"> Appleblogs.inc
-      </a>
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-  <!-- Footer -->
+    </footer>
+    <!-- Footer -->
 </body>
-<script>
-  $(document).ready(function () {
-    // Validate Email
-    const email =
-      document.getElementById('email');
-    email.addEventListener('blur', () => {
-      let regex =
-        /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
-      let s = email.value;
-      if (regex.test(s)) {
-        email.classList.remove(
-          'is-invalid');
-        emailError = true;
-      }
-      else {
-        email.classList.add(
-          'is-invalid');
-        emailError = false;
-      }
-    })
-    // Validate Password
-    $('#passcheck').hide();
-    let passwordError = true;
-    $('#password').keyup(function () {
-      validatePassword();
-    });
-    function validatePassword() {
-      let passwrdValue =
-        $('#password').val();
-      if (passwrdValue.length == '') {
-        $('#passcheck').show();
-        passwordError = false;
-        return false;
-      }
-      if ((passwrdValue.length < 3) ||
-        (passwrdValue.length > 10)) {
-        $('#passcheck').show();
-        $('#passcheck').html
-          ("**length of your password must be between 3 and 10");
-        $('#passcheck').css("color", "red");
-        passwordError = false;
-        return false;
-      } else {
-        $('#passcheck').hide();
-      }
-    }
-    // Validate Confirm Password
-    $('#conpasscheck').hide();
-    let confirmPasswordError = true;
-    $('#cpas').keyup(function () {
-      validateConfirmPasswrd();
-    });
-    function validateConfirmPasswrd() {
-      let confirmPasswordValue =
-        $('#cpas').val();
-      let passwrdValue =
-        $('#password').val();
-      if (passwrdValue != confirmPasswordValue) {
-        $('#conpasscheck').show();
-        $('#conpasscheck').html(
-          "**Password didn't Match");
-        $('#conpasscheck').css(
-          "color", "red");
-        confirmPasswordError = false;
-        return false;
-      } else {
-        $('#conpasscheck').hide();
-      }
-    }
-    // Submitt button
-    $('#submitbtn').click(function () {
-      validatePassword();
-      validateConfirmPasswrd();
-      validateEmail();
-      if (
-        (passwordError == true) &&
-        (confirmPasswordError == true) &&
-        (emailError == true)) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-  });
-</script>
-
-<script>
-
-  (function () {
-    'use strict';
-    window.addEventListener('load', function () {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function (form) {
-        form.addEventListener('submit', function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-
-</script>
-
 </html>
