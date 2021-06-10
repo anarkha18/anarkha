@@ -43,6 +43,8 @@ def fblogin(request):
     return render(request, "fblogin.html")
 def home(request):
     return render(request, "home.html")
+def contact(request):
+    return render(request, "contact.html")
 
 
 

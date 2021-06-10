@@ -139,7 +139,7 @@ $(document).ready(function () {
             $('#eminvalid').html('Email Cannot be Empty');
             $('#eminvalid').focus();
             $('#eminvalid').css("color", "red");
-            cpas_error = false;
+            em_error = false;
             return false;
         } else {
             $('#eminvalid').hide();

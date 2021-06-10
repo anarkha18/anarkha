@@ -23,4 +23,5 @@ urlpatterns = [
     path('home', views.home, name="home"),
     path('fblogin', views.fblogin, name="fblogin"),
     path('fbhome', views.fbhome, name="fbhome"),
+    path('contact', views.contact, name="contact"),
 ]

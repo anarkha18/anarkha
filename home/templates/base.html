@@ -30,6 +30,7 @@
             background: #17D654;
         }
     </style>
+    {% block css %} {% endblock %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -39,7 +40,8 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="{% static 'js/signup.js' %}"></script>
     <script src="{% static 'js/login.js' %}"></script>
-    {% block css %} {% endblock%}
+    {% block js %} {% endblock %}
+  
 </head>
 
 <body>
@@ -55,7 +57,7 @@
             style="padding-left: 20px; padding-right: 10px; font-size: larger;">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -64,8 +66,7 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="{% url 'contact' %}"  role="butto"                 aria-haspopup="true" aria-expanded="false">
                         Contact Us
                     </a>
                 </li>
