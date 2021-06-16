@@ -27,4 +27,6 @@ urlpatterns = [
     path('sum', views.sum, name="sum"),
     path('fsum', views.fsum, name="fsum"),
     path('calcu', views.calcu, name="calcu"),
+    path('myform', views.myform, name="myform"),
+    path('mytable', views.mytable, name="mytable"),
 ]

@@ -24,40 +24,42 @@
 </head>
 <body>
     <h1>My Form</h1>
-    <form action="#" method="POST" id="myform" onsubmit="return validateform()">
+    <form action="myform" method="POST" id="myform" onsubmit="return validateform()">
+        {% csrf_token %} 
         <div class="myform">
             <label for="fn">First Name</label>
-            <input type="text" id="fn">
+            <input type="text" id="fn" name="fname">
             <span class="formerror" id="fner"></span>
         </div>
         <div class="myform">
             <label for="ln">Last Name </label>
-            <input type="text" id="ln">
+            <input type="text" id="ln" name="lname">
             <span class="formerror" id="lner"></span>
         </div>
         <div class="myform">
             <label for="em">Email  </label>
-            <input type="email" id="em">
+            <input type="email" id="em" name="email">
             <span class="formerror" id="emer"></span>
         </div>
-        <div class="myform">
+        <!-- <div class="myform">
             <label for="ph">Phone </label>
-            <input type="email" id="ph">
-            <span class="formerror" id="pher"></span>
+            <input type="email" id="ph" name="phone">
+            <span class="formerror" id="pher"></span> -->
         </div>
         <div class="myform">
             <label for="pas">Password</label>
             <input type="password" name="password" id="pas">
             <span class="formerror" id="pser"></span>
         </div>
-        <div class="myform">
+        <!-- <div class="myform">
             <label for="cpas">Confirm Password</label>
             <input type="password" name="cpassword" id="cpas">
             <span class="formerror" id="cpser"></span>
-        </div>
+        </div> -->
         <div class="myform">
             <input type="submit" value="Submit" id="btn">
         </div>
+        {{message}}
     </form>
 </body>
 <script>

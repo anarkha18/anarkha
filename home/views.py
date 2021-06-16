@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from .models import *
 
 # Create your views here.
 def assignment1(request):
@@ -46,12 +47,12 @@ def home(request):
 def contact(request):
     return render(request, "contact.html")
 def sum(request):
-    return render(request, "some.html")
+    return render(request, "sum.html")
 def fsum(request):
     fnum = request.GET["firstnumber"]
     snum = request.GET["secondnumber"]
     sum= int(fnum) + int(snum)
-    return render(request, "some.html",{'sum': sum})
+    return render(request, "sum.html",{'sum': sum})
     # return HttpResponse(sum)
 def calcu(request):
     if (request.method == 'POST'):
@@ -60,6 +61,29 @@ def calcu(request):
         sum= int(fnum) + int(snum)
         return render(request, "calcu.html",{'sum': sum})
     return render(request, "calcu.html")
+def myform(request):
+    if (request.method == 'POST'):
+        fname = request.POST["fname"]
+        lname = request.POST["lname"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        regval = registration(firstname=fname,lastname=lname,emailid=email,password=password)
+        regval.save()
+        return render(request, "validation.html",{'message': 'success'})
+    return render(request, "validation.html")
+def mytable(request):
+    details = registration.objects.all()
+    return render(request, "table.html",{'key':details})
+def contact(request):
+    if request.method=="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        content =request.POST['content']
+        contact=Contact(name=name, email=email, phone=phone, content=content)
+        contact.save()
+        return render(request, "contact.html",{'message': 'Your Message has been sent!'})
+    return render(request, "contact.html")
     
 
 
