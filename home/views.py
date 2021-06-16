@@ -45,6 +45,21 @@ def home(request):
     return render(request, "home.html")
 def contact(request):
     return render(request, "contact.html")
-
+def sum(request):
+    return render(request, "some.html")
+def fsum(request):
+    fnum = request.GET["firstnumber"]
+    snum = request.GET["secondnumber"]
+    sum= int(fnum) + int(snum)
+    return render(request, "some.html",{'sum': sum})
+    # return HttpResponse(sum)
+def calcu(request):
+    if (request.method == 'POST'):
+        fnum = request.POST["firstnumber"]
+        snum = request.POST["secondnumber"]
+        sum= int(fnum) + int(snum)
+        return render(request, "calcu.html",{'sum': sum})
+    return render(request, "calcu.html")
+    
 
 

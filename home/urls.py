@@ -24,4 +24,7 @@ urlpatterns = [
     path('fblogin', views.fblogin, name="fblogin"),
     path('fbhome', views.fbhome, name="fbhome"),
     path('contact', views.contact, name="contact"),
+    path('sum', views.sum, name="sum"),
+    path('fsum', views.fsum, name="fsum"),
+    path('calcu', views.calcu, name="calcu"),
 ]
