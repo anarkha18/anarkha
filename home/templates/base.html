@@ -29,20 +29,20 @@
         .invalid input:required:valid {
             background: #17D654;
         }
-        .footernv{
+
+        .footernv {
             color: white;
             font-family: 'Times New Roman', Times, serif;
             font-size: larger;
             padding-left: 15px;
             padding-right: 15px;
-            border-right: 2px solid white;  
+            border-right: 2px solid white;
         }
-        .footernv:hover{
+
+        .footernv:hover {
             color: rgb(32, 32, 250);
             text-decoration: unset;
         }
-        
-
     </style>
     {% block css %} {% endblock %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -55,7 +55,7 @@
     <script src="{% static 'js/signup.js' %}"></script>
     <script src="{% static 'js/login.js' %}"></script>
     {% block js %} {% endblock %}
-  
+
 </head>
 
 <body>
@@ -72,11 +72,11 @@
             style="padding-left: 20px; padding-right: 10px; font-size: larger;">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {% block homeactive %} {% endblock homeactive %}">
-                <!-- <li class="nav-item active"> -->
+                    <!-- <li class="nav-item active"> -->
                     <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item {% block blogactive %} {% endblock blogactive %}">
-                    <a class="nav-link" href="#">
+                <li class="nav-item {% block blogsactive %} {% endblock blogsactive %}">
+                    <a class="nav-link" href="{% url 'blogs' %}">
                         Latest Blogs
                     </a>
                 </li>
@@ -273,11 +273,11 @@
 
                         <!-- Facebook -->
                         <a class="footernv" href="{% url 'home' %}">
-                           Home
+                            Home
                         </a>
                         <!-- Twitter -->
-                        <a class="footernv">
-                           Blogs 
+                        <a class="footernv" href="{% url 'blogs' %}">
+                            Blogs
                         </a>
                         <!-- Google +-->
                         <a class="footernv" href="{% url 'contact' %}">
@@ -309,4 +309,5 @@
     </footer>
     <!-- Footer -->
 </body>
+
 </html>
