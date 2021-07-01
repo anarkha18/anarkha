@@ -30,4 +30,9 @@ urlpatterns = [
     path('calcu', views.calcu, name="calcu"),
     path('myform', views.myform, name="myform"),
     path('mytable', views.mytable, name="mytable"),
+    path('mesg', views.mesg, name="mesg"),
+    path('mymesgs', views.mymessages, name="mymessages"),
+    path('update/<int:id>/', views.updatedata, name="updatedata"),
+    path('<int:id>/', views.deletedata, name="deletedata"),
+
 ]

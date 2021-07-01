@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import *
 
 # Create your views here.
@@ -86,6 +86,41 @@ def contact(request):
         contact.save()
         return render(request, "contact.html",{'message': 'Your Message has been sent!'})
     return render(request, "contact.html")
-    
+
+    # add data
+def mesg(request):
+    if request.method=="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        content =request.POST['content']
+        msg=Mesg(name=name, email=email, phone=phone, content=content)
+        msg.save()
+        return render(request, "datas.html",{'message': 'Your Message has been sent!'})
+    return render(request, "datas.html")
+def mymessages(request):
+    messages = Mesg.objects.all()
+    return render(request, "datastable.html",{'key':messages})
+    # update data
+def updatedata(request, id):
+    if request.method=="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        content =request.POST['content']
+        # Mesg.objects.filter(id=id).update(name=name, email=email, phone=phone, content=content)
+        msg=Mesg(name=name, email=email, phone=phone, content=content)
+        msg.save()
+        return render(request, 'updatedata.html',{'message': 'Your Details has been Updated!'})
+    details=Mesg.objects.get(id=id) 
+    return render(request, 'updatedata.html',{'details':details})
+    # delete data
+def deletedata(request, id):
+    if (request.method == 'POST'):
+        deldata = Mesg.objects.get(id=id)
+        deldata.delete()
+        return redirect('/mymesgs')
+
+
 
 

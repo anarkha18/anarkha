@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+</head>
+
+<body>
+    <section>
+        <div class="container my-3">
+            <h2>Update Details</h2>
+            <form action="/updatedata/{{details.id}}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="namw">Name</label>
+                    <input type="text" value="{{details.name}}" class="form-control" name="name" id="name"
+                        aria-describedby="name" placeholder="Enter your Name" autocomplete="off">
+                    <small id="nmer" class="form-text"></small>
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" value="{{details.email}}" class="form-control" name="email" id="email"
+                        aria-describedby="emailHelp" placeholder="Enter Your email" autocomplete="off">
+                    <small id="emer" class="form-text"></small>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="phone" value="{{details.phone}}" class="form-control" name="phone" id="phone"
+                        aria-describedby="phone" placeholder="Enter your Phone" autocomplete="off">
+                    <small id="pher" class="form-text"></small>
+                </div>
+                <div class="form-group">
+                    <label for="content">Describe your Issue:</label>
+                    <textarea class="form-control" id="content" name="content" cols="20" rows="6"
+                        placeholder="Your Message">{{details.content}}</textarea>
+                    <small id="contenter" class="form-text"></small>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="sub">Submit</button>
+                {{message}}
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datas Table</title>
+    <style>
+        * {
+            margin-left: 20px;
+            background-color: rgb(251, 247, 255);
+        }
+
+        table,
+        td,
+        th {
+            border: 2px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table.th {
+            font-weight: bold;
+        }
+
+        table {
+            width: 60%;
+        }
+
+        th {
+            height: 30px;
+            padding: 4px;
+        }
+
+        td {
+            height: 30px;
+            padding: 4px;
+            text-align: left;
+            padding-left: 8px;
+        }
+
+        .id {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>My Messages</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Content</th>
+            <th>Action</th>
+        </tr>
+        {% for x in key %}
+        <tr>
+            <td class="id">{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.phone}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.content}}</td>
+            <td>
+                <a href="{% url 'updatedata' x.id %}" class="btn text-secondary px-0">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </a>
+                <form action="{% url 'deletedata' x.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>

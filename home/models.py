@@ -1,12 +1,19 @@
 from django.db import models
 
 # Create your models here.
-
-class registration(models.Model):
+# (for validation.html)
+class registration(models.Model):              
     firstname = models.CharField(max_length=80)
     lastname = models.CharField(max_length=80)
     emailid = models.CharField(max_length=100)
     password = models.CharField(max_length=50)
+
+# (for crud exmple)
+class Mesg(models.Model):
+    name= models.CharField(max_length=255)
+    phone = models.IntegerField()
+    email= models.CharField(max_length=100)
+    content= models.TextField()
 
 class UserReg(models.Model):
     firstname = models.CharField(max_length=80)
