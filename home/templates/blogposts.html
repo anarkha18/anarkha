@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Posts</title>
+  <style>
+    h1 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 18px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1 class="bg-secondary text-white">Blog Posts</h1>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th style="width:4%; text-align: center;">Sno:</th>
+          <th style="width: 10%; text-align: center;">Title</th>
+          <th style="width: 8%; text-align: center;">Author</th>
+          <th style="width: 12%; text-align: center;">Time Stamp</th>
+          <th style="width: 20%; text-align: center;">Content</th>
+          <th style="width: 15%; text-align: center;" colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in key %}
+        <tr>
+          <th class="table-active" scope="row">{{x.sno}}</th>
+          <td class="table-primary">{{x.title}}</td>
+          <td class="table-success">{{x.author}}</td>
+          <td class="table-danger">{{x.timeStamp}}</td>
+          <td class="table-warning">{{x.content}}</td>
+          <td class="table-info" style="text-align: center;">
+            <button type="submit" class="btn btn-success" id="sub">Edit</button>
+          </td>
+          <td class="table-info" style="text-align: center;">
+            <button type="submit" class="btn btn-danger" id="sub">Delete</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+
+</body>
+
+</html>

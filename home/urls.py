@@ -34,5 +34,6 @@ urlpatterns = [
     path('mymesgs', views.mymessages, name="mymessages"),
     path('update/<int:id>/', views.updatedata, name="updatedata"),
     path('<int:id>/', views.deletedata, name="deletedata"),
-
+    path('blogposts', views.blogposts, name="blogposts"),
+    path('addpost', views.addpost, name="addpost"),
 ]

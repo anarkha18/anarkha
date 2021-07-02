@@ -44,8 +44,6 @@ def fblogin(request):
     return render(request, "fblogin.html")
 def home(request):
     return render(request, "home.html")
-def blogs(request):
-    return render(request, "blogs.html")
 def contact(request):
     return render(request, "contact.html")
 def sum(request):
@@ -108,18 +106,32 @@ def updatedata(request, id):
         email=request.POST['email']
         phone=request.POST['phone']
         content =request.POST['content']
-        # Mesg.objects.filter(id=id).update(name=name, email=email, phone=phone, content=content)
-        msg=Mesg(name=name, email=email, phone=phone, content=content)
-        msg.save()
-        return render(request, 'updatedata.html',{'message': 'Your Details has been Updated!'})
+        Mesg.objects.filter(id=id).update(name=name, email=email, phone=phone, content=content)
+        return redirect('/mymesgs')
     details=Mesg.objects.get(id=id) 
     return render(request, 'updatedata.html',{'details':details})
     # delete data
 def deletedata(request, id):
-    if (request.method == 'POST'):
-        deldata = Mesg.objects.get(id=id)
-        deldata.delete()
-        return redirect('/mymesgs')
+    # if (request.method == 'POST'):
+    deldata = Mesg.objects.get(id=id)
+    deldata.delete()
+    return redirect('/mymesgs')
+def addpost(request):
+    if request.method=="POST":
+        title=request.POST['title']
+        author=request.POST['author']
+        content =request.POST['content']
+        post=Post(title=title, author=author, content=content)
+        post.save()
+        return render(request, "addpost.html",{'message': 'Your Blog has been Added'})
+    return render(request, "addpost.html")
+def blogposts(request):
+    posts = Post.objects.all()
+    return render(request, "blogposts.html",{'key':posts})
+def blogs(request):
+    posts = Post.objects.all()
+    return render(request, "blogs.html" ,{'key':posts})
+
 
 
 

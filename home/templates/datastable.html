@@ -72,11 +72,13 @@
                 <a href="{% url 'updatedata' x.id %}" class="btn text-secondary px-0">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </a>
-                <form action="{% url 'deletedata' x.id %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit" class="btn">
+                <!-- <form action="{% url 'deletedata' x.id %}" method="POST">
+                    {% csrf_token %} -->
+                <a href="{% url 'deletedata' x.id %}"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </a>
+                <!-- <button type="submit" class="btn">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    </button>
+                    </button> -->
                 </form>
             </td>
 

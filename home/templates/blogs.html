@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 {% block title %} Blogs {% endblock %}
+{% block css %}
+<style>
+    .tlink {
+        color: black;
+        /* font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 32px; */
+    }
+
+    .tlink:hover {
+        text-decoration: none;
+        color: rgb(23, 50, 85);
+
+    }
+</style>
+{% endblock %}
 {% block blogsactive %} active {% endblock blogsactive %}
 {% block div1 %}
 <section>
@@ -8,16 +24,16 @@
             <h2>Latest Blogs</h2>
         </div>
         <!-- <div class="container my-4"> -->
+        {% for x in key %}
         <div class="col-md-12 container my-4">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-primary">World</strong>
-                    <h3 class="mb-0">
-                        <a class="text-dark" href="#">Featured post</a>
+                    <h3 class="mb-0 h33">
+                        <a href="#" class="tlink">{{x.title}}</a>
                     </h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
-                        lead-in to additional content.</p>
+                    <strong class=" d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
+                    <div class="mb-1 text-muted">{{x.timeStamp}}</div>
+                    <p class="card-text mb-auto">{{x.content}}</p>
                     <div class="my-2">
                         <a href="#" role="button" class="btn btn-primary">Continue reading</a>
                     </div>
@@ -27,6 +43,7 @@
                     alt="Card image cap">
             </div>
         </div>
+        {% endfor %}
         <!-- </div> -->
     </div>
     <!-- </section> -->

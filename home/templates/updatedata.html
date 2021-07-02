@@ -18,7 +18,7 @@
     <section>
         <div class="container my-3">
             <h2>Update Details</h2>
-            <form action="/updatedata/{{details.id}}" method="post">
+            <form action="{% url 'updatedata' details.id %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="namw">Name</label>
