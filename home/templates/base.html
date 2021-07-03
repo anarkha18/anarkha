@@ -43,14 +43,35 @@
             color: rgb(32, 32, 250);
             text-decoration: unset;
         }
+
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .nav-item::after {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 2px;
+            background: #9c9b97;
+            transition: 0.4s
+        }
+
+        .nav-item:hover::after {
+            width: 100%
+        }
     </style>
     {% block css %} {% endblock %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.tstrap/4.5.2/js/bootstrap.min.js"></scriptbootstrapcdn.com/boo>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="{% static 'js/signup.js' %}"></script>
     <script src="{% static 'js/login.js' %}"></script>
@@ -81,7 +102,7 @@
                     </a>
                 </li>
                 <li class="nav-item {% block contactactive %} {% endblock contactactive %}">
-                    <a class="nav-link" href="{% url 'contact' %}">
+                    <a class="nav-link nvv" href="{% url 'contact' %}">
                         Contact Us
                     </a>
                 </li>

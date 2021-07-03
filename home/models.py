@@ -52,9 +52,10 @@ class Contact(models.Model):
         return "Message from " + self.name + ' - ' + self.email
 
 class Post(models.Model):
-    sno=models.AutoField(primary_key=True)
+    id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=255)
     author=models.CharField(max_length=14)
+    slug=models.CharField(max_length=130)
     timeStamp=models.DateTimeField(auto_now_add=True)
     content=models.TextField()
 

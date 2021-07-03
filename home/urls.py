@@ -33,7 +33,9 @@ urlpatterns = [
     path('mesg', views.mesg, name="mesg"),
     path('mymesgs', views.mymessages, name="mymessages"),
     path('update/<int:id>/', views.updatedata, name="updatedata"),
-    path('<int:id>/', views.deletedata, name="deletedata"),
+    path('deletedata<int:id>/', views.deletedata, name="deletedata"),
     path('blogposts', views.blogposts, name="blogposts"),
     path('addpost', views.addpost, name="addpost"),
+    path('deleteblog<int:id>/', views.deletepost, name="deletepost"),
+    path('<str:slug>', views.blogpage, name="blogpage"),
 ]

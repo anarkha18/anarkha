@@ -121,7 +121,8 @@ def addpost(request):
         title=request.POST['title']
         author=request.POST['author']
         content =request.POST['content']
-        post=Post(title=title, author=author, content=content)
+        slug =request.POST['slug']
+        post=Post(title=title, author=author, slug=slug, content=content)
         post.save()
         return render(request, "addpost.html",{'message': 'Your Blog has been Added'})
     return render(request, "addpost.html")
@@ -131,6 +132,16 @@ def blogposts(request):
 def blogs(request):
     posts = Post.objects.all()
     return render(request, "blogs.html" ,{'key':posts})
+def deletepost(request, id):
+    if (request.method == 'POST'):
+        delpost = Post.objects.get(id=id)
+        delpost.delete()
+        return redirect('/blogposts')
+def blogpage(request, slug):
+    page = Post.objects.filter(slug=slug).first()
+    context= {'page':page}
+    return render(request, "blogpage.html", context)
+    # return render(request, "bloghome.html", {'key':page})
 
 
 

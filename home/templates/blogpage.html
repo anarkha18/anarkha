@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %} Blog Home {% endblock %}
+{% block css %}
+<style>
+    .img1 {
+        margin-left: 20px;
+        margin-top: 20px;
+        padding-right: 7px;
+        padding-bottom: 7px;
+    }
+
+    .para1 {
+        text-align: justify;
+        text-indent: 45px;
+    }
+
+    .head2 {
+        margin-top: 25px;
+        margin-left: 23px;
+    }
+
+    .head4 {
+        /* text-align: center; */
+        /* height: 20%; */
+        margin-left: 23px;
+    }
+</style>
+{% endblock %}
+{% block div1 %}
+<section>
+    <!-- Jumbotron -->
+    <div class="card card-image" style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/forest2.jpg);">
+        <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+            <div class="py-5">
+                <h2 class="card-title h2 my-4 py-2">MAIN TITLE</h2>
+
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+    <div class="container">
+        <h2 class="head2">{{page.title}}</h2>
+    </div>
+    <div class="container my-3">
+        <strong class=" d-inline-block mb-1 text-primary head4">Article by {{page.author}}</strong>
+        <!-- <h6>Article by {{page.author}}</h4> -->
+        <div class="mb-1 text-muted head4">{{page.timeStamp}}</div>
+    </div>
+    <div class="container">
+        <article class="row single-post mt-3 no-gutters">
+            <div class="col-12">
+                <div class="image-wrapper float-left pr-3">
+                    <img class="img1" src="https://i.ytimg.com/vi/SBjCQX7Lh2Q/maxresdefault.jpg" alt="" width="400px"
+                        height="300px">
+                </div>
+                <div class="single-post-content-wrapper p-3 para1">
+                    {{page.content}}
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}
