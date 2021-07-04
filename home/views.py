@@ -74,18 +74,7 @@ def myform(request):
 def mytable(request):
     details = registration.objects.all()
     return render(request, "table.html",{'key':details})
-def contact(request):
-    if request.method=="POST":
-        name=request.POST['name']
-        email=request.POST['email']
-        phone=request.POST['phone']
-        content =request.POST['content']
-        contact=Contact(name=name, email=email, phone=phone, content=content)
-        contact.save()
-        return render(request, "contact.html",{'message': 'Your Message has been sent!'})
-    return render(request, "contact.html")
-
-    # add data
+   # add data
 def mesg(request):
     if request.method=="POST":
         name=request.POST['name']
@@ -128,12 +117,13 @@ def addpost(request):
     return render(request, "addpost.html")
 def blogposts(request):
     posts = Post.objects.all()
+    ordering=['-timeStamp']
     return render(request, "blogposts.html",{'key':posts})
 def blogs(request):
     posts = Post.objects.all()
     return render(request, "blogs.html" ,{'key':posts})
 def deletepost(request, id):
-    if (request.method == 'POST'):
+    # if (request.method == 'POST'):
         delpost = Post.objects.get(id=id)
         delpost.delete()
         return redirect('/blogposts')
@@ -142,6 +132,33 @@ def blogpage(request, slug):
     context= {'page':page}
     return render(request, "blogpage.html", context)
     # return render(request, "bloghome.html", {'key':page})
+def updatepost(request, id):
+    if request.method=="POST":
+        title=request.POST['title']
+        author=request.POST['author']
+        content =request.POST['content']
+        slug =request.POST['slug']
+        Post.objects.filter(id=id).update(title=title, author=author, slug=slug, content=content)
+        return redirect('/blogposts')
+    postinfo=Post.objects.get(id=id) 
+    return render(request, 'editpost.html',{'postinfo':postinfo})
+def contact(request):
+    if request.method=="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        content =request.POST['content']
+        contact=Contact(name=name, email=email, phone=phone, content=content)
+        contact.save()
+        return render(request, "contact.html",{'message': 'Your Message has been sent!'})
+    return render(request, "contact.html")
+def messages(request):
+    mesgs = Contact.objects.all()
+    return render(request, "messages.html",{'key':mesgs})
+def deletemsg(request, id):
+        delmsg = Contact.objects.get(id=id)
+        delmsg.delete()
+        return redirect('/messages')
 
 
 

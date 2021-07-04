@@ -15,19 +15,17 @@
       display: inline;
     }
 
-    .btn1 {
-      float: right;
+    .addbtn {
       /* display: inline-block; */
-      vertical-align: top;
-    }
+      float: right;
+      margin: 13px 75px 0px 0px;
 
-    .abtn {
-      padding-top: 10px;
     }
 
     .topbar {
       background-color: gray;
       height: 60px;
+      /* margin-bottom: 5px; */
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,8 +39,10 @@
   <div class="container-fluid">
     <div class="topbar">
       <h1 class="text-white">Blog Posts </h1>
-      <a href="{% url 'addpost' %}" class="abtm"> <button type="button" class="btn btn-success btn1">+ Add
-          Post</button></a>
+      <div class="addbtn">
+        <a href="{% url 'addpost' %}"> <button type="button" class="btn btn-success btn1">+ Add
+            Post</button></a>
+      </div>
     </div>
     <table class="table table-hover">
       <thead class="thead-dark">
@@ -66,15 +66,24 @@
         <!-- <td class="table-secondary">{{x.slug}}</td> -->
         <td class="table-danger" style="text-transform: uppercase;">{{x.timeStamp}}</td>
         <td class="table-warning">{{x.content}}</td>
+        <!-- <td class="table-info" style="text-align: center;">
+          <a href=""><button type=" submit" class="btn btn-success" id="sub">Edit</button>
+          </a>
+        </td> -->
+
         <td class="table-info" style="text-align: center;">
-          <button type="submit" class="btn btn-success" id="sub">Edit</button>
+          <a href="{% url 'updatepost' x.id %}" class="btn text-secondary px-0">
+            <button type=" submit" class="btn btn-success" id="sub">Edit</button></a>
+
+          <a href="{% url 'deletepost' x.id %}"> <button type="button" class="btn btn-danger">Delete</button>
+          </a>
         </td>
-        <td class="table-info" style="text-align: center;">
-          <!-- Button trigger modal -->
-          <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete
-          </button>
-          <!-- Modal triggee -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        </tr>
+        <!-- Button trigger modal -->
+        <!-- <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete
+          </button> -->
+        <!-- Modal triggee -->
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -87,18 +96,19 @@
                 <div class="modal-body" style="text-align: left;">
                   Are you sure you want to Delete Post?</div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                  <form action="{% url 'deletepost' x.id %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Yes
-                      <!-- <a href="{% url 'deletepost' x.id %}">Yes</a> -->
-                    </button>
-                    <!-- </button> -->
-                  </form>
-                </div>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> -->
+        <!-- <form action="{% url 'deletepost' x.id %}" method="POST"> -->
+        <!-- {% csrf_token %} -->
+        <!-- <a href="{% url 'deletepost' x.id %}">
+                    <button type="submit" class="btn btn-danger">Yes -->
+        <!-- <a href="{% url 'deletepost' x.id %}">Yes</a> -->
+        <!-- </button></a> -->
+        <!-- </button> -->
+        <!-- </form> -->
+        <!-- </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </td>
         </tr>
         {% endfor %}

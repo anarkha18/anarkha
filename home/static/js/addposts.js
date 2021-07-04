@@ -2,9 +2,11 @@ $(document).ready(function () {
     $('#titleer').hide();
     $('#authorer').hide();
     $('#contenter').hide();
+    $('#slger').hide();
 
     var title_error = true;
     var aut_error = true;
+    var slg_error = true;
     var content_error = true;
 
     $('#title').keyup(function () {
@@ -63,6 +65,36 @@ $(document).ready(function () {
             $('#authorer').hide();
         }
     }
+
+    $('#slgs').keyup(function () {
+        slg_check();
+    });
+    function slg_check() {
+
+        var slg_val = $('#slgs').val();
+        if (slg_val.trim() == "") {
+            $('#slger').show();
+            $('#slger').html('Title Cannot be Empty');
+            $('#slger').focus();
+            $('#slger').css("color", "red");
+            slg_error = false;
+            return false;
+        } else {
+            $('#slger').hide();
+        }
+
+        if (slg_val.length < 5) {
+            $('#slger').show();
+            $('#slger').html('Slug is too Short');
+            $('#slger').focus();
+            $('#slger').css("color", "red");
+            slg_error = false;
+            return false;
+        } else {
+            $('#slger').hide();
+        }
+    }
+
     $('#content').keyup(function () {
         content_check();
     });
@@ -93,15 +125,18 @@ $(document).ready(function () {
     }
 
     $('#sub').click(function () {
+
         title_error = true;
         aut_error = true;
+        slg_error = true;
         content_error = true;
 
         title_check();
         aut_check();
+        slg_check();
         content_check();
 
-        if ((title_error = true) && (aut_error = true) && (content_error == true)) {
+        if ((title_error == true) && (aut_error == true) && (slg_error == true) && (content_error == true)) {
             return true;
         }
         else {

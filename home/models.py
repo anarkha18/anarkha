@@ -41,7 +41,6 @@ class Fbuser(models.Model):
     dob=models.DateField()
 
 class Contact(models.Model):
-    sno= models.AutoField(primary_key=True)
     name= models.CharField(max_length=255)
     phone = models.IntegerField()
     email= models.CharField(max_length=100)
@@ -52,7 +51,6 @@ class Contact(models.Model):
         return "Message from " + self.name + ' - ' + self.email
 
 class Post(models.Model):
-    id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=255)
     author=models.CharField(max_length=14)
     slug=models.CharField(max_length=130)
@@ -61,3 +59,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title + " by " + self.author
+
+
+
+
