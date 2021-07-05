@@ -28,6 +28,7 @@
         .divi {
             background-color: rgb(240, 229, 229, 0.5);
             padding: 20px;
+
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,55 +40,58 @@
 </head>
 
 <body class="bg">
-    <div>
-        <div class="container my-3 divi">
-            <h2 class="text-white bg-dark">Edit & Update Blogs</h2>
-            <div class="container my-3">
-                <form action="{% url 'updatepost' postinfo.id %}" method="post">
-                    {% csrf_token %}
-                    <div class="form-group row">
-                        <label for="title" class="col-sm-2 col-form-label">Title :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" name="title" value="{{postinfo.title}}"
-                                placeholder="Title of the Blog">
-                            <small id="titleer" class="form-text"></small>
+    <div class="container">
+        <div class="container">
+            <div class="container my-3 divi">
+                <h2 class="text-white bg-dark text-truncate">Edit & Update Blogs</h2>
+                <div class="container my-3">
+                    <form action="{% url 'updatepost' postinfo.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="title" class="col-sm-2 col-form-label">Title :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="title" name="title"
+                                    value="{{postinfo.title}}" placeholder="Title of the Blog">
+                                <small id="titleer" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Author" class="col-sm-2 col-form-label">Author :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="author" name="author"
-                                value="{{postinfo.author}}" placeholder="Author's Name">
-                            <small id="authorer" class="form-text"></small>
+                        <div class="form-group row">
+                            <label for="Author" class="col-sm-2 col-form-label">Author :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="author" name="author"
+                                    value="{{postinfo.author}}" placeholder="Author's Name">
+                                <small id="authorer" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="slugs" class="col-sm-2 col-form-label">Slug :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="slgs" name="slug" value="{{postinfo.slug}}"
-                                placeholder="Enter Post URL">
-                            <small id="slger" class="form-text"></small>
+                        <div class="form-group row">
+                            <label for="slugs" class="col-sm-2 col-form-label">Slug :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="slgs" name="slug" value="{{postinfo.slug}}"
+                                    placeholder="Enter Post URL">
+                                <small id="slger" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="content" class="col-sm-2 col-form-label">Blog Content :</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="content" name="content" cols="25" rows="100"
-                                style="height: 200px;" placeholder="Your Blog Content">{{postinfo.content}}</textarea>
-                            <small id="contenter" class="form-text"></small>
+                        <div class="form-group row">
+                            <label for="content" class="col-sm-2 col-form-label">Blog Content :</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="content" name="content" cols="25" rows="100"
+                                    style="height: 200px;"
+                                    placeholder="Your Blog Content">{{postinfo.content}}</textarea>
+                                <small id="contenter" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Add New Post :</label>
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-dark" id="sub">Submit</button>
-                            <a href="{% url 'blogposts' %}"><button type="button"
-                                    class="btn btn-success">Cancel</button>
-                            </a>
-                            {{message}}
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Save & Submit :</label>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-dark" id="sub">Submit</button>
+                                <a href="{% url 'blogposts' %}"><button type="button"
+                                        class="btn btn-success">Cancel</button>
+                                </a>
+                                {{message}}
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

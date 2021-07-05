@@ -39,55 +39,57 @@
 </head>
 
 <body class="bg">
-    <div>
-        <div class="container my-3 divi">
-            <h2 class="text-white bg-dark">Add a New Blog Post</h2>
-            <div class="container my-3">
-                <form action="/addpost" method="post">
-                    {% csrf_token %}
-                    <div class="form-group row">
-                        <label for="title" class="col-sm-2 col-form-label">Title :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" name="title"
-                                placeholder="Title of the Blog">
-                            <small id="titleer" class="form-text"></small>
+    <div class="container">
+        <div class="container">
+            <div class="container my-3 divi">
+                <h2 class="text-white bg-dark text-truncate">Add a New Blog Post</h2>
+                <div class="container my-3">
+                    <form action="/addpost" method="post">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="title" class="col-sm-2 col-form-label">Title :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="title" name="title"
+                                    placeholder="Title of the Blog">
+                                <small id="titleer" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Author" class="col-sm-2 col-form-label">Author :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="author" name="author"
-                                placeholder="Author's Name">
-                            <small id="authorer" class="form-text"></small>
+                        <div class="form-group row">
+                            <label for="Author" class="col-sm-2 col-form-label">Author :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="author" name="author"
+                                    placeholder="Author's Name">
+                                <small id="authorer" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="slgs" class="col-sm-2 col-form-label">Slug :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="slgs" name="slug" placeholder="Enter Post URL">
-                            <small id="slger" class="form-text"></small>
+                        <div class="form-group row">
+                            <label for="slgs" class="col-sm-2 col-form-label">Slug :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="slgs" name="slug"
+                                    placeholder="Enter Post URL">
+                                <small id="slger" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="content" class="col-sm-2 col-form-label">Blog Content :</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="content" name="content" cols="25" rows="100"
-                                style="height: 200px;" placeholder="Your Blog Content"></textarea>
-                            <small id="contenter" class="form-text"></small>
+                        <div class="form-group row">
+                            <label for="content" class="col-sm-2 col-form-label">Blog Content :</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="content" name="content" cols="25" rows="100"
+                                    style="height: 200px;" placeholder="Your Blog Content"></textarea>
+                                <small id="contenter" class="form-text"></small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="sub" class="col-sm-2 col-form-label">Add New Post :</label>
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-dark" id="sub">Submit</button>
-                            <a href="{% url 'blogposts' %}">
-                                <utton type=" button" class="btn btn-success">View all
-                                    Posts</button>
-                            </a>
-                            {{message}}
+                        <div class="form-group row">
+                            <label for="sub" class="col-sm-2 col-form-label">Save Post :</label>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-dark" id="sub">Submit</button>
+                                <a href="{% url 'blogposts' %}">
+                                    <utton type=" button" class="btn btn-success">Cancel</button>
+                                </a>
+                                {{message}}
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
