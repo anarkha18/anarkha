@@ -44,21 +44,57 @@
             text-decoration: unset;
         }
 
-        .dropdown:hover>.dropdown-menu {
-            display: block;
+        .bg-black {
+            background-color: #000
         }
 
-        .nav-item::after {
-            content: '';
-            display: block;
-            width: 0px;
-            height: 2px;
-            background: #9c9b97;
-            transition: 0.4s
+        .nav-item {
+            padding: 0px 8px;
+            margin: 0px 3px;
+            /* text-align: center; */
+            border-radius: 5px
         }
 
-        .nav-item:hover::after {
-            width: 100%
+        .nav-item.active {
+            background-color: #9E9E9E
+        }
+
+        .nav-item:hover {
+            background-color: #9E9E9E
+        }
+
+        .nav-link {
+            padding: 5px
+        }
+
+        .navbar-collapse.collapse.in {
+            display: block !important
+        }
+
+        .fa {
+            padding-right: 10px
+        }
+
+        .fa-check {
+            color: #fff;
+            left: 17px;
+            top: 18px;
+            font-size: 7px;
+            position: absolute;
+        }
+
+        .submitbtn,
+        .submitbtn:active {
+            font-size: 16px;
+            font-weight: bold;
+            background: #0fd652 !important;
+            border: none;
+            min-width: 140px;
+        }
+
+        .submitbtn:hover,
+        .submitbtn:focus {
+            background: #179722 !important;
         }
     </style>
     {% block css %} {% endblock %}
@@ -79,47 +115,56 @@
 
 <body>
     <!-- add "fixed-top" class for sticky top -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
-        style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">
-        <a class="navbar-brand" href="#" style="padding-left: 10px;"> <img class="logo"
-                src="https://www.vhv.rs/dpng/d/414-4147413_white-avengers-logo-png-transparent-png.png" alt=""></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <a class="navbar-brand" href="#" style="padding-left: 15px;">
+            <img class="logo" src="https://www.vhv.rs/dpng/d/414-4147413_white-avengers-logo-png-transparent-png.png"
+                alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse navi" id="navbarSupportedContent"
-            style="padding-left: 20px; padding-right: 10px; font-size: larger;">
+            style="padding-left: 10px; padding-right: 10px;">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {% block homeactive %} {% endblock homeactive %}">
                     <!-- <li class="nav-item active"> -->
-                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <span class="fa fa-home"></span>
+                        Home<span class="sr-only">(current)</span></a>
                 </li>
+                <!-- <span class="sr-only">(current)</span></a>
+                </li> -->
                 <li class="nav-item {% block blogsactive %} {% endblock blogsactive %}">
                     <a class="nav-link" href="{% url 'blogs' %}">
-                        Latest Blogs
-                    </a>
+                        <span class="fa fa-folder"></span> Latest
+                        Blogs</a>
+                    <!-- Latest Blogs
+                    </a> -->
                 </li>
                 <li class="nav-item {% block contactactive %} {% endblock contactactive %}">
-                    <a class="nav-link nvv" href="{% url 'contact' %}">
-                        Contact Us
-                    </a>
+                    <a class="nav-link" href="{% url 'contact' %}">
+                        <span class="fa fa-paper-plane"></span>
+                        Contact Us</a>
                 </li>
-                <li class="nav-item dropdown nav-item">
+                <li class="nav-item {% block aboutactive %} {% endblock aboutactive %}">
+                    <a class="nav-link" href="#"><span class="fa fa-user"></span>
+                        About Us</a>
+                </li>
+                <!-- <li class="nav-item dropdown nav-item">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         More
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown" style="color: white;">
-                        <a class="dropdown-item bg-dark" href="#" style="color: white;">View Polls</a>
-                        <a class="dropdown-item bg-dark" href="#" style="color: white;">About Us</a>
-                </li>
+                        <a class="dropdown-item bg-dark" href="#" style="color: white;">View Polls</a> -->
+                <!-- <a class="dropdown-item bg-dark" href="#" style="color: white;">About Us
+                </a> 
+                </li>-->
             </ul>
             <form class="form-inline my-2 my-lg-0" style="margin-right: 15px;" name="search">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
             </form>
-
-            <!-- model for login -->
             <!-- Button trigger modal -->
             <button type="button" style="margin-right: 15px" ; class="btn btn-success" data-toggle="modal"
                 data-target="#loginmodal">
@@ -168,18 +213,20 @@
                     </div>
                 </div>
             </div>
+
             <!-- model for signup -->
             <!-- Button trigger modal -->
             <button style="margin-right: 15px" ; type="button" class="btn btn-danger" data-toggle="modal"
                 data-target="#signupmodel">
                 Sign Up
             </button>
-
             <!-- Modal -->
-            <div class="modal fade" id="signupmodel" tabindex="-1" aria-labelledby="signupmodel" aria-hidden="true">
+            <div class="modal fade" id="signupmodel" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <!-- <div class="modal fade" id="signupmodel" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="signupmodel" aria-hidden="true"> -->
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header border-0">
                             <h5 class="modal-title" id="signupmodel">Sign Up</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -187,71 +234,104 @@
                         </div>
                         <div class="modal-body">
                             <form id="signupform" action="#">
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="fn">First Name</label>
-                                        <input type="text" class="form-control" placeholder="First name" id="fn">
-                                        <small id="fninvalid"></small>
-                                    </div>
-                                    <div class="col">
-                                        <label for="ln">Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last name" id="ln">
-                                        <small id="lninvalid"></small>
-                                    </div>
-                                </div>
-                                <br>
                                 <div class="form-group">
-                                    <label for="em">Email address</label>
-                                    <input type="text" class="form-control" id="em" placeholder="name@example.com">
+                                    <!-- <div class="input-group"> -->
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fa fa-user"></span>
+                                        </span>
+                                        <!-- </div> -->
+                                        <input type="text" id="fn" class="form-control" name="username"
+                                            placeholder="First Name">
+
+                                    </div>
+                                    <small id="fninvalid"></small>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <span class="fa fa-user"></span>
+                                            </span>
+                                        </div>
+                                        <input type="text" id="ln" class="form-control" name="username"
+                                            placeholder="Last Name">
+                                    </div>
+                                    <small id="lninvalid"></small>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-paper-plane"></i>
+                                            </span>
+                                        </div>
+                                        <input type="email" id="em" class="form-control" name="email"
+                                            placeholder="Email Address">
+
+                                    </div>
                                     <small id="eminvalid">
-                                    </small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="pas" name="pass"
-                                        placeholder="Password">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" id="pas" class="form-control" name="password"
+                                            placeholder="Password" required="required">
+                                    </div>
                                     <small id="pasinvalid"></small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="cpas"> Confirm Password</label>
-                                    <input type="password" class="form-control" id="cpas" id="cpas"
-                                        placeholder="Confirm Password">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-lock"></i>
+                                                <i class="fa fa-check"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" id="cpas" class="form-control" name="confirm_password"
+                                            placeholder="Confirm Password">
+                                    </div>
                                     <small id="cpasinvalid"></small>
                                 </div>
-                                <div class="form-row align-items-center">
-                                    <div class="col-auto my-1">
-                                        <label for="birthday">Birthday</label><br>
-                                        <input type="date" id="birthday" name="birthday" required>
-                                    </div>
-                                </div>
-                                <div class="form-row align-items-center">
-                                    <div class="col-auto my-1">
-                                        <label for="inlineFormCustomSelect">Gender</label>
-                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
-                                            <option value="">Choose</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
-                                            <option value="3">Others</option>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                        </div>
+                                        <select class="custom-select">
+                                            <option>Gender</option>
+                                            <option>Female</option>
+                                            <option>Male</option>
                                         </select>
                                     </div>
                                 </div>
-                                <br>
-                                <div class="modal-footer">
+                                <div class="form-group">
+                                    <label class="form-check-label"><input type="checkbox"> I
+                                        accept the
+                                        <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-lg" id="submitbtn">Sign Up</button>
+                                </div>
+
+                                <!-- <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
     </nav>
-    <!-- <div class="alert alert-{{ message.error }} alert-dismissible fade show" role="alert">
-        <strong>Message : </strong> {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div> -->
 
     {% block div1 %} {% endblock %}
     {% block div2 %} {% endblock %}
