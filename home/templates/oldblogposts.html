@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Posts</title>
+  <style>
+    h1 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 18px;
+      display: inline;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- <div class="topbar"> -->
+    <!-- <h1 class="text-white">Blog Posts </h1> -->
+    <!-- <div class="addbtn"> -->
+    <!-- <a href="{% url 'addpost' %}"> <button type="button" class="btn btn-success btn1">+ Add
+          Post</button></a> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th colspan="6">
+            <h1>Blog Posts</h1>
+            <a href="{% url 'addpost' %}"> <button type="button" class="btn btn-success btn1"
+                style="float: right; margin-right: 120px; vertical-align: middle;">+ Add
+                Post</button></a>
+          </th>
+        </tr>
+        <tr>
+          <th style="width:4%; text-align: center;">Sno:</th>
+          <th style="width: 10%; text-align: center;">Title</th>
+          <th style="width: 8%; text-align: center;">Author</th>
+          <!-- <th style="width: 6%; text-align: center;">Slug</th> -->
+          <th style="width: 12%; text-align: center;">Time Stamp</th>
+          <th style="width: 18%; text-align: center;">Content</th>
+          <th style="width: 12%; text-align: center;" colspan="2">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in key %}
+        <!-- <tr> -->
+        <th class="table-active" scope="row">{{x.id}}</th>
+        <td class="table-primary">{{x.title}}</td>
+        <td class="table-success">{{x.author}}</td>
+        <!-- <td class="table-secondary">{{x.slug}}</td> -->
+        <td class="table-danger" style="text-transform: uppercase;">{{x.timeStamp}}</td>
+        <td class="table-warning">{{x.content}}</td>
+        <td class="table-info" style="text-align: center;">
+          <a href="{% url 'updatepost' x.id %}" class="btn text-secondary px-0">
+            <button type=" submit" class="btn btn-success" id="sub">Edit</button></a>
+
+          <!-- <a href="{% url 'deletepost' x.id %}"> <button type="button" class="btn btn-danger">Delete</button>
+          </a> -->
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal{{x.id}}">
+            Delete
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal{{x.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered ">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Delete Blog Post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p style="text-align: justify;">Are you sure you have to delete the blog <strong> "{{x.title}}"
+                    </strong></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <a href="{% url 'deletepost' x.id %}" data-toggle=" modal" data-target="#modal{{x.id}}">
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+
+</body>
+
+</html>

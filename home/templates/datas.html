@@ -17,6 +17,7 @@
 <body>
     <section>
         <div class="container my-3">
+            welcome {{current_session.fname}}
             <h2>Contact Us</h2>
             <form action="/mesg" method="post">
                 {% csrf_token %}

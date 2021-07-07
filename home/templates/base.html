@@ -52,7 +52,7 @@
             padding: 0px 8px;
             margin: 0px 3px;
             /* text-align: center; */
-            border-radius: 5px
+            border-radius: 5px;
         }
 
         .nav-item.active {
@@ -82,20 +82,6 @@
             font-size: 7px;
             position: absolute;
         }
-
-        .submitbtn,
-        .submitbtn:active {
-            font-size: 16px;
-            font-weight: bold;
-            background: #0fd652 !important;
-            border: none;
-            min-width: 140px;
-        }
-
-        .submitbtn:hover,
-        .submitbtn:focus {
-            background: #179722 !important;
-        }
     </style>
     {% block css %} {% endblock %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -103,6 +89,7 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% block links %} {% endblock %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

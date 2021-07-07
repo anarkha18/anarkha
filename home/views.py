@@ -1,5 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import *
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+
 
 # Create your views here.
 def assignment1(request):
@@ -40,6 +43,78 @@ def bootstrap2(request):
     return render(request, "bootstrap2.html")
 def fbhome(request):
     return render(request, "fbhome.html")
+# def reg(request):
+#     return render(request, "signup.html")   
+# def log(request):
+#     return render(request, "log.html")   
+def reg(request):
+    if request.method=="POST":
+        # username=request.POST['uname']
+        fname=request.POST['fname']
+        lname=request.POST['lname']
+        email=request.POST['email']
+        pas =request.POST['pas'] 
+        regis = Reg(fname=fname,lname=lname,email=email,pas=pas) 
+        regis.save()
+        return render(request, "signup.html",{'message': 'Your account is created'})
+    return render(request, "signup.html")
+def log(request):
+    if request.method=="POST":
+        lemail=request.POST['lemail']
+        lpas =request.POST['lpas'] 
+        try:
+            svuser=Reg.objects.get(email=lemail)
+            svpas=svuser.pas
+            if(svuser.email==lemail and svpas==lpas):
+                request.session['userlogged']=svuser.id
+                # name=request.session['name']
+                # return render(request,"datas.html", {'name':name})
+                # return render(request,"datas.html")
+                return redirect('/viewprofile')
+                # return HttpResponse('vguy')
+            else:
+                return render(request,"log.html",{'message': 'login failed'})
+        except User.DoesNotExist:
+            return render(request,"log.html",{'message': 'login failed'})
+    return render(request, 'log.html')
+    
+def viewprofile(request):
+    current_session=request.session['userlogged']
+    userlogged=Reg.objects.get(id=current_session)
+    return render(request, 'datas.html', {'current_session': userlogged})
+# def vsignup(request):
+#     if request.method=="POST":
+#         # username=request.POST['uname']
+#         fname=request.POST['fname']
+#         lname=request.POST['lname']
+#         email=request.POST['email']
+#         pas =request.POST['pas'] 
+
+#         myuser=User.objects.create_user(email, pas)
+#         # myuser.fname=fname
+#         myuser.lname=lname
+#         myuser.save()
+
+#         return render(request, "signup.html")
+
+#     else:
+#          return render(request,"signup.html")
+# def vlog(request):
+#     if request.method=="POST":
+#         luname=request.POST['luname']
+#         lpas =request.POST['lpas'] 
+#         user = authenticate(email=luname, password=lpas)
+
+#         if user is not None:
+#             login(request,User)
+#             return HttpResponse('vccfg')
+#         else:
+#             return HttpResponse("fghgjhjjkj")
+
+
+
+#     return HttpResponse('login')
+
 def fblogin(request):
     return render(request, "fblogin.html")
 def home(request):
@@ -117,7 +192,6 @@ def addpost(request):
     return render(request, "addpost.html")
 def blogposts(request):
     posts = Post.objects.all()
-    ordering=['-timeStamp']
     return render(request, "blogposts.html",{'key':posts})
 def blogs(request):
     posts = Post.objects.all()
@@ -159,8 +233,4 @@ def deletemsg(request, id):
         delmsg = Contact.objects.get(id=id)
         delmsg.delete()
         return redirect('/messages')
-
-
-
-
-
+##################
