@@ -7,82 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
-    <style>
-        .logo {
-            height: 35px;
-            width: 60px;
-            border-radius: 50%;
-        }
-
-        li {
-            padding-right: 10px;
-        }
-
-        .footer1 {
-            background-color: black;
-        }
-
-        .invalid input:required:invalid {
-            background: #BE4C54;
-        }
-
-        .invalid input:required:valid {
-            background: #17D654;
-        }
-
-        .footernv {
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: larger;
-            padding-left: 15px;
-            padding-right: 15px;
-            border-right: 2px solid white;
-        }
-
-        .footernv:hover {
-            color: rgb(32, 32, 250);
-            text-decoration: unset;
-        }
-
-        .bg-black {
-            background-color: #000
-        }
-
-        .nav-item {
-            padding: 0px 8px;
-            margin: 0px 3px;
-            /* text-align: center; */
-            border-radius: 5px;
-        }
-
-        .nav-item.active {
-            background-color: #9E9E9E
-        }
-
-        .nav-item:hover {
-            background-color: #9E9E9E
-        }
-
-        .nav-link {
-            padding: 5px
-        }
-
-        .navbar-collapse.collapse.in {
-            display: block !important
-        }
-
-        .fa {
-            padding-right: 10px
-        }
-
-        .fa-check {
-            color: #fff;
-            left: 17px;
-            top: 18px;
-            font-size: 7px;
-            position: absolute;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block css %} {% endblock %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -152,205 +77,39 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
             </form>
-            <!-- Button trigger modal -->
-            <button type="button" style="margin-right: 15px" ; class="btn btn-success" data-toggle="modal"
-                data-target="#loginmodal">
-                Log In
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="loginmodal">Log In</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="needs-validation" novalidate action="#" name="myloginform" id="loginform">
-                                <div class="form-group">
-                                    <label for="loginem">Email address</label>
-                                    <input type="email" class="form-control" id="loginem" aria-describedby="emailHelp"
-                                        placeholder="Enter email" required>
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="loginpas">Password</label>
-                                    <input type="password" class="form-control" id="loginpas" placeholder="Password"
-                                        required>
-                                    <div class="invalid-feedback">
-                                        Please enter a password
-                                    </div>
-                                </div>
-                                <div class="form-check mb-1">
-                                    <input type="checkbox" class="form-check-input" id="chkbox">
-                                    <label class="form-check-label" for="chkbox">Check me out</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary" id="loginbtn">Submit</button>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- model for signup -->
-            <!-- Button trigger modal -->
-            <button style="margin-right: 15px" ; type="button" class="btn btn-danger" data-toggle="modal"
-                data-target="#signupmodel">
-                Sign Up
-            </button>
-            <!-- Modal -->
-            <div class="modal fade" id="signupmodel" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <!-- <div class="modal fade" id="signupmodel" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="signupmodel" aria-hidden="true"> -->
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="signupmodel">Sign Up</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="signupform" action="#">
-                                <div class="form-group">
-                                    <!-- <div class="input-group"> -->
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <span class="fa fa-user"></span>
-                                        </span>
-                                        <!-- </div> -->
-                                        <input type="text" id="fn" class="form-control" name="username"
-                                            placeholder="First Name">
-
-                                    </div>
-                                    <small id="fninvalid"></small>
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <span class="fa fa-user"></span>
-                                            </span>
-                                        </div>
-                                        <input type="text" id="ln" class="form-control" name="username"
-                                            placeholder="Last Name">
-                                    </div>
-                                    <small id="lninvalid"></small>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-paper-plane"></i>
-                                            </span>
-                                        </div>
-                                        <input type="email" id="em" class="form-control" name="email"
-                                            placeholder="Email Address">
-
-                                    </div>
-                                    <small id="eminvalid">
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-lock"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text" id="pas" class="form-control" name="password"
-                                            placeholder="Password" required="required">
-                                    </div>
-                                    <small id="pasinvalid"></small>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-lock"></i>
-                                                <i class="fa fa-check"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text" id="cpas" class="form-control" name="confirm_password"
-                                            placeholder="Confirm Password">
-                                    </div>
-                                    <small id="cpasinvalid"></small>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-user"></i>
-                                            </span>
-                                        </div>
-                                        <select class="custom-select">
-                                            <option>Gender</option>
-                                            <option>Female</option>
-                                            <option>Male</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-check-label"><input type="checkbox"> I
-                                        accept the
-                                        <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-lg" id="submitbtn">Sign Up</button>
-                                </div>
-
-                                <!-- <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
-                                </div> -->
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         {% include 'buttons.html' %}                     
     </nav>
 
     {% block div1 %} {% endblock %}
     {% block div2 %} {% endblock %}
 
     <!-- Footer -->
-    <footer class="page-footer font-small bg-dark footer1">
+    <footer class="page-footer font-small bg-black footer1">
 
         <!-- Footer Elements -->
         <div class="container">
 
             <!-- Grid row-->
             <div class="row">
-
-                <!-- Grid column -->
+    <!-- Grid column -->
                 <div class="col-md-12 py-5 text-center">
                     <div class="mb-5 flex-center" style="padding-left: 5%;">
 
                         <!-- Facebook -->
                         <a class="fb-ic">
-                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-black"> </i>
                         </a>
                         <!-- Twitter -->
                         <a class="tw-ic">
-                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-black"> </i>
                         </a>
                         <!-- Google +-->
                         <a class="gplus-ic">
-                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-black"> </i>
                         </a>
                         <!--Instagram-->
                         <a class="ins-ic">
-                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-dark"> </i>
+                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-black"> </i>
                         </a>
                     </div>
                 </div>
@@ -377,7 +136,7 @@
                             Contact Us
                         </a>
                         <!--Instagram-->
-                        <a class="footernv" style="border-style: hidden;">
+                        <a class="footernv" href="#" style="border-style: hidden;">
                             About
                         </a>
                     </div>
@@ -391,7 +150,7 @@
         <!-- Footer Elements -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3 text-white bg-dark"
+        <div class="footer-copyright text-center py-3 text-white bg-black"
             style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">© 2020 Copyright -
             <a href="#" style="color: white; font-size: 20px; font-family: 'Times New Roman', Times, serif;">
                 Appleblogs.inc

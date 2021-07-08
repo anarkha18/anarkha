@@ -77,11 +77,17 @@ def log(request):
         except User.DoesNotExist:
             return render(request,"log.html",{'message': 'login failed'})
     return render(request, 'log.html')
-    
+def logout(request):
+    del request.session['userlogged']
+    return HttpResponse('You are logged out')
+
 def viewprofile(request):
-    current_session=request.session['userlogged']
-    userlogged=Reg.objects.get(id=current_session)
-    return render(request, 'datas.html', {'current_session': userlogged})
+    try:
+        current_session=request.session['userlogged']
+        userlog=Reg.objects.get(id=current_session)
+        return render(request, 'profile.html', {'current_session': userlog})
+    except:
+        return HttpResponse('login required')
 # def vsignup(request):
 #     if request.method=="POST":
 #         # username=request.POST['uname']
