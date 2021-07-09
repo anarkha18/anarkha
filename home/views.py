@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 
 # Create your views here.
@@ -11,8 +12,6 @@ def fblogin(request):
     return render(request, "home/fblogin.html")
 def home(request):
     return render(request, "home/home.html")
-# def contact(request):
-#     return render(request, "home/contact.html")
 def addpost(request):
     if request.method=="POST":
         title=request.POST['title']
@@ -21,6 +20,7 @@ def addpost(request):
         slug =request.POST['slug']
         post=Post(title=title, author=author, slug=slug, content=content)
         post.save()
+        # return render(request, "home/addpost.html")
         return render(request, "home/addpost.html",{'message': 'Your Blog has been Added'})
     return render(request, "home/addpost.html")
 def blogposts(request):
@@ -57,12 +57,14 @@ def contact(request):
         content =request.POST['content']
         contact=Contact(name=name, email=email, phone=phone, content=content)
         contact.save()
-        return render(request, "home/contact.html",{'message': 'Your Message has been sent!'})
+        messages.success(request, "Your message has been successfully sent!")
+        return render(request, "home/contact.html")
+        # return render(request, "home/contact.html",{'message': 'Your Message has been sent!'})
     return render(request, "home/contact.html")
-def messages(request):
+def contacts(request):
     mesgs = Contact.objects.all()
     return render(request, "home/messages.html",{'key':mesgs})
 def deletemsg(request, id):
         delmsg = Contact.objects.get(id=id)
         delmsg.delete()
-        return redirect('/messages')
+        return redirect('/contacts')
