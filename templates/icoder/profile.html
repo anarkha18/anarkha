@@ -9,12 +9,10 @@
 </head>
 
 <body>
-    <form action="" method="POST">
+    <h1>Hello, {{current_session.fname}}</h1>
+    <form action="logout" method="POST">
         {% csrf_token %}
-        <label for="uname">username:</label>
-        <input type="text" id="uname" name="uname">
-        <label for="un">password:</label>
-        <input type="password" name="pas" id="pas">
+        <button type="submit" style="float: right;">Log Out</button>
     </form>
 </body>
 

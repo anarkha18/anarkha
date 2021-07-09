@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="/log" method="POST">
+    <form action="log" method="POST">
         {% csrf_token %}
         <input type="email" class="form-control" id="loginem" aria-describedby="emailHelp" placeholder="Enter email"
             required name="lemail">
