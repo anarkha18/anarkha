@@ -19,8 +19,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="{% static 'js/signup.js' %}"></script>
-    <script src="{% static 'js/login.js' %}"></script>
     {% block js %} {% endblock %}
 
 </head>
@@ -77,7 +75,8 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
             </form>
-         {% include 'buttons.html' %}                     
+            {% include 'login.html' %}
+            {% include 'signup.html' %}
     </nav>
 
     {% block div1 %} {% endblock %}
@@ -91,7 +90,7 @@
 
             <!-- Grid row-->
             <div class="row">
-    <!-- Grid column -->
+                <!-- Grid column -->
                 <div class="col-md-12 py-5 text-center">
                     <div class="mb-5 flex-center" style="padding-left: 5%;">
 
@@ -105,7 +104,8 @@
                         </a>
                         <!-- Google +-->
                         <a class="gplus-ic">
-                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-black"> </i>
+                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x text-white bg-black">
+                            </i>
                         </a>
                         <!--Instagram-->
                         <a class="ins-ic">

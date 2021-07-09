@@ -1,15 +1,18 @@
+
 $(document).ready(function () {
     $('#fninvalid').hide();
     $('#lninvalid').hide();
     $('#pasinvalid').hide();
     $('#cpasinvalid').hide();
     $('#eminvalid').hide();
+    $('#uninvalid').hide();
 
     var fn_error = true;
     var ln_error = true;
-    var pass_error = true;
-    var cpaSss_error = true;
+    var pas_error = true;
+    var cpas_error = true;
     var em_error = true;
+    var un_error = true;
 
     $('#fn').keyup(function () {
         fn_check();
@@ -157,22 +160,51 @@ $(document).ready(function () {
             $('#eminvalid').hide();
         }
     }
+    $('#un').keyup(function () {
+        un_check();
+    });
+    function un_check() {
+        var un_val = $('#un').val();
+
+        if (un_val.trim() == "") {
+            $('#uninvalid').show();
+            $('#uninvalid').html('This Fiesld Cannot be Empty');
+            $('#uninvalid').focus();
+            $('#uninvalid').css("color", "red");
+            un_error = false;
+            return false;
+        } else {
+            $('#uninvalid').hide();
+        }
+        if ((un_val.length < 3) || (un_val.length > 15)) {
+            $('#uninvalid').show();
+            $('#uninvalid').focus();
+            $('#uninvalid').html('Username Must be Between 3-20 Characters');
+            $('#uninvalid').css("color", "red");
+            un_error = false;
+            return false;
+        } else {
+            $('#uninvalid').hide();
+        }
+    }
 
     $('#submitbtn').click(function () {
         fn_error = true;
         ln_error = true;
-        pass_error = true;
-        cpass_error = true;
+        pas_error = true;
+        cpas_error = true;
         em_error = true;
+        un_error = true;
 
         fn_check();
         ln_check();
         pas_check();
         cpas_check();
         em_check();
+        un_check();
 
         if ((fn_check == true) && (ln_check == true) && (pas_check == true)
-            && (cpas_check == true) && (em_check == true)) {
+            && (cpas_check == true) && (em_check == true) && (un_check == true)) {
             return true;
         }
         else {

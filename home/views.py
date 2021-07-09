@@ -56,8 +56,8 @@ def reg(request):
         pas =request.POST['pas'] 
         regis = Reg(fname=fname,lname=lname,email=email,pas=pas) 
         regis.save()
-        return render(request, "signup.html",{'message': 'Your account is created'})
-    return render(request, "signup.html")
+        return render(request, "su.html",{'message': 'Your account is created'})
+    return render(request, "su.html")
 def log(request):
     if request.method=="POST":
         lemail=request.POST['lemail']
