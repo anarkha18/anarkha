@@ -1,12 +1,12 @@
 $(document).ready(function () {
     $('#nmer').hide();
     $('#emer').hide();
-    $('#pher').hide();
+    // $('#pher').hide();
     $('#contenter').hide();
 
     var nm_error = true;
     var em_error = true;
-    var ph_error = true;
+    // var ph_error = true;
     var content_error = true;
 
     $('#name').keyup(function () {
@@ -94,47 +94,47 @@ $(document).ready(function () {
             $('#contenter').hide();
         }
     }
-    $('#phone').keyup(function () {
-        phone_check();
-    });
-    function phone_check() {
+    // $('#phone').keyup(function () {
+    //     phone_check();
+    // });
+    // function phone_check() {
 
-        var ph_val = $('#phone').val();
-        var pattern = /^(\+\d{1,3}[- ]?)?\d{10}$/
-        if (ph_val.trim() == "") {
-            $('#pher').show();
-            $('#pher').html('This Field Cannot be Empty');
-            $('#pher').focus();
-            $('#pher').css("color", "red");
-            ph_error = false;
-            return false;
-        } else {
-            $('#pher').hide();
-        }
+    //     var ph_val = $('#phone').val();
+    //     var pattern = /^(\+\d{1,3}[- ]?)?\d{10}$/
+    //     if (ph_val.trim() == "") {
+    //         $('#pher').show();
+    //         $('#pher').html('This Field Cannot be Empty');
+    //         $('#pher').focus();
+    //         $('#pher').css("color", "red");
+    //         ph_error = false;
+    //         return false;
+    //     } else {
+    //         $('#pher').hide();
+    //     }
 
-        if (!pattern.test(ph_val)) {
-            $('#pher').show();
-            $('#pher').html('Please Enter a Valid Phone Number');
-            $('#pher').focus();
-            $('#pher').css("color", "red");
-            ph_error = false;
-            return false;
-        } else {
-            $('#pher').hide();
-        }
-    }
+    //     if (!pattern.test(ph_val)) {
+    //         $('#pher').show();
+    //         $('#pher').html('Please Enter a Valid Phone Number');
+    //         $('#pher').focus();
+    //         $('#pher').css("color", "red");
+    //         ph_error = false;
+    //         return false;
+    //     } else {
+    //         $('#pher').hide();
+    //     }
+    // }
     $('#sub').click(function () {
         nm_error = true;
         em_error = true;
-        ph_error = true;
+        // ph_error = true;
         content_error = true;
 
         name_check();
         em_check();
         content_check();
-        phone_check();
+        // phone_check();
 
-        if ((nm_error == true) && (em_error == true) && (ph_error == true)
+        if ((nm_error == true) && (em_error == true)
             && (content_error == true)) {
             return true;
         }

@@ -53,18 +53,17 @@ def contact(request):
     if request.method=="POST":
         name=request.POST['name']
         email=request.POST['email']
-        phone=request.POST['phone']
         content =request.POST['content']
-        contact=Contact(name=name, email=email, phone=phone, content=content)
+        contact=Contact(name=name, email=email, content=content)
         contact.save()
         messages.success(request, "Your message has been successfully sent!")
         return render(request, "home/contact.html")
         # return render(request, "home/contact.html",{'message': 'Your Message has been sent!'})
     return render(request, "home/contact.html")
-def contacts(request):
+def inbox(request):
     mesgs = Contact.objects.all()
-    return render(request, "home/messages.html",{'key':mesgs})
+    return render(request, "home/inbox.html",{'key':mesgs})
 def deletemsg(request, id):
         delmsg = Contact.objects.get(id=id)
         delmsg.delete()
-        return redirect('/contacts')
+        return redirect('/inbox')
