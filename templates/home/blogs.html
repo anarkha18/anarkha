@@ -34,7 +34,7 @@
                     <strong class=" d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
                     <div class="mb-1 text-muted">{{x.timeStamp}}</div>
                     <p class="card-text mb-auto" style="text-align: justify;">
-                        {{x.content| truncatechars:500}}</p>
+                        {{x.content| truncatechars:500 |safe}}</p>
                     <div class="my-2">
                         <a href="{% url 'blogpage' x.slug %}" role="button" class="btn btn-primary">Read More</a>
                     </div>

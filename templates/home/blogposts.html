@@ -59,11 +59,11 @@
                                 </span>
                             </td> -->
                     <td style="width: 2%;">{{x.id}}</td>
-                    <td style="width: 14%;">{{x.title}}</td>
-                    <td style="width: 10%;">{{x.author}}</td>
-                    <td style="width: 10%;">{{x.timeStamp}}</td>
-                    <td style="width: 28%;">{{x.content}}</td>
-                    <td style="width: 10%;">
+                    <td style="width: 8%;">{{x.title}}</td>
+                    <td style="width: 8%;">{{x.author}}</td>
+                    <td style="width: 9%;">{{x.timeStamp}}</td>
+                    <td style="width: 32%;">{{x.content|safe|truncatechars:475}}</td>
+                    <td style="width: 8%;">
                         <a href="" class="view" title="View" data-toggle="tooltip"><i
                                 class="material-icons">&#xE417;</i></a>
                         <a href="{% url 'updatepost' x.id %}" class="edit"><i class="material-icons">&#xE254;</i></a>
