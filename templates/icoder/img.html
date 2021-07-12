@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        * {
+            margin-left: 20px;
+            background-color: rgb(237, 207, 247);
+        }
+
+        table,
+        th,
+        td {
+            border: 3px solid black;
+        }
+
+        table.th {
+            font-weight: bold;
+        }
+
+        table {
+            width: 30%;
+        }
+
+        th,
+        td {
+            height: 30px;
+            padding: 2px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Table</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Place</th>
+            <th>Picture</th>
+        </tr>
+        {% for x in key %}
+        <tr>
+            <td>{{x.name}}</td>
+            <td>{{x.place}}</td>
+            <td>{{x.pic}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>

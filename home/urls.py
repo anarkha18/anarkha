@@ -2,6 +2,7 @@ from django.urls import path
 from home import views
 
 urlpatterns = [
+    path('sd', views.sd, name="sd"),
     path('home', views.home, name="home"),
     path('fblogin', views.fblogin, name="fblogin"),
     path('fbhome', views.fbhome, name="fbhome"),

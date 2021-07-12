@@ -31,4 +31,6 @@ urlpatterns = [
     path('log', views.log, name="log"),
     path('viewprofile', views.viewprofile, name="viewprofile"),
     path('logout', views.logout, name="logout"),
+    path('upload', views.upload, name="upload"),
+    path('img', views.img, name="img"),
 ]

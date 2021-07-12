@@ -6,6 +6,8 @@ from django.contrib import messages
 
 
 # Create your views here.
+def sd(request):
+    return render(request, "home/sd.html")
 def fbhome(request):
     return render(request, "home/fbhome.html")
 def fblogin(request):

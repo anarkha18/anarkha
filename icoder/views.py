@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import *
+from random import random
+from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 def assignment1(request):
@@ -123,3 +125,19 @@ def viewprofile(request):
         return render(request, 'icoder/profile.html', {'current_session': userlog})
     except:
         return HttpResponse('login required')
+def upload(request):
+    if request.method=="POST":
+        name=request.POST['name']
+        place=request.POST['place']
+        pic=request.FILES['pic']
+        filename = str(random())+pic.name
+        # print(filename)
+        photo=FileSystemStorage()
+        photo.save(filename, pic)
+        details=Upload(name=name, place=place, pic=filename)
+        details.save()
+        return render(request, "icoder/new.html",{'message': 'Your pic has been uploaded'})
+    return render(request, "icoder/new.html")
+def img(request):
+    tables = Upload.objects.all()
+    return render(request, "icoder/img.html",{'key':tables})

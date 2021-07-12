@@ -32,3 +32,8 @@ class User(models.Model):
     emailid = models.CharField(max_length=100)
     password = models.CharField(max_length=50)
     dob = models.DateField()
+class Upload(models.Model):
+    name = models.CharField(max_length=80)
+    place = models.CharField(max_length=80)
+    pic = models.CharField(max_length=100)
+
