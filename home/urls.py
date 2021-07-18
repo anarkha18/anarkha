@@ -15,6 +15,6 @@ urlpatterns = [
     path('updatepost/<int:id>/', views.updatepost, name="updatepost"),
     path('inbox', views.inbox, name="inbox"),
     path('deletemsg<int:id>/', views.deletemsg, name="deletemsg"),
-    # path('vlog', views.vlog, name="vlog"),
+    path('signup', views.handleSignup, name="handleSignup"),
     # path('vsignup', views.vsignup, name="vsignup"),
 ]

@@ -27,7 +27,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="signup-form">
-                    <form action="" method="post">
+                    <form action="/signup" method="post">
+                        {% csrf_token %}
                         <h2>Sign Up</h2>
                         <p>Create an account & Join Our Community!</p>
                         <hr>
@@ -38,8 +39,7 @@
                                         <span class="fa fa-user"></span>
                                     </span>
                                 </div>
-                                <input type="text" id="fn" class="form-control" name="First Name"
-                                    placeholder="Fist Name">
+                                <input type="text" id="fn" class="form-control" name="fname" placeholder="Fist Name">
                             </div>
                             <span id="fninvalid"></span>
                         </div>
@@ -50,8 +50,7 @@
                                         <span class="fa fa-user"></span>
                                     </span>
                                 </div>
-                                <input type="text" id="ln" class="form-control" name="Last Name"
-                                    placeholder="Last Name">
+                                <input type="text" id="ln" class="form-control" name="lname" placeholder="Last Name">
                             </div>
                             <span id="lninvalid"></span>
                         </div>
@@ -88,7 +87,7 @@
                                         <i class="fa fa-lock"></i>
                                     </span>
                                 </div>
-                                <input type="text" id="pas" class="form-control" name="password" placeholder="Password">
+                                <input type="password" id="pas" class="form-control" name="password" placeholder="Password">
                             </div>
                             <span id="pasinvalid"></span>
                         </div>
@@ -100,7 +99,7 @@
                                         <i class="fa fa-check"></i>
                                     </span>
                                 </div>
-                                <input type="text" id="cpas" class="form-control" name="confirm_password"
+                                <input type="password" id="cpas" class="form-control" name="c_password"
                                     placeholder="Confirm Password">
                             </div>
                             <span id="cpasinvalid"></span>

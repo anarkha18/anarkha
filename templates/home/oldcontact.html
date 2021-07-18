@@ -1,0 +1,53 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %} Contact Us {% endblock %}
+{% block js %}
+<script src="{% static 'js/contact.js' %}"></script>{% endblock %}
+{% block contactactive %} active {% endblock contactactive %}
+{% block div1 %}
+<section>
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message : </strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+  <div class="container my-3">
+    <h2>Contact Us</h2>
+    <div class="col-md-8">
+      <form action="/contact" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Full Name :</label>
+          <input type="text" class="form-control" name="name" id="name" aria-describedby="name"
+            placeholder="Enter your Full Name" autocomplete="off">
+          <small id="nmer" class="form-text"></small>
+        </div>
+        <div class="form-group">
+          <label for="Email">Email :</label>
+          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+            placeholder="Enter Your email" autocomplete="off">
+          <small id="emer" class="form-text"></small>
+        </div>
+        <!-- <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phone"
+          placeholder="Enter your Phone" autocomplete="off">
+        <small id="pher" class="form-text"></small>
+      </div> -->
+        <div class="form-group">
+          <label for="content">Describe your Issue:</label>
+          <textarea class="form-control" id="content" name="content" cols="20" rows="6"
+            placeholder="Type Your Message/Feedbacks Here..."></textarea>
+          <small id="contenter" class="form-text"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="sub">Send</button>
+        <span style="color: green; font-family: 'Times New Roman', Times, serif;">{{message}}</span>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

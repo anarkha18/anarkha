@@ -7,7 +7,7 @@ from django.contrib import messages
 
 # Create your views here.
 def sd(request):
-    return render(request, "home/sd.html")
+    return render(request, "home/oldcontact.html")
 def fbhome(request):
     return render(request, "home/fbhome.html")
 def fblogin(request):
@@ -69,3 +69,23 @@ def deletemsg(request, id):
         delmsg = Contact.objects.get(id=id)
         delmsg.delete()
         return redirect('/inbox')
+def handleSignup(request):
+    if request.method=="POST":
+        fname=request.POST['fname']
+        lname=request.POST['lname']
+        username =request.POST['username']
+        email =request.POST['email']
+        password =request.POST['password']
+        cpassword =request.POST['c_password']
+
+        # Create the user
+        myuser = User.objects.create_user(username, email, password)
+        myuser.firstname=fname
+        myuser.lastname=lname
+        myuser.save()
+        messages.success(request, "Your Account has been successfully created")
+        return render(request, 'home/home.html')
+
+
+    else:
+        return HttpResponse('404 - Not Found')
