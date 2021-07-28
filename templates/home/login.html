@@ -26,18 +26,21 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="needs-validation" novalidate action="#" name="myloginform" id="loginform">
+                <form class="needs-validation" novalidate action="/login" method="POST" name="myloginform"
+                    id="loginform">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label style="color: white;" for="loginem">User Name</label>
-                        <input type="email" class="form-control" id="loginem" aria-describedby="emailHelp"
-                            placeholder="Enter email" required>
+                        <input type="email" class="form-control" id="loginem" name="loginusername"
+                            aria-describedby="emailHelp" placeholder="Enter email" required>
                         <div class="invalid-feedback">
                             Please enter a User Name
                         </div>
                     </div>
                     <div class="form-group">
                         <label style="color: white;" for="loginpas">Password</label>
-                        <input type="password" class="form-control" id="loginpas" placeholder="Password" required>
+                        <input type="password" name="loginpassword" class="form-control" id="loginpas"
+                            placeholder="Password" required>
                         <div class="invalid-feedback">
                             Please enter a password
                         </div>

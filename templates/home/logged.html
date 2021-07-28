@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/logged.css' %}">
+<div class="dropdown logged">
+    <!-- <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img
+            src="" class="avatar" alt="Avatar"> Antonio
+        Moreno <b class="caret"></b></a> -->
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle user-action"><img class="dp"
+            src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg">
+        <span class="name"> {{request.user}} </span><b class="caret"></b></a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+        <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+        <div class="divider dropdown-divider"></div>
+        <a href="/logout" class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+    </div>
+</div>
+</div>
