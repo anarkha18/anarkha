@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from .models import *
 from random import random
 from django.core.files.storage import FileSystemStorage
+from django.http.response import JsonResponse
 
 # Create your views here.
 def assignment1(request):
@@ -141,3 +142,8 @@ def upload(request):
 def img(request):
     tables = Upload.objects.all()
     return render(request, "icoder/img.html",{'key':tables})
+def checkemail(request):
+    email=request.POST['email']
+    # print(email)
+    return JsonResponse({'message': 'This is a response'})
+ 

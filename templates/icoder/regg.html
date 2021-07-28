@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -18,10 +17,7 @@
         <br>
         <input type="text" name="lname" placeholder="last name">
         <br>
-        <input type="email" name="email" id="em" placeholder="email" onkeyup="check_email()">
-
-
-
+        <input type="email" name="email" id="em" placeholder="email">
         <br>
         <input type="password" name="pas" id="" placeholder="password">
 
@@ -30,26 +26,5 @@
         {{message}}
         <a href="{% url 'log' %}">login here</a>
     </form>
-
-    <script>
-        $.ajaxSetup({
-            headers: { "X-CSRFToken": '{{csrf_token}}' }
-        });
-        function check_email() {
-            // alert("hai")
-            $.ajax({
-                url: 'checkemail',
-                type: 'POST',
-                data: {
-                    email: $('#em').val()
-
-                },
-                success: function (response) {
-                    alert(response.message)
-                }
-            })
-        }
-    </script>
-</body>
 
 </html>

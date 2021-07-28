@@ -33,4 +33,5 @@ urlpatterns = [
     path('logout', views.logout, name="logout"),
     path('upload', views.upload, name="upload"),
     path('img', views.img, name="img"),
+    path('checkemail', views.checkemail, name="checkemail"),
 ]
