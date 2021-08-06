@@ -31,8 +31,9 @@
                     <h3 class="mb-0 h33">
                         <a href="#" class="tlink">{{x.title}}</a>
                     </h3>
-                    <strong class=" d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
-                    <div class="mb-1 text-muted">{{x.timeStamp}}</div>
+                    <strong class="d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
+                    &nbsp;
+                    <div class="mb-1 text-muted times">{{x.timeStamp}}</div>
                     <p class="card-text mb-auto" style="text-align: justify;">
                         {{x.content| truncatechars:300 |safe}}</p>
                     <div class="my-2">
@@ -40,8 +41,17 @@
                         <!-- <a href="{% url 'blogpage' x.slug %}" role="button">READ MORE</a> -->
                         <div style="display: inline-block; margin-left: 800px;">
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            &nbsp;
+                            <span>23</span>
+                            &nbsp;
                             <i class="fa fa-comment-o" aria-hidden="true"></i>
+                            &nbsp;
+                            <span>12</span>
+                            &nbsp;
                             <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            &nbsp;
+                            <span>7</span>
+                            &nbsp;
                         </div>
                     </div>
                     <!-- <a href="#">Continue reading</a> -->

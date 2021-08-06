@@ -79,9 +79,8 @@ def handleSignup(request):
         cpassword =request.POST['c_password']
 
         # Create the user
-        myuser = User.objects.create_user(username, email, password)
-        myuser.firstname=fname
-        myuser.lastname=lname
+        myuser = User.objects.create_user(username=username, email=email, password=password, first_name=fname)
+        myuser.last_name=lname
         myuser.save()
         messages.success(request, "Your Account has been successfully created")
         return render(request, 'home/home.html')
@@ -110,3 +109,6 @@ def handelLogout(request):
     logout(request)
     messages.success(request, "Successfully logged out")
     return redirect('home')
+def user_list(request):
+    user_list = User.objects.all()
+    return render(request, "home/users.html" ,{'key':user_list})
