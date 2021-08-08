@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %}
+{% block title %} Blogs {% endblock %}
+{% block css %}
+<style>
+    .tlink {
+        color: black;
+        /* font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 32px; */
+    }
+
+    .tlink:hover {
+        text-decoration: none;
+        color: rgb(23, 50, 85);
+    }
+</style>
+{% endblock %}
+{% block blogsactive %} active {% endblock blogsactive %}
+{% block div1 %}
+<section>
+    <div class="container">
+        <div class="container my-4">
+            <h2>
+                Latest Blogs</h2>
+        </div>
+        <!-- <div class="container my-4"> -->
+        {% for x in key %}
+        <div class="col-md-12 container my-4">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0 h33">
+                        <a href="#" class="tlink">{{x.title}}</a>
+                    </h3>
+                    <strong class="d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
+                    &nbsp;
+                    <div class="mb-1 text-muted times">{{x.timeStamp}}</div>
+                    <p class="card-text mb-auto" style="text-align: justify;">
+                        {{x.content| truncatechars:300 |safe}}</p>
+                    <div class="my-2">
+                        <a href="{% url 'blogpage' x.slug %}" role="button" class="btn btn-primary">Read More</a>
+                        <!-- <a href="{% url 'blogpage' x.slug %}" role="button">READ MORE</a> -->
+                        <div style="display: inline-block; margin-left: 800px;">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            &nbsp;
+                            <span>23</span>
+                            &nbsp;
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>
+                            &nbsp;
+                            <span>12</span>
+                            &nbsp;
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            &nbsp;
+                            <span>7</span>
+                            &nbsp;
+                        </div>
+                    </div>
+                    <!-- <a href="#">Continue reading</a> -->
+                </div>
+                <!-- <img class="card-img-right flex-auto d-none d-md-block"
+                    src="https://jooinn.com/images/dramatic-landscape-7.jpg" width="250"
+                    alt="Card image cap"> -->
+            </div>
+        </div>
+        {% endfor %}
+        <!-- </div> -->
+    </div>
+    <!-- </section> -->
+    {% endblock %}

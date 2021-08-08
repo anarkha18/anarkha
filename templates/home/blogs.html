@@ -1,68 +1,142 @@
 {% extends 'home/base.html' %}
+{% load static %}
 {% block title %} Blogs {% endblock %}
 {% block css %}
-<style>
-    .tlink {
-        color: black;
-        /* font-family: 'Times New Roman', Times, serif;
-        font-weight: bold;
-        font-size: 32px; */
-    }
-
-    .tlink:hover {
-        text-decoration: none;
-        color: rgb(23, 50, 85);
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/blogs.css' %}">
 {% endblock %}
 {% block blogsactive %} active {% endblock blogsactive %}
 {% block div1 %}
 <section>
-    <div class="container">
+    <div id="main-content" class="blog-page">
         <div class="container my-4">
             <h2>
                 Latest Blogs</h2>
         </div>
-        <!-- <div class="container my-4"> -->
-        {% for x in key %}
-        <div class="col-md-12 container my-4">
-            <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                    <h3 class="mb-0 h33">
-                        <a href="#" class="tlink">{{x.title}}</a>
-                    </h3>
-                    <strong class="d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
-                    &nbsp;
-                    <div class="mb-1 text-muted times">{{x.timeStamp}}</div>
-                    <p class="card-text mb-auto" style="text-align: justify;">
-                        {{x.content| truncatechars:300 |safe}}</p>
-                    <div class="my-2">
-                        <a href="{% url 'blogpage' x.slug %}" role="button" class="btn btn-primary">Read More</a>
-                        <!-- <a href="{% url 'blogpage' x.slug %}" role="button">READ MORE</a> -->
-                        <div style="display: inline-block; margin-left: 800px;">
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+        <div class="container my-4">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 left-box">
+                    {% for x in key %}
+                    <div class="card single_post">
+                        <div class="body">
+                            <h3 class="mb-0 " style="display: inline-block;">
+                                <a href="#" class="tlink">{{x.title| truncatechars:25 |safe}}</a>
+                            </h3>
+                            <div class="mb-1 text-muted times" style="float: right; text-transform: uppercase;">
+                                {{x.timeStamp}}</div>
+                            <div class="img-post my-3">
+                                <img class="d-block img-fluid" src="https://via.placeholder.com/800x280/FFB6C1/000000"
+                                    alt="First slide">
+                            </div>
+                            <strong class="d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
                             &nbsp;
-                            <span>23</span>
-                            &nbsp;
-                            <i class="fa fa-comment-o" aria-hidden="true"></i>
-                            &nbsp;
-                            <span>12</span>
-                            &nbsp;
-                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                            &nbsp;
-                            <span>7</span>
-                            &nbsp;
+                            <p class="card-text mb-auto my-2" style="text-align: justify;">
+                                {{x.content| truncatechars:300 |safe}}</p>
+                        </div>
+                        <div class="footer">
+                            <div class="actions">
+                                <a href="{% url 'blogpage' x.slug %}" role="button" class="btn btn-outline-primary">Read
+                                    More</a>
+                            </div>
+                            <!-- <ul class="stats"> -->
+                            <!-- <ul style="display: inline-block; margin-left: 800px;"> -->
+                            <div style="display: inline-block; margin-left: 350px;">
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                &nbsp;
+                                <span>23</span>
+                                &nbsp;
+                                <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                &nbsp;
+                                <span>12</span>
+                                &nbsp;
+                                <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                &nbsp;
+                                <span>7</span>
+                                &nbsp;
+                            </div>
                         </div>
                     </div>
-                    <!-- <a href="#">Continue reading</a> -->
+                    {% endfor %}
+                    <ul class="pagination pagination-primary">
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+                    </ul>
                 </div>
-                <!-- <img class="card-img-right flex-auto d-none d-md-block"
-                    src="https://jooinn.com/images/dramatic-landscape-7.jpg" width="250"
-                    alt="Card image cap"> -->
+                <div class="col-lg-4 col-md-12 right-box">
+                    <div class="card">
+                        <div class="header category">
+                            <h2>Browse Category</h2>
+                        </div>
+                        <div class="body search">
+                            <div class="dropdown">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-folder"></i></span>
+                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false" style="width: 225px;">
+                                        Choose Category
+                                    </button>
+                                    
+                                    <div class="dropdown-menu scrollable-menu" role="menu"
+                                        aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                                crossorigin="anonymous"></script>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>Categories Clouds</h2>
+                        </div>
+                        <div class="body widget">
+                            <ul class="list-unstyled categories-clouds m-b-0">
+                                <li><a href="javascript:void(0);">eCommerce</a></li>
+                                <li><a href="javascript:void(0);">Microsoft Technologies</a></li>
+                                <li><a href="javascript:void(0);">Creative UX</a></li>
+                                <li><a href="javascript:void(0);">Wordpress</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>Popular Posts</h2>
+                        </div>
+                        <div class="body widget popular-post">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="single_post">
+                                        <p class="m-b-0">Apple Introduces Search Ads Basic</p>
+                                        <span>jun 22, 2018</span>
+                                        <div class="img-post">
+                                            <img src="https://via.placeholder.com/280x280/FFB6C1/000000"
+                                                alt="Awesome Image">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-        {% endfor %}
-        <!-- </div> -->
     </div>
-    <!-- </section> -->
-    {% endblock %}
+
+</section>
+
+{% endblock %}
