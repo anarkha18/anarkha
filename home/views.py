@@ -109,6 +109,5 @@ def handelLogout(request):
     logout(request)
     messages.success(request, "Successfully logged out")
     return redirect('home')
-def user_list(request):
-    user_list = User.objects.all()
-    return render(request, "home/users.html" ,{'key':user_list})
+def profile(request):
+    return render(request, 'home/profile.html')

@@ -18,5 +18,5 @@ urlpatterns = [
     path('signup', views.handleSignup, name="handleSignup"),
     path('login', views.handeLogin, name="handleLogin"),
     path('logout', views.handelLogout, name="handleLogout"),
-    # path('userlist', views.user_list, name="userlist"),
+    path('profile', views.profile, name="profile"),
 ]

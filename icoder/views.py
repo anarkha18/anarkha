@@ -3,6 +3,7 @@ from .models import *
 from random import random
 from django.core.files.storage import FileSystemStorage
 from django.http.response import JsonResponse
+from rest_framework.decorators import api_view
 
 # Create your views here.
 def assignment1(request):
@@ -66,9 +67,12 @@ def mesg(request):
         return render(request, "icoder/datas.html",{'message': 'Your Message has been sent!'})
     return render(request, "icoder/datas.html")
     # retrive data
+@api_view(['GET'])
 def mymessages(request):
     messages = Mesg.objects.all()
-    return render(request, "icoder/datastable.html",{'key':messages})
+    mydata=[{'id': x.id, 'name': x.name, 'email': x.email, 'content': x.content} for x in messages]
+    return JsonResponse({'messgs': mydata})
+    # return render(request, "icoder/datastable.html",{'key':messages})
     # update data
 def updatedata(request, id):
     if request.method=="POST":

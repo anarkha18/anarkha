@@ -3,6 +3,40 @@
 {% block title %} Blogs {% endblock %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
+<style>
+    .card-box {
+        padding: 20px;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        background-color: #fff;
+    }
+
+    .thumb-lg {
+        height: 88px;
+        width: 88px;
+    }
+
+    .img-thumbnail {
+        padding: .25rem;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: .25rem;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text-pink {
+        color: #ff679b !important;
+    }
+
+    .btn-rounded {
+        border-radius: 2em;
+    }
+
+    .text-muted {
+        color: #98a6ad !important;
+    }
+</style>
 {% endblock %}
 {% block blogsactive %} active {% endblock blogsactive %}
 {% block div1 %}
@@ -78,7 +112,7 @@
                                         aria-expanded="false" style="width: 225px;">
                                         Choose Category
                                     </button>
-                                    
+
                                     <div class="dropdown-menu scrollable-menu" role="menu"
                                         aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="#">Action</a>
@@ -98,6 +132,48 @@
 
                         </div>
                     </div>
+                    {% if user.is_authenticated %}
+                    <div class="card">
+                        <div class="header category">
+                            <h5>Profile</h5>
+                        </div>
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h5>{{request.user.first_name}}</h5>
+                                    <p class="text-muted">@{{request.user}}<span> | </span><span><a href="#"
+                                                class="text-pink">@{{request.user.email}}</a></span></p>
+                                </div>
+                                <button type="button" class="btn btn-outline-primary">View Profile</button>
+                                <button type="button" class="btn btn-outline-primary">Log Out</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                    {% else %}
+                    <div class="card">
+                        <div class="header category">
+                            <h5>Profile</h5>
+                        </div>
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h5>You are Not Logged In</h5>
+                                    <p class="text-muted">@anonymous<span> | </span><span><a href="#"
+                                                class="text-pink">Unknown</a></span></p>
+                                </div>
+                                <button type="button" class="btn btn-outline-primary">Log In</button>
+                                <button type="button" class="btn btn-outline-primary">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
                     <div class="card">
                         <div class="header">
                             <h2>Categories Clouds</h2>
@@ -131,7 +207,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

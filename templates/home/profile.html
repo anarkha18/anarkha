@@ -1,0 +1,181 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %} Profile {% endblock %}
+{% block css %}
+<style>
+    /* User Cards */
+    .user-box {
+        width: 110px;
+        margin: auto;
+        margin-bottom: 20px;
+
+    }
+
+    .user-box img {
+        width: 100%;
+        border-radius: 50%;
+        padding: 3px;
+        background: #fff;
+        -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+        -ms-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-card-4 .user-box {
+        width: 110px;
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+
+    .nav-pills .nav-link {
+        border-radius: .25rem;
+        color: #223035;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 3px;
+        padding: 12px 20px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+
+    }
+
+    .nav-pills .nav-link:hover {
+        background-color: #f4f5fa;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: #fff;
+        background-color: #008cff;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(0, 140, 255, 0.5);
+    }
+
+    .z-depth-3 {
+        -webkit-box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .options:hover {
+        background-color: #f4f5fa;
+    }
+
+    .options {
+        padding: 0px 8px;
+        margin: 0px 3px;
+        text-align: center;
+        width: 30%;
+        border-radius: 5px;
+    }
+
+    .ic {
+        width: 30px;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: rgb(52, 52, 255);
+    }
+</style>
+{% endblock %}
+{% block div1 %}
+<section>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="profile-card-4 z-depth-3">
+                    <div class="card">
+                        <div class="card-body text-center bg-primary rounded-top">
+                            <div class="user-box">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user avatar">
+                                <!-- <img class="rounded-circle" src="{% static 'images/cr1.jpg' %}" alt="user avatar"> -->
+                            </div>
+                            <h5 class="mb-1 text-white">Jhon Doe</h5>
+                            <h6 class="text-light">@Anonymus <span> | </span> User </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row listop">
+                                <div class="ml-4 my-2">
+                                    <div class="ic" style="display: inline-block;">
+                                        <span class="fa fa-user fa-lg"></span>
+                                    </div>
+                                    <div class="nm" style="float: right;">
+                                        <a href="#" style="color: #000;">Profile </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row listop">
+                                <div class="ml-4 my-2">
+                                    <div class="ic" style="display: inline-block;">
+                                        <span class="fa fa-folder"></span>
+                                    </div>
+                                    <div class="nm" style="float: right;">
+                                        <a href="#" style="color: #000;"> Settings </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row listop">
+                                <div class="ml-4 my-2">
+
+                                    <div class="ic" style="display: inline-block;">
+                                        <span class="fa fa-envelope"></span>
+                                    </div>
+                                    <div class="nm" style="float: right;">
+                                        <a href="#" style="color: #000;"> Log Out </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card z-depth-3">
+                    <div class="card-body">
+                        <ul class="nav nav-pills nav-pills-primary nav-justified">
+                            <li class="options">
+                                <a href="javascript:void();" data-target="#profile" data-toggle="pill"
+                                    class="nav-link active show"><i class="icon-user"></i> <span
+                                        class="hidden-xs">Profile</span></a>
+                            </li>
+                            <li class="options">
+                                <a href="javascript:void();" data-target="#messages" data-toggle="pill"
+                                    class="nav-link"><i class="icon-envelope-open"></i> <span
+                                        class="hidden-xs">Messages</span></a>
+                            </li>
+                            <li class="options">
+                                <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i
+                                        class="icon-note"></i> <span class="hidden-xs">Edit</span></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content p-3">
+                            <div class="tab-pane active show" id="profile">
+                                <h5 class="mb-3">User Profile</h5>
+                                <div class="row">
+                                </div>
+                                <!--/row-->
+                            </div>
+                            <div class="tab-pane" id="messages">
+                            </div>
+                            <div class="tab-pane" id="edit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

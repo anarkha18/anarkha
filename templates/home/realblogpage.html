@@ -14,54 +14,24 @@
     .content {
         text-align: justify;
     }
-
-    .jumbotron-image {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-    .btn-primary{
-        border-radius: 20px !important;
-        width: 150px;
-    }
 </style>
 {% endblock %}
 {% block div1 %}
 <section>
-    <!-- <div class="container py-5"> -->
-    <div class="">
-        <div class="jumbotron text-white jumbotron-image shadow"
-            style="background-image: url(https://images.unsplash.com/photo-1552152974-19b9caf99137?fit=crop&w=1350&q=80);">
-            <h2 class="container mb-4">
-                {{page.title}}
-            </h2>
-            <p class="container mb-4">
-                Hey, check this out.
-            </p>
-            <div class="container">
-
-                <a href="#bcontent" class="btn btn-primary" type="button">Read Article</a>
-            </div>
-        </div>
-    </div>
     <!-- Jumbotron -->
-    <!-- <div class="card card-image" style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/forest2.jpg);">
+    <div class="card card-image" style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/forest2.jpg);">
         <div class="text-white text-center rgba-stylish-strong py-5 px-4">
             <div class="py-5">
                 <h2 class="card-title h2 my-4 py-2">MAIN TITLE</h2>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Jumbotron -->
     <!-- <div class="container"> -->
     <div class="container col-10">
         <div class="card text border-0">
-            <div class="card-header bg-transparent border-0" id="bcontent">
-                <h2 class="card-title head2">{{page.title}}</h5>
+            <div class="card-header bg-transparent border-0">
+                <h2 class=" card-title head2">{{page.title}}</h5>
                     <strong class=" d-inline-block mb-1 text-primary head4">Article by {{page.author}}</strong>
                     <div class="mb-1 text-muted">{{page.timeStamp}}</div>
             </div>
@@ -74,6 +44,5 @@
         </div>
     </div>
     </div>
-
 </section>
 {% endblock %}
