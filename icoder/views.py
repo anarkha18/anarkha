@@ -146,8 +146,34 @@ def upload(request):
 def img(request):
     tables = Upload.objects.all()
     return render(request, "icoder/img.html",{'key':tables})
-def checkemail(request):
+# def checkemail(request):
+#     email=request.POST['email']
+#     print(email)
+#     return JsonResponse({'message': 'This is a response'})
+def student(request):
+    return render(request, "icoder/student.html" )
+def savestud(request):
+    name=request.POST['name']
     email=request.POST['email']
-    # print(email)
-    return JsonResponse({'message': 'This is a response'})
- 
+    password =request.POST['password'] 
+    if len(name)<2 or len(email)<3 or len(password)<3:
+       return JsonResponse({'message': 'Please fill the form correctly'})
+    else:
+        stud = Student(name=name,email=email,password=password) 
+        stud.save()
+        return JsonResponse({'message': 'Your data has been successfully updated'})
+def studdata(request):
+    data=Student.objects.all()
+    userdetails=[{'id':x.id,'name':x.name,'email':x.email,'password':x.password} for x in data]
+    return JsonResponse({'data':userdetails})
+def deletestud(request):
+    id=request.POST['id']
+    Student.objects.get(id=id).delete()
+    return JsonResponse({'message':'data is deleted'})
+def updatestud(request):
+    id=request.POST['id']
+    data=Student.objects.get(id=id)
+    details=[{'id':data.id,'name':data.name,'email':data.email,'password':data.password}]
+    return JsonResponse({'data':details})
+
+

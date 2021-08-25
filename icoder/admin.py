@@ -4,3 +4,4 @@ from .models import *
 # Register your models here.
 admin.site.register(Reg)
 admin.site.register(Upload)
+admin.site.register(Student)

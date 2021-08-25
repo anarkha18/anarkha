@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+
+<body onload="displayfun()">
+    <div class="container mt-5">
+        <h1 class="text-center alert alert-danger p-2">AJAX CRUD</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2 class="text-center alert alert-info p-2">ADD STUDENT</h2>
+                <form action="/savestud" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-success" onclick="valfun()">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-8">
+                <h2 class="text-center alert alert-info p-2">STUDENT LIST</h2>
+                <table class="table" id="table1">
+                    <thead>
+                        <tr class="text-center alert alert-info">
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <!-- <tbody>
+                    <tr class="text-center mt-2">
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td class="text-center">
+                                <button class="btn btn-danger">Edit</button> &nbsp;
+                                <button class="btn btn-warning">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>  -->
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $.ajaxSetup({
+            headers: { "X-CSRFToken": '{{csrf_token}}' }
+        });
+        function valfun() {
+            $.ajax({
+                url: '{% url "savestud" %}',
+                type: 'POST',
+                data: {
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    password: $('#password').val()
+
+                },
+                success: function (response) {
+                    alert(response.message)
+                    displayfun()
+                }
+            })
+        }
+    </script>
+    <script>
+
+        function displayfun() {
+            $.ajax({
+                url: '{% url "studdata" %}',
+                type: 'GET',
+                success: function (response) {
+                    userdata = response.data
+                    $('.tr').remove();
+                    for (i = 0; i <= userdata.length; i++) {
+                        $('#table1').append("<tr class='tr text-center mt-2'> <th scope='row'>" + userdata[i].id + "</th><td>" + userdata[i].name + "</td><td>" + userdata[i].email + "</td><td>" + userdata[i].password + "</td><td class='text-center'><button class='btn btn-danger' onclick='updatestud(" + userdata[i].id + ");'>Edit</button>&nbsp;<button class='btn btn-warning' onclick='deletestud(" + userdata[i].id + ");'>Delete</button></td></tr>")
+                    }
+                }
+
+
+            })
+        }
+        function deletestud(x) {
+            // alert(x);
+            $.ajax({
+                url: '{% url "deletestud" %}',
+                type: 'POST',
+                data: {
+                    id: x
+                },
+                success: function (response) {
+                    alert(response.message)
+                    displayfun()
+
+                }
+            })
+        }
+        function updatestud(x) {
+            $.ajaxSetup({
+                headers: { "X-CSRFToken": '{{csrf_token}}' }
+            });
+            // alert(x);
+            $.ajax({
+                url: '{% url "updatestud" %}',
+                type: 'POST',
+                data: {
+                    id: x
+                },
+                success: function (response) {
+                    users = response.data;
+                    ab = obj.name;
+                    console.log(ab)
+                    // console.log(response.data)
+                    // y = myJSON.name;
+                    // $("#email").val(data.email);
+                    // $("#password").val(data.password);
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

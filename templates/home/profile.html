@@ -93,8 +93,9 @@
                     <div class="card">
                         <div class="card-body text-center bg-primary rounded-top">
                             <div class="user-box">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user avatar">
-                                <!-- <img class="rounded-circle" src="{% static 'images/cr1.jpg' %}" alt="user avatar"> -->
+                                <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="110" width="110"
+                                alt="user avatar"> -->
+                                <img src="{% static 'images/cr3.jpg' %}" height="110" width="110">
                             </div>
                             <h5 class="mb-1 text-white">Jhon Doe</h5>
                             <h6 class="text-light">@Anonymus <span> | </span> User </h6>
@@ -161,10 +162,41 @@
                         </ul>
                         <div class="tab-content p-3">
                             <div class="tab-pane active show" id="profile">
-                                <h5 class="mb-3">User Profile</h5>
-                                <div class="row">
+                                <h5 class="mb-3 mt-2" style="display: inline-block;">User Profile</h5>
+                                <div class="mr-4" style="float: right;">
+                                    <a href="{% url 'editprofile' %}"> <button class="btn btn-outline-primary">Edit
+                                            Profile <i class="fa fa-pencil" aria-hidden="true"></i></button> </a>
                                 </div>
-                                <!--/row-->
+                                <div class="row">
+                                    <div class="col-md-6" style="display: inline-block">
+                                        <h6>Name</h6>
+                                        <p>
+                                            Harry Harris
+                                        </p>
+                                        <h6>Email</h6>
+                                        <p>
+                                            harry@gmail.com
+                                        </p>
+                                        <h6>User Name </h6>
+                                        <p>
+                                            harry@123
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6" style="float: right;">
+                                        <h6>About</h6>
+                                        <p>
+                                            Web Designer, UI/UX Engineer
+                                        </p>
+                                        <h6>Hobbies</h6>
+                                        <p>
+                                            Indie music, skiing and hiking. I love the great outdoors.
+                                        </p>
+                                        <h6>Status</h6>
+                                        <p>
+                                            User
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane" id="messages">
                             </div>

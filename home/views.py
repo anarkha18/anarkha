@@ -7,7 +7,7 @@ from django.contrib import messages
 
 # Create your views here.
 def sd(request):
-    return render(request, "home/oldcontact.html")
+    return render(request, "home/sd.html")
 def fbhome(request):
     return render(request, "home/fbhome.html")
 def fblogin(request):
@@ -111,3 +111,7 @@ def handelLogout(request):
     return redirect('home')
 def profile(request):
     return render(request, 'home/profile.html')
+def dashboard(request):
+    return render(request, "home/dashboard.html")
+def editprofile(request):
+    return render(request, "home/editprofile.html")

@@ -36,4 +36,7 @@ class Upload(models.Model):
     name = models.CharField(max_length=80)
     place = models.CharField(max_length=80)
     pic = models.CharField(max_length=100)
-
+class Student(models.Model):
+    name = models.CharField(max_length=80)
+    email = models.CharField(max_length=80)
+    password = models.CharField(max_length=100)

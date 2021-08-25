@@ -33,5 +33,10 @@ urlpatterns = [
     path('logout', views.logout, name="logout"),
     path('upload', views.upload, name="upload"),
     path('img', views.img, name="img"),
-    path('checkemail', views.checkemail, name="checkemail"),
+    path('student', views.student, name="student"),
+    path('savestud', views.savestud, name="savestud"),
+    path('studdata', views.studdata, name="studdata"),
+    path('deletestud', views.deletestud, name="deletestud"),
+    path('updatestud', views.updatestud, name="updatestud"),
+    # path('checkemail', views.checkemail, name="checkemail"),
 ]
