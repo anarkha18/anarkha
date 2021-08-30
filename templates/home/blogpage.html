@@ -170,8 +170,10 @@
                 <div class="text-center">
                     <h3>You are not Authenticated !</h3>
                     <p>Authenticate to Comment!</p>
-                    <button type="submit" class="btn btn-success mt-2">Log IN</button>
-                    <button type="button" class="btn  btn-danger mt-2 mr-3 ml-2">Sign Up</button>
+                    {% include 'home/login.html' %}
+                    {% include 'home/signup.html' %}
+                    <!-- <button type="submit" class="btn btn-success mt-2">Log IN</button>
+                    <button type="button" class="btn  btn-danger mt-2 mr-3 ml-2">Sign Up</button> -->
                 </div>
             </div>
         </div>

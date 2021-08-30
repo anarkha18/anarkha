@@ -98,7 +98,6 @@ def handeLogin(request):
         user=authenticate(username= loginusername, password= loginpassword)
         if user is not None:
             login(request, user)
-            messages.success(request, "Successfully Logged In")
             return redirect("home")
         else:
             messages.error(request, "Invalid credentials! Please try again")

@@ -43,7 +43,8 @@
             <!-- text-light bg-primary font-weight-bolder -->
             <ul class="nav nav-pills flex-column ml-3 mb-0 pr-2">
                 <li class="nav-item mt-1">
-                    <a href="{% url 'editprofile' %}" class="nav-link {% block editprofileactive %} {% endblock %}   rounded-right shadow-sm"><i
+                    <a href="{% url 'editprofile' %}"
+                        class="nav-link {% block editprofileactive %} {% endblock %}   rounded-right shadow-sm"><i
                             class="fa fa-pencil mr-3">
                         </i> Edit Profile<span class="sr-only">(current)</span>
                     </a>
@@ -65,10 +66,12 @@
             <div class="card mb-3 mt-4 ml-4 log">
                 <div class="card-body">
                     <div class="px-xl-2">
-                        <button class="btn btn-block btn-secondary">
-                            <i class="fa fa-sign-out"></i>
-                            <span>Logout</span>
-                        </button>
+                        <a href="/logout">
+                            <button class="btn btn-block btn-secondary">
+                                <i class="fa fa-sign-out"></i>
+                                <span>Logout</span>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -89,7 +92,9 @@
                 <div class="card-body">
                     <h6 class="card-title font-weight-bold">Support</h6>
                     <p class="card-text">Get fast, free help from our friendly assistants.</p>
-                    <button type="button" class="btn btn-primary">Contact Us</button>
+                    <a href="{% url 'contact' %}">
+                        <button type="button" class="btn btn-primary">Contact Us</button>
+                    </a>
                 </div>
             </div>
         </div>
