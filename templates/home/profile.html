@@ -82,6 +82,10 @@
         text-decoration: none;
         color: rgb(52, 52, 255);
     }
+
+    .nav-item:hover {
+        background-color: transparent;
+    }
 </style>
 {% endblock %}
 {% block div1 %}
@@ -107,7 +111,7 @@
                                         <span class="fa fa-user fa-lg"></span>
                                     </div>
                                     <div class="nm" style="float: right;">
-                                        <a href="#" style="color: #000;">Profile </a>
+                                        <a href="" style="color: #000;">Profile </a>
                                     </div>
 
                                 </div>
@@ -116,10 +120,11 @@
                             <div class="row listop">
                                 <div class="ml-4 my-2">
                                     <div class="ic" style="display: inline-block;">
-                                        <span class="fa fa-folder"></span>
+                                        <span class="fa fa-sliders"></span>
                                     </div>
                                     <div class="nm" style="float: right;">
-                                        <a href="#" style="color: #000;"> Settings </a>
+                                        <a href="{% url 'settings' %}" style="color: #000;"> Settings
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +133,7 @@
                                 <div class="ml-4 my-2">
 
                                     <div class="ic" style="display: inline-block;">
-                                        <span class="fa fa-envelope"></span>
+                                        <span class="fa fa-sign-out"></span>
                                     </div>
                                     <div class="nm" style="float: right;">
                                         <a href="#" style="color: #000;"> Log Out </a>

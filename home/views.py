@@ -115,3 +115,5 @@ def dashboard(request):
     return render(request, "home/dashboard.html")
 def editprofile(request):
     return render(request, "home/editprofile.html")
+def settings(request):
+    return render(request, "home/settings.html")

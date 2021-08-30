@@ -1,11 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= <div class="col-md-10" id="div1">
-        <div class="row">
-            <div class="col mb-3">
+{% extends 'home/base.html' %}
+{% load static %}
+{% block css %}
+<style>
+    .nav-item:hover {
+        background-color: transparent;
+    }
+
+    .nav-item.active {
+        background-color: transparent;
+        font-weight: bolder;
+    }
+
+    .log {
+        width: 270px;
+    }
+
+    @media screen and (max-width:600px) {
+        .log {
+            width: 150px;
+        }
+
+        .support {
+            margin-left: 15px;
+        }
+    }
+</style>
+{% endblock %}
+{% block js %}
+<script>
+    $(document).on("click", 'ul li', function () {
+        $('ul li').removeClass('active');
+        $(this).addClass('active');
+    })
+</script>
+{% endblock %}
+{% block div1 %}
+<section>
+    <div class="row">
+        <div class="col-sm-3 mt-5">
+            <!-- <div class="col-12 col-lg-auto mb-3" style="width: 220px;"> -->
+            <!-- <div class="card"> -->
+            <!-- text-light bg-primary font-weight-bolder -->
+            <ul class="nav nav-pills flex-column ml-3 mb-0 pr-2">
+                <li class="nav-item mt-1 active">
+                    <a href="#edittab" data-toggle="tab" class="nav-link active rounded-right shadow-sm"><i
+                            class="fa fa-pencil mr-3">
+                        </i> Edit Profile
+                    </a>
+                </li>
+                <li class="nav-item mt-1">
+                    <a href="#settingstab" data-toggle="tab" class="nav-link rounded-right shadow-sm"><i
+                            class="fa fa-sliders mr-3"></i>
+                        Settings</a>
+                    <!--  bg-white -->
+                </li>
+                <li class="nav-item mt-1">
+                    <a href="{% url 'profile' %}" class="nav-link rounded-right shadow-sm"><i
+                            class="fa fa-user mr-3"></i>
+                        View Profile</a>
+                    <!--  bg-white  -->
+                </li>
+            </ul>
+            <div class="card mb-3 mt-4 ml-4 log">
+                <div class="card-body">
+                    <div class="px-xl-2">
+                        <button class="btn btn-block btn-secondary">
+                            <i class="fa fa-sign-out"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-7 mt-5 mb-5 tab-content">
+            <div id="edittab" class="tab-pane active">
+                <!-- <div class="col-sm-7 mt-5 mb-5"> -->
                 <div class="card">
                     <div class="card-body">
                         <div class="e-profile">
@@ -155,24 +224,66 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
-    <div class="col-12 col-md-3 mb-3">
-        <div class="card mb-3">
-            <div class="card-body">
-                <div class="px-xl-3">
-                    <button class="btn btn-block btn-secondary">
-                        <i class="fa fa-sign-out"></i>
-                        <span>Logout</span>
-                    </button>
+            <div id="settingstab" class="tab-pane">
+                <div class="card">
+                    <div class="card-header">
+                        <h6>ACCOUNT SETTINGS</h6>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
+                                    placeholder="Enter your username" value="kennethvaldez">
+                                <small id="usernameHelp" class="form-text text-muted">After changing your username, your
+                                    old
+                                    username becomes available for anyone else to claim.</small>
+                            </div>
+                            <div class="mt-4">
+                                <h6>PASSWORD SETTINGS</h6>
+                            </div>
+                            <form>
+                                <div class="form-group">
+                                    <label class="d-block">Change Password</label>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" placeholder="Enter your old password">
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control mt-1" placeholder="New password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control mt-1" placeholder="Confirm new password">
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </form>
+                            <form>
+                                <div class="form-group mt-4">
+                                    <label class="d-block text-danger" style="font-size: 20px;">Delete Account</label>
+                                    <p class="text-muted font-size-sm">Once you delete your account, there is no going
+                                        back.
+                                        Please
+                                        be certain.</p>
+                                </div>
+                                <button class="btn btn-danger" type="button">Delete Account</button>
+                            </form>
+                    </div>
                 </div>
             </div>
-        </div>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+        </div>
+        <div class="col-sm-2 mt-5 mb-5">
+            <div class="card support" style="width: 170px;">
+                <div class="card-body">
+                    <h6 class="card-title font-weight-bold">Support</h6>
+                    <p class="card-text">Get fast, free help from our friendly assistants.</p>
+                    <button type="button" class="btn btn-primary">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

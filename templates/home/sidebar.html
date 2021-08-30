@@ -1,0 +1,98 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block css %}
+<style>
+    .nav-item:hover {
+        background-color: transparent;
+    }
+
+    .nav-item.active {
+        background-color: transparent;
+        font-weight: bolder;
+    }
+
+    .log {
+        width: 270px;
+    }
+
+    @media screen and (max-width:600px) {
+        .log {
+            width: 150px;
+        }
+
+        .support {
+            margin-left: 15px;
+        }
+    }
+</style>
+{% endblock %}
+{% block js %}
+<!-- <script>
+    $(document).on("click", 'ul li', function () {
+        $('ul li').removeClass('active');
+        $(this).addClass('active');
+    })
+</script> -->
+{% endblock %}
+{% block div1 %}
+<section>
+    <div class="row">
+        <div class="col-sm-3 mt-5">
+            <!-- <div class="col-12 col-lg-auto mb-3" style="width: 220px;"> -->
+            <!-- <div class="card"> -->
+            <!-- text-light bg-primary font-weight-bolder -->
+            <ul class="nav nav-pills flex-column ml-3 mb-0 pr-2">
+                <li class="nav-item mt-1">
+                    <a href="{% url 'editprofile' %}" class="nav-link {% block editprofileactive %} {% endblock %}   rounded-right shadow-sm"><i
+                            class="fa fa-pencil mr-3">
+                        </i> Edit Profile<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item mt-1">
+                    <a href="{% url 'settings' %}"
+                        class="nav-link {% block Settingsactive %} {% endblock %} rounded-right shadow-sm"><i
+                            class="fa fa-sliders mr-3"></i>
+                        Settings</a>
+                    <!--  bg-white -->
+                </li>
+                <li class="nav-item mt-1">
+                    <a href="{% url 'profile' %}" class="nav-link rounded-right shadow-sm"><i
+                            class="fa fa-user mr-3"></i>
+                        View Profile</a>
+                    <!--  bg-white  -->
+                </li>
+            </ul>
+            <div class="card mb-3 mt-4 ml-4 log">
+                <div class="card-body">
+                    <div class="px-xl-2">
+                        <button class="btn btn-block btn-secondary">
+                            <i class="fa fa-sign-out"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-7 mt-5 mb-5 tab-content">
+            <!-- <div id="edittab" class="tab-pane active"> -->
+            <!-- <div class="col-sm-7 mt-5 mb-5"> -->
+            {% block editprofile %}
+            {% endblock %}
+            <!-- </div> -->
+            <!-- <div id="settingstab" class="tab-pane"> -->
+            {% block Settings %}
+            {% endblock %}
+            <!-- </div> -->
+        </div>
+        <div class="col-sm-2 mt-5 mb-5">
+            <div class="card support" style="width: 170px;">
+                <div class="card-body">
+                    <h6 class="card-title font-weight-bold">Support</h6>
+                    <p class="card-text">Get fast, free help from our friendly assistants.</p>
+                    <button type="button" class="btn btn-primary">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
