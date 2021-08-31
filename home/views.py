@@ -54,10 +54,13 @@ def updatepost(request, id):
         author=request.POST['author']
         content =request.POST['content']
         slug =request.POST['slug']
-        Post.objects.filter(id=id).update(title=title, author=author, slug=slug, content=content)
+        category_id=request.POST.get('category')
+        category =blogcategory.objects.get(id=category_id)
+        Post.objects.filter(id=id).update(category=category, title=title, author=author, slug=slug, content=content)
         return redirect('/blogposts')
-    postinfo=Post.objects.get(id=id) 
-    return render(request, 'home/editpost.html',{'postinfo':postinfo})
+    postinfo=Post.objects.get(id=id)
+    bcat = blogcategory.objects.all() 
+    return render(request, 'home/editpost.html',{'postinfo':postinfo,'key':bcat})
 def contact(request):
     if request.method=="POST":
         name=request.POST['name']
@@ -70,7 +73,7 @@ def contact(request):
         # return render(request, "home/contact.html",{'message': 'Your Message has been sent!'})
     return render(request, "home/contact.html")
 def inbox(request):
-    mesgs = Contact.objects.all()
+    mesgs = Contact.objects.order_by('-timeStamp')
     return render(request, "home/inbox.html",{'key':mesgs})
 def deletemsg(request, id):
         delmsg = Contact.objects.get(id=id)

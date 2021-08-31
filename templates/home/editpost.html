@@ -51,8 +51,13 @@
                         <div class="form-group row">
                             <label for="category" class="col-sm-2 col-form-label">Ctegory :</label>
                             <div class="col-sm-10">
-                                <select class="form-control"  id="bcat">
-                                    <option value="{{post.category}}"></option>
+                                <select class="form-control" id="bcat" name="category">
+                                    {% for x in key %}
+                                    <!-- <option value="{{x.id}}" selected> {{postinfo.category}}</option> -->
+                                    <option value="{{x.id}}" {% if x.id and postinfo.category %} selected {% endif %}>
+                                        {{x.name}}</option>
+
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
