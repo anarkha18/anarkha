@@ -16,20 +16,27 @@ def home(request):
     return render(request, "home/home.html")
 def addpost(request):
     if request.method=="POST":
+        # print(category)
         title=request.POST['title']
         author=request.POST['author']
         content =request.POST['content']
         slug =request.POST['slug']
-        post=Post(title=title, author=author, slug=slug, content=content)
+        category_id=request.POST.get('category')
+        category =blogcategory.objects.get(id=category_id)
+        # print(category)
+        post=Post(category=category, title=title, author=author, slug=slug, content=content)
         post.save()
         # return render(request, "home/addpost.html")
         return render(request, "home/addpost.html",{'message': 'Your Blog has been Added'})
-    return render(request, "home/addpost.html")
+    bcat = blogcategory.objects.all()
+    return render(request, "home/addpost.html",{'key':bcat})
 def blogposts(request):
-    posts = Post.objects.all()
+    posts = Post.objects.order_by('-timeStamp')
+    # posts = Post.objects.all()
     return render(request, "home/blogposts.html",{'key':posts})
 def blogs(request):
-    posts = Post.objects.all()
+    posts = Post.objects.order_by('-timeStamp')
+    # posts = Post.objects.all()
     return render(request, "home/blogs.html" ,{'key':posts})
 def deletepost(request, id):
     # if (request.method == 'POST'):
