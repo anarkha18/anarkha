@@ -85,8 +85,8 @@ DATABASES = {
         'NAME': 'webapps',
         'USER': 'postgres',
         'PASSWORD': '1234',
-        'HOST':'localhost',
-        'PORT':'5432'
+        # 'HOST':'localhost',
+        # 'PORT':'5432'
     }
 }
 
