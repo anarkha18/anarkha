@@ -1,6 +1,9 @@
 {% extends 'home/sidebar.html' %}
 {% load static %}
 {% block editprofileactive %} active {% endblock %}
+{% block js %}
+<script src="{% static 'js/editpro.js' %}"></script>
+{% endblock %}
 {% block editprofile %}
 <!-- <div class="col-sm-7 mt-5 mb-5"> -->
 <div class="card">
@@ -17,8 +20,9 @@
                 </div>
                 <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                     <div class="text-center text-sm-left mb-2 mb-sm-0">
-                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                        <p class="mb-0">@johnny.s</p>
+                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{request.user.first_name}}
+                            {{request.user.last_name}}</h4>
+                        <p class="mb-0">{{request.user.username}}</p>
                         <div class="text-muted"><small>Last seen 2 hours ago</small></div>
                         <div class="mt-2">
                             <button class="btn btn-primary" type="button">
@@ -29,7 +33,7 @@
                     </div>
                     <div class="text-center text-sm-right">
                         <span class="badge badge-secondary">administrator</span>
-                        <div class="text-muted"><small>Joined 09 Dec 2017</small></div>
+                        <div class="text-muted"><small>{{request.user.date_joined}}</small></div>
                     </div>
                 </div>
             </div>
@@ -38,22 +42,46 @@
             </ul>
             <div class="tab-content pt-3">
                 <div class="tab-pane active">
-                    <form class="form" novalidate="">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0 mb-3" role="alert">
+                        <strong>Message : </strong> {{ message }}
+                        <a href="javascript:window.location.href=window.location.href"
+                            style="text-decoration: none;">Click to Refresh</a>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %}
+                    <form class="form" action="/editprofile" method="POST">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col">
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Full Name</label>
-                                            <input class="form-control" type="text" name="name" placeholder="John Smith"
-                                                value="John Smith">
+                                            <label>First Name</label>
+                                            <input class="form-control" type="text" name="fname"
+                                                value="{{request.user.first_name}}" id="fn" placeholder="First Name"
+                                                required>
+                                            <span id="fninvalid"></span>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Username</label>
-                                            <input class="form-control" type="text" name="username"
-                                                placeholder="johnny.s" value="johnny.s">
+                                            <label>Last Name</label>
+                                            <input class="form-control" type="text" id="ln" name="lname"
+                                                value="{{request.user.last_name}}" placeholder="Last Name" required>
+                                            <span id="lninvalid"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <input class="form-control" id="loc"
+                                                value="{{request.user.user_details.location}}" type="text"
+                                                name="location" placeholder="Location" required>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +89,9 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input class="form-control" type="text" placeholder="user@example.com">
+                                            <input class="form-control" id="em" value="{{request.user.email}}"
+                                                name="email" type="email" placeholder="user@example.com" required>
+                                            <span id="eminvalid"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -69,45 +99,18 @@
                                     <div class="col mb-3">
                                         <div class="form-group">
                                             <label>About</label>
-                                            <textarea class="form-control" rows="5" placeholder="My Bio"></textarea>
+                                            <textarea id="about" class="form-control" rows="5" placeholder="My Bio"
+                                                name="about">{{request.user.user_details.about}}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row"> -->
-                        <div class="col-12 col-sm-5  mb-3">
-                            <div class="mb-2"><b>Keeping in Touch</b></div>
-                            <div class="row">
-                                <div class="col">
-                                    <label>Email Notifications</label>
-                                    <div class="custom-controls-stacked px-2">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="notifications-blog"
-                                                checked="">
-                                            <label class="custom-control-label" for="notifications-blog">Blog
-                                                posts</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="notifications-news"
-                                                checked="">
-                                            <label class="custom-control-label"
-                                                for="notifications-news">Newsletter</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input"
-                                                id="notifications-offers" checked="">
-                                            <label class="custom-control-label" for="notifications-offers">Personal
-                                                Offers</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- </div> -->
-                        </div>
+
                         <div class="row">
                             <div class="col d-flex justify-content-end">
-                                <button class="btn btn-secondary" type="submit">Cancel</button>
+                                <button class="btn btn-secondary" type="button"
+                                    onClick="window.location.reload();">Cancel</button>
                                 &nbsp;
                                 <button class="btn btn-primary" type="submit">Save Changes</button>
                             </div>

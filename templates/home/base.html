@@ -61,10 +61,12 @@
                     <a class="nav-link" href="#"><span class="fa fa-user"></span>
                         About Us</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="fa fa-user"></span>
-                        Profile</a>
-                </li> -->
+                {% if request.user.is_superuser == True %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}"><span class="fa fa-th-large"></span>
+                        Dashboard</a>
+                </li>
+                {% endif %}
                 <!-- <li class="nav-item dropdown nav-item">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -87,14 +89,6 @@
             {% include 'home/signup.html' %}
             {% endif %}
     </nav>
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
-        <strong>Message : </strong> {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
     {% block div1 %} {% endblock %}
     {% block div2 %} {% endblock %}
 

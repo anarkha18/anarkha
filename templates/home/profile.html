@@ -101,8 +101,9 @@
                                 alt="user avatar"> -->
                                 <img src="{% static 'images/cr3.jpg' %}" height="110" width="110">
                             </div>
-                            <h5 class="mb-1 text-white">Jhon Doe</h5>
-                            <h6 class="text-light">@Anonymus <span> | </span> User </h6>
+                            <h5 class="mb-1 text-white"> {{request.user.first_name}}
+                                {{request.user.last_name}}</h5>
+                            <h6 class="text-light"> {{request.user.username}} <span> | </span> User </h6>
                         </div>
                         <div class="card-body">
                             <div class="row listop">
@@ -136,7 +137,7 @@
                                         <span class="fa fa-sign-out"></span>
                                     </div>
                                     <div class="nm" style="float: right;">
-                                        <a href="#" style="color: #000;"> Log Out </a>
+                                        <a href="/logout" style="color: #000;"> Log Out </a>
                                     </div>
 
 
@@ -176,25 +177,26 @@
                                     <div class="col-md-6" style="display: inline-block">
                                         <h6>Name</h6>
                                         <p>
-                                            Harry Harris
+                                            {{request.user.first_name}}
+                                            {{request.user.last_name}}
                                         </p>
                                         <h6>Email</h6>
                                         <p>
-                                            harry@gmail.com
+                                            {{request.user.email}}
                                         </p>
                                         <h6>User Name </h6>
                                         <p>
-                                            harry@123
+                                            {{request.user.username}}
                                         </p>
                                     </div>
                                     <div class="col-md-6" style="float: right;">
                                         <h6>About</h6>
                                         <p>
-                                            Web Designer, UI/UX Engineer
+                                            {{request.user.user_details.about}}
                                         </p>
-                                        <h6>Hobbies</h6>
+                                        <h6>Location</h6>
                                         <p>
-                                            Indie music, skiing and hiking. I love the great outdoors.
+                                            {{request.user.user_details.location}}
                                         </p>
                                         <h6>Status</h6>
                                         <p>

@@ -3,7 +3,7 @@ from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-
+from django.core.paginator import Paginator
 
 # Create your views here.
 def sd(request):
@@ -23,7 +23,6 @@ def addpost(request):
         slug =request.POST['slug']
         category_id=request.POST.get('category')
         category =blogcategory.objects.get(id=category_id)
-        # print(category)
         post=Post(category=category, title=title, author=author, slug=slug, content=content)
         post.save()
         # return render(request, "home/addpost.html")
@@ -32,12 +31,21 @@ def addpost(request):
     return render(request, "home/addpost.html",{'key':bcat})
 def blogposts(request):
     posts = Post.objects.order_by('-timeStamp')
-    # posts = Post.objects.all()
-    return render(request, "home/blogposts.html",{'key':posts})
+    # no_posts = Post.objects.all().count()
+    paginator= Paginator(posts, 3)
+    page_number = request.GET.get('page')
+    page_obj=paginator.get_page(page_number)
+    return render(request, "home/blogposts.html",{'key':page_obj})
 def blogs(request):
     posts = Post.objects.order_by('-timeStamp')
     # posts = Post.objects.all()
-    return render(request, "home/blogs.html" ,{'key':posts})
+    paginator= Paginator(posts, 3)
+    page_number = request.GET.get('page')
+    page_obj=paginator.get_page(page_number)
+    # print(page_obj)
+    bcat = blogcategory.objects.all()
+    return render(request, "home/blogs.html",{'key':page_obj, 'cat':bcat})
+    # return render(request, "home/blogs.html" ,{'key':posts})
 def deletepost(request, id):
     # if (request.method == 'POST'):
         delpost = Post.objects.get(id=id)
@@ -74,7 +82,11 @@ def contact(request):
     return render(request, "home/contact.html")
 def inbox(request):
     mesgs = Contact.objects.order_by('-timeStamp')
-    return render(request, "home/inbox.html",{'key':mesgs})
+    paginator= Paginator(mesgs, 5)
+    page_number = request.GET.get('page')
+    page_obj=paginator.get_page(page_number)
+    return render(request, "home/inbox.html",{'key':page_obj})
+    # return render(request, "home/inbox.html",{'key':mesgs})
 def deletemsg(request, id):
         delmsg = Contact.objects.get(id=id)
         delmsg.delete()
@@ -119,10 +131,43 @@ def handelLogout(request):
     messages.success(request, "Successfully logged out")
     return redirect('home')
 def profile(request):
-    return render(request, 'home/profile.html')
+    if request.user.is_authenticated:
+        return render(request, 'home/profile.html')
+    else:
+        return HttpResponse("Login Required !!!")
 def dashboard(request):
-    return render(request, "home/dashboard.html")
+    if request.user.is_authenticated:
+        if request.user.is_superuser == True:
+            return render(request, "home/dashboard.html")
+        else:
+            return HttpResponse("Error 404 NOT Found!!!")
+    return HttpResponse("Login Required !!!")
 def editprofile(request):
-    return render(request, "home/editprofile.html")
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            fname=request.POST['fname']
+            lname=request.POST['lname']
+            email =request.POST['email']
+            location=request.POST['location']
+            about=request.POST['about']
+            if len(fname)<2 or len(lname)<1 or len(email)<5 :
+                messages.error(request, "Please fill the form correctly")
+            else:
+                User.objects.filter(id=request.user.id).update(first_name=fname,last_name=lname,email=email)
+                # user_edit=user_details.objects.filter(user__id=request.user.id)
+                # user_edit.location= location
+                # user_edit.about=about
+               
+                # print(user_edit)
+            # user_edit.last_name= lname
+            # user_edit.email= email
+            # user_edit.save()
+
+                user_details.objects.filter(user__id=request.user.id).update(about=about,location=location)
+                messages.success(request, "Your Profile has been successfully updated!!")
+            return render(request, 'home/editprofile.html')
+        return render(request, 'home/editprofile.html')
+    else:
+        return HttpResponse("Login Required !!!")
 def settings(request):
     return render(request, "home/settings.html")
