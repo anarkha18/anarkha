@@ -53,13 +53,14 @@
                     <div class="card single_post">
                         <div class="body">
                             <h3 class="mb-0 " style="display: inline-block;">
-                                <a href="#" class="tlink">{{x.title| truncatechars:25 |safe}}</a>
+                                <a href="#" class="tlink" style="text-decoration: none;">{{x.title| truncatechars:25|safe}}</a>
                             </h3>
                             <div class="mb-1 text-muted times" style="float: right; text-transform: uppercase;">
                                 {{x.timeStamp}}</div>
                             <div class="img-post my-3">
-                                <img class="d-block img-fluid" src="https://via.placeholder.com/800x280/FFB6C1/000000"
-                                    alt="First slide">
+                                <!-- <img class="d-block img-fluid" src="https://via.placeholder.com/800x280/FFB6C1/000000" -->
+                                <img class="d-block img-fluid" src="/icoder/media/{{x.picture}}" height="280"
+                                    width="800" alt="First slide">
                             </div>
                             <strong class="d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
                             <strong class="pull-right d-inline-block mb-1 text-primary mr-3">{{x.category}}</strong>

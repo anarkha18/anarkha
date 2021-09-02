@@ -1,5 +1,6 @@
-{% extends 'home/base.html' %}
+{% extends 'home/dash_base.html' %}
 {% load static %}
+{% block bpactive %} active {% endblock %} 
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/blogposts.css' %}">
 {% endblock %}
@@ -28,8 +29,8 @@
                         <a href="{% url 'addpost' %}" class="btn btn-success"><i class="material-icons">&#xE147;</i>
                             <span>Add New
                                 Post</span></a>
-                        <a href="" class="btn btn-danger"><i class="material-icons">&#xE15C;</i>
-                            <span>Delete</span></a>
+                        <!-- <a href="" class="btn btn-danger"><i class="material-icons">&#xE15C;</i>
+                            <span>Delete</span></a> -->
                     </div>
                 </div>
             </div>
@@ -44,6 +45,7 @@
                             </th> -->
                         <th style="width: 10px;">Sno:</th>
                         <th style="width: 60px;">Title</th>
+                        <th style="width: 60px;">Thumbnail</th>
                         <th style="width: 30px;">Author</th>
                         <th style="width: 30px;">Category</th>
                         <th style="width: 30px;">Time Stamp</th>
@@ -61,12 +63,14 @@
                             </td> -->
                     <td style="width: 2%;">{{x.id}}</td>
                     <td style="width: 8%;">{{x.title}}</td>
+                    <td style="width: 8%;"><img src="/icoder/media/{{x.picture}}" alt="" height="100;" width="100;">
+                    </td>
                     <td style="width: 8%;">{{x.author}}</td>
                     <td style="width: 8%;">{{x.category}}</td>
                     <td style="width: 9%;">{{x.timeStamp}}</td>
                     <td style="width: 32%;">{{x.content|safe|truncatechars:475}}</td>
                     <td style="width: 8%;">
-                        <a href="" class="view" title="View" data-toggle="tooltip"><i
+                        <a href="{% url 'blogpage' x.slug %}" class="view" title="View" data-toggle="tooltip"><i
                                 class="material-icons">&#xE417;</i></a>
                         <a href="{% url 'updatepost' x.id %}" class="edit"><i class="material-icons">&#xE254;</i></a>
                         <!-- <a href="" class="delete"><i class="material-icons" title="Delete">&#xE872;</i></a> -->
@@ -107,7 +111,7 @@
                 </tbody>
             </table>
             <div class="clearfix">
-                <div class="hint-text">Showing Page {{key.number}}  of {{key.paginator.num_pages}}</div>
+                <div class="hint-text">Showing Page {{key.number}} of {{key.paginator.num_pages}}</div>
                 <ul class="pagination">
                     {% if key.has_previous %}
                     <li class="page-item"><a href="?page={{key.previous_page_number}}"><i

@@ -78,10 +78,10 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Location</label>
-                                            <input class="form-control" id="loc"
-                                                value="{{request.user.user_details.location}}" type="text"
-                                                name="location" placeholder="Location" required>
+                                            <label>Contact Number</label>
+                                            <input class="form-control" id="phone"
+                                                value="{{request.user.userinfo.phone}}" type="text" name="phone"
+                                                placeholder="Contact Number" required>
                                         </div>
                                     </div>
                                 </div>
@@ -96,11 +96,21 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <input class="form-control" id="loc"
+                                                value="{{request.user.userinfo.location}}" type="text" name="location"
+                                                placeholder="Location" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col mb-3">
                                         <div class="form-group">
                                             <label>About</label>
                                             <textarea id="about" class="form-control" rows="5" placeholder="My Bio"
-                                                name="about">{{request.user.user_details.about}}</textarea>
+                                                name="about">{{request.user.userinfo.about}}</textarea>
                                         </div>
                                     </div>
                                 </div>

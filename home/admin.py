@@ -6,7 +6,7 @@ from .models import *
 # Register your models here.
 admin.site.register(Contact)
 admin.site.register(blogcategory)
-admin.site.register(user_details)
+admin.site.register(userinfo)
 # admin.site.register(Post)
 @admin.register(Post)
 

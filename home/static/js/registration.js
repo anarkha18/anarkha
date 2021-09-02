@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('#fninvalid').hide();
     $('#lninvalid').hide();

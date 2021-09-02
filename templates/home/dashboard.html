@@ -1,408 +1,224 @@
-{% load static %}
-<!DOCTYPE html>
-<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home</title>
-  <style>
-    .projects-dashboard {
-      background: #fff
-    }
-
-    .projects-dashboard #sidebar {
-      -webkit-transition: all .3s;
-      -moz-transition: all .3s;
-      -o-transition: all .3s;
-      transition: all .3s;
-      min-width: 230px;
-      max-width: 230px;
-      margin-left: -230px
-    }
-
-    .projects-dashboard #sidebar.active {
-      margin-left: 0
-    }
-
-    .projects-dashboard #sidebar .nav-link.collapsed {
-      position: relative
-    }
-
-    .projects-dashboard #sidebar .nav-link.collapsed:before {
-      content: "\F054";
-      position: absolute;
-      right: 6px;
-      font-family: Font Awesome\ 5 Free;
-      font-weight: 900
-    }
-  </style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-
-</head>
-
-<body>
-  <div class="projects-dashboard">
-    <nav class="navbar navbar-expand-lg navbar-success bg-light">
-      <a class="navbar-brand mr-3" href="https://megabootstrap.com"
-        title="Bootstrap 4 Dashboard layout example">Dashboard Home</a> <button id="sidebarCollapse" type="button"
-        class="btn btn-link text-blue mr-5"><i class="fa fa-bars"></i></button> <button class="navbar-toggler"
-        type="button" data-toggle="collapse" data-target="#navbarSupportedContent"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="my-2 my-lg-0 mr-auto">
-        </div>
-        <!-- <form class="form-inline my-2 my-lg-0 mr-auto">
-          <div class="form-group">
-            <input type="search" class="form-control rounded-pill pl-3" placeholder="search" />
-          </div>
-        </form> -->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Blog Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'blogs' %}">blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">About</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown">
-              <a href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                  class="rounded-circle img-thumbnail"
-                  src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" alt="" /></a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#"><i class="fa fa-user-o"></i> Profile</a> <a class="dropdown-item"
-                  href="#"><i class="fa fa-sliders"></i> Settings</a> <a class="dropdown-item" href="#"><i
-                    class="fa fa-door-open"></i> Logout</a>
-              </div>
-            </div>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> -->
-        </ul>
-      </div>
-    </nav>
-    <div class="d-flex flex-row overflow-hidden">
-      <div id="sidebar" class="active">
-        <div class="py-4 px-3">
-          <div class="media d-flex align-items-center">
-            <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg"
-              class="mr-2 rounded-circle img-thumbnail shadow-sm" alt="..." />
-            <div class="media-body">
-              <h5 class="m-0">William Turner</h5>
-              <p class="font-weight-light text-muted mb-0">IT Coordinator</p>
-            </div>
-          </div>
-        </div>
-        <ul class="nav flex-column ml-3 mb-0 pr-3">
-          <li class="nav-item">
-            <a href="#" class="nav-link active text-light bg-primary font-weight-bolder rounded-right shadow-sm"><i
-                class="fa fa-th-large mr-3">
-              </i> Dashboard</a>
-          </li>
-          <li class="nav-item mt-1">
-            <a href="#" class="nav-link rounded-right text-dark bg-white shadow-sm"><i class="fa fa-list mr-3"></i>
-              Projects</a>
-          </li>
-          <li class="nav-item mt-1">
-            <a href="#" class="nav-link rounded-right text-dark bg-white shadow-sm"><i class="fa fa-suitcase mr-3"></i>
-              Client</a>
-          </li>
-          <li class="nav-item mt-1">
-            <a href="#" class="nav-link rounded-right text-dark bg-white shadow-sm"><i class="fa fa-users-cog mr-3"></i>
-              Staff</a>
-          </li>
-        </ul>
-        <ul class="nav flex-column ml-3 mb-0 pr-3">
-          <li class="nav-item mt-1">
-            <a href="#" class="nav-link rounded-right text-dark bg-white shadow-sm collapsed" data-toggle="collapse"
-              data-target="#collapsibleNavbarSettings" aria-expanded="false"><i class="fa fa-cog mr-3"></i> Settings</a>
-            <div class="navbar-collapse collapse" id="collapsibleNavbarSettings">
-              <ul class="nav flex-column">
-                <li class="nav-item pr-3 mt-1">
-                  <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
-                      class="fa fa-globe mr-3"></i> Translations</a>
-                </li>
-                <li class="nav-item pr-3 mt-1">
-                  <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
-                      class="fa fa-money-bill mr-3"></i> Currencies</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-        <ul class="nav flex-column ml-3 mb-0 pr-3">
-          <li class="nav-item mt-1">
-            <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm collapsed"
-              data-toggle="collapse" data-target="#collapsibleNavbarAuth" aria-expanded="false"><i
-                class="fa fa-lock mr-3"></i> Auth</a>
-            <div class="navbar-collapse collapse" id="collapsibleNavbarAuth">
-              <ul class="nav flex-column">
-                <li class="nav-item pr-3 mt-1">
-                  <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
-                      class="fa fa-users mr-3"></i> Profile</a>
-                </li>
-                <li class="nav-item pr-3 mt-1">
-                  <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
-                      class="fa fa-door-open mr-3"></i> Logout</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="container-fluid pb-4">
-        <div class="row">
-          <div class="col-md-6">
+{% extends 'home/dash_base.html' %}
+{% block dashactive %} active {% endblock %}
+{% block div1 %}
+<div class="container-fluid pb-4">
+    <div class="row">
+        <div class="col-md-6">
             <div class="card rounded-lg shadow border-0 overflow-hidden my-3">
-              <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                <div>
-                  <b>Monthly targets</b> <small class="d-block text-capitalize mt-1">Card with progress bars.</small>
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <b>Monthly targets</b> <small class="d-block text-capitalize mt-1">Card with progress
+                            bars.</small>
+                    </div>
+                    <div>
+                        <span class="dropdown"><a href="#"
+                                class="btn btn-link btn-link-primary p-0 font-size-xl text-primary" title="View options"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><i class="fas fa-2x fa-ellipsis-h"></i></a></span>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <span class="dropdown"><a class="dropdown-item" href="#">Action</a> <a class="dropdown-item"
+                                    href="#">Another action</a> <a class="dropdown-item" href="#">Something else
+                                    here</a></span>
+                        </div><span class="dropdown"></span>
+                    </div>
                 </div>
-                <div>
-                  <span class="dropdown"><a href="#" class="btn btn-link btn-link-primary p-0 font-size-xl text-primary"
-                      title="View options" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false"><i class="fas fa-2x fa-ellipsis-h"></i></a></span>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <span class="dropdown"><a class="dropdown-item" href="#">Action</a> <a class="dropdown-item"
-                        href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a></span>
-                  </div><span class="dropdown"></span>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item pt-2 pb-2">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div>
+                                <div class="font-weight-bold"> Orders </div>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="font-size-xl font-weight-bold text-success"> 190 </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="43"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                        </div>
+                        <div class="mt-1 d-flex justify-content-between">
+                            <small>0</small> <small>100%</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item pt-2 pb-2">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div>
+                                <div class="font-weight-bold"> Orders </div>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="font-size-xl font-weight-bold text-success"> 348 </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                            <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="43"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 29%;"></div>
+                        </div>
+                        <div class="mt-1 d-flex justify-content-between">
+                            <small>0</small> <small>100%</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item pt-2 pb-2">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div>
+                                <div class="font-weight-bold"> Orders </div>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="font-size-xl font-weight-bold text-success"> 220 </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="43"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        </div>
+                        <div class="mt-1 d-flex justify-content-between">
+                            <small>0</small> <small>100%</small>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-footer bg-white p-4 text-center">
+                    <button class="btn btn-sm btn-second" type="button"><span class="btn-wrapper--icon"><i
+                                class="far fa-question-circle"></i></span> <span class="btn-wrapper--label">View
+                            details</span></button>
                 </div>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item pt-2 pb-2">
-                  <div class="mb-1 d-flex justify-content-between">
-                    <div>
-                      <div class="font-weight-bold"> Orders </div>
-                    </div>
-                    <div class="ml-auto">
-                      <div class="font-size-xl font-weight-bold text-success"> 190 </div>
-                    </div>
-                  </div>
-                  <div class="progress-bar-sm progress-bar-animated-alt progress">
-                    <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="43"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                  </div>
-                  <div class="mt-1 d-flex justify-content-between">
-                    <small>0</small> <small>100%</small>
-                  </div>
-                </li>
-                <li class="list-group-item pt-2 pb-2">
-                  <div class="mb-1 d-flex justify-content-between">
-                    <div>
-                      <div class="font-weight-bold"> Orders </div>
-                    </div>
-                    <div class="ml-auto">
-                      <div class="font-size-xl font-weight-bold text-success"> 348 </div>
-                    </div>
-                  </div>
-                  <div class="progress-bar-sm progress-bar-animated-alt progress">
-                    <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="43" aria-valuemin="0"
-                      aria-valuemax="100" style="width: 29%;"></div>
-                  </div>
-                  <div class="mt-1 d-flex justify-content-between">
-                    <small>0</small> <small>100%</small>
-                  </div>
-                </li>
-                <li class="list-group-item pt-2 pb-2">
-                  <div class="mb-1 d-flex justify-content-between">
-                    <div>
-                      <div class="font-weight-bold"> Orders </div>
-                    </div>
-                    <div class="ml-auto">
-                      <div class="font-size-xl font-weight-bold text-success"> 220 </div>
-                    </div>
-                  </div>
-                  <div class="progress-bar-sm progress-bar-animated-alt progress">
-                    <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="43"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                  </div>
-                  <div class="mt-1 d-flex justify-content-between">
-                    <small>0</small> <small>100%</small>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-footer bg-white p-4 text-center">
-                <button class="btn btn-sm btn-second" type="button"><span class="btn-wrapper--icon"><i
-                      class="far fa-question-circle"></i></span> <span class="btn-wrapper--label">View
-                    details</span></button>
-              </div>
             </div>
-          </div>
-          <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
             <div class="card rounded-lg shadow border-0 overflow-hidden my-3">
-              <div class="card-header bg-primary d-flex justify-content-between align-items-center">
-                <div class="text-white">
-                  <b>Monthly plan</b> <small class="d-block text-capitalize mt-1">Card with progress bars.</small>
-                </div>
-                <div>
-                  <span class="dropdown"><a href="#" class="btn btn-link p-0 font-size-xl text-white"
-                      title="View options" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false"><i class="fas fa-chevron-down"></i></a></span>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <span class="dropdown"><a class="dropdown-item" href="#">Action</a> <a class="dropdown-item"
-                        href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a></span>
-                  </div><span class="dropdown"></span>
-                </div>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item pt-2 pb-2">
-                  <div class="mb-1 d-flex justify-content-between">
+                <div class="card-header bg-primary d-flex justify-content-between align-items-center">
+                    <div class="text-white">
+                        <b>Monthly plan</b> <small class="d-block text-capitalize mt-1">Card with progress bars.</small>
+                    </div>
                     <div>
-                      <div class="font-weight-bold"> Orders </div>
+                        <span class="dropdown"><a href="#" class="btn btn-link p-0 font-size-xl text-white"
+                                title="View options" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><i class="fas fa-chevron-down"></i></a></span>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <span class="dropdown"><a class="dropdown-item" href="#">Action</a> <a class="dropdown-item"
+                                    href="#">Another action</a> <a class="dropdown-item" href="#">Something else
+                                    here</a></span>
+                        </div><span class="dropdown"></span>
                     </div>
-                    <div class="ml-auto">
-                      <div class="font-size-xl font-weight-bold text-success"> 190 </div>
-                    </div>
-                  </div>
-                  <div class="progress-bar-sm progress-bar-animated-alt progress">
-                    <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="43"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                  </div>
-                  <div class="mt-1 d-flex justify-content-between">
-                    <small>0</small> <small>100%</small>
-                  </div>
-                </li>
-                <li class="list-group-item pt-2 pb-2">
-                  <div class="mb-1 d-flex justify-content-between">
-                    <div>
-                      <div class="font-weight-bold"> Orders </div>
-                    </div>
-                    <div class="ml-auto">
-                      <div class="font-size-xl font-weight-bold text-success"> 348 </div>
-                    </div>
-                  </div>
-                  <div class="progress-bar-sm progress-bar-animated-alt progress">
-                    <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="43" aria-valuemin="0"
-                      aria-valuemax="100" style="width: 29%;"></div>
-                  </div>
-                  <div class="mt-1 d-flex justify-content-between">
-                    <small>0</small> <small>100%</small>
-                  </div>
-                </li>
-                <li class="list-group-item pt-2 pb-2">
-                  <div class="mb-1 d-flex justify-content-between">
-                    <div>
-                      <div class="font-weight-bold"> Orders </div>
-                    </div>
-                    <div class="ml-auto">
-                      <div class="font-size-xl font-weight-bold text-success"> 220 </div>
-                    </div>
-                  </div>
-                  <div class="progress-bar-sm progress-bar-animated-alt progress">
-                    <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="43"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                  </div>
-                  <div class="mt-1 d-flex justify-content-between">
-                    <small>0</small> <small>100%</small>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-footer bg-white p-4 text-center">
-                <button class="btn btn-sm btn-second" type="button"><span class="btn-wrapper--icon"><i
-                      class="far fa-question-circle"></i></span> <span class="btn-wrapper--label">View
-                    details</span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="card border-0 rounded-lg shadow overflow-hidden">
-              <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                <h5>Projects</h5>
-                <div class="dropdown dropleft">
-                  <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                      class="fa fa-ellipsis-h"></i></button>
-                  <div class="dropdown-menu">
-                    <button class="dropdown-item" type="button">Action</button> <button class="dropdown-item"
-                      type="button">Another action</button> <button class="dropdown-item" type="button">Something else
-                      here</button>
-                  </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-borderless table-hover">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Due Date</th>
-                        <th>Priority</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <label class="custom-control custom-checkbox mr-2"><input type="checkbox"
-                                class="custom-control-input" /> <span class="custom-control-label">&nbsp;</span></label>
-                            <img src="https://www.megabootstrap.com/media/40/samples/avatars/male/1.jpg"
-                              class="rounded-circle mr-4" alt="..." />
-                            <div class="d-inline-block">
-                              <h6>Elliott Powell</h6>
-                              <p class="text-muted m-b-0">Application Developer</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item pt-2 pb-2">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div>
+                                <div class="font-weight-bold"> Orders </div>
                             </div>
-                          </div>
-                        </td>
-                        <td>Feb 15, 2020</td>
-                        <td><label class="badge badge-info">Critical</label></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <label class="custom-control custom-checkbox mr-2"><input type="checkbox"
-                                class="custom-control-input" /> <span class="custom-control-label">&nbsp;</span></label>
-                            <img src="https://www.megabootstrap.com/media/40/samples/avatars/male/2.jpg"
-                              class="rounded-circle mr-4" alt="..." />
-                            <div class="d-inline-block">
-                              <h6>Michael Richardson</h6>
-                              <p class="text-muted m-b-0">Java Developer</p>
+                            <div class="ml-auto">
+                                <div class="font-size-xl font-weight-bold text-success"> 190 </div>
                             </div>
-                          </div>
-                        </td>
-                        <td>Feb 22, 2020</td>
-                        <td><label class="badge badge-warning">Low</label></td>
-                      </tr>
-                      <tr>
-                    </tbody>
-                  </table>
+                        </div>
+                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="43"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                        </div>
+                        <div class="mt-1 d-flex justify-content-between">
+                            <small>0</small> <small>100%</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item pt-2 pb-2">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div>
+                                <div class="font-weight-bold"> Orders </div>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="font-size-xl font-weight-bold text-success"> 348 </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                            <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="43"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 29%;"></div>
+                        </div>
+                        <div class="mt-1 d-flex justify-content-between">
+                            <small>0</small> <small>100%</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item pt-2 pb-2">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div>
+                                <div class="font-weight-bold"> Orders </div>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="font-size-xl font-weight-bold text-success"> 220 </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm progress-bar-animated-alt progress">
+                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="43"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        </div>
+                        <div class="mt-1 d-flex justify-content-between">
+                            <small>0</small> <small>100%</small>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-footer bg-white p-4 text-center">
+                    <button class="btn btn-sm btn-second" type="button"><span class="btn-wrapper--icon"><i
+                                class="far fa-question-circle"></i></span> <span class="btn-wrapper--label">View
+                            details</span></button>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script>
-    $(function () {
-      $('#sidebarCollapse').click(function () {
-        $('#sidebar').toggleClass('active');
-      });
-    })
-  </script>
-</body>
-
-</html>
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 rounded-lg shadow overflow-hidden">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <h5>Blogs</h5>
+                    <div class="dropdown dropleft">
+                        <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"><i class="fa fa-ellipsis-h"></i></button>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'blogs' %}">
+                                <button class="dropdown-item" type="button">Go to Blog Home</button>
+                            </a>
+                            <a href="{% url 'blogposts' %}">
+                                <button class="dropdown-item" type="button">VieW all Blog Details</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Published Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for x in key %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <label class="custom-control custom-checkbox mr-2"><input type="checkbox"
+                                                    class="custom-control-input" /> <span
+                                                    class="custom-control-label">&nbsp;</span></label>
+                                            <img src="/icoder/media/{{x.picture}}" height="60" width="60"
+                                                class="rounded-circle mr-4" alt="No-Img" />
+                                            <div class="d-inline-block">
+                                                <h6>{{x.title}}</h6>
+                                                <p class="text-muted m-b-0">{{x.category}}</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{x.author}}</td>
+                                    <td>{{x.timeStamp}}</td>
+                                    <td><label class="badge badge-info"></label>
+                                        <a href="{% url 'blogpage' x.slug %}" class="view" title="View"
+                                            data-toggle="tooltip"><i class="fa fa-eye"></i>&nbsp; View</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

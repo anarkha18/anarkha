@@ -7,6 +7,7 @@ urlpatterns = [
     path('fblogin', views.fblogin, name="fblogin"),
     path('fbhome', views.fbhome, name="fbhome"),
     path('contact', views.contact, name="contact"),
+    path('about', views.about, name="about"),
     path('blogs', views.blogs, name="blogs"),
     path('blogposts', views.blogposts, name="blogposts"),
     path('addpost', views.addpost, name="addpost"),

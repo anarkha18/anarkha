@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.core.files.storage import FileSystemStorage
+from random import random
 
 # Create your views here.
 def sd(request):
@@ -12,8 +14,14 @@ def fbhome(request):
     return render(request, "home/fbhome.html")
 def fblogin(request):
     return render(request, "home/fblogin.html")
+def about(request):
+    return render(request, "home/about.html")
 def home(request):
-    return render(request, "home/home.html")
+    posts = Post.objects.order_by('-timeStamp')
+    paginator= Paginator(posts, 4)
+    page_number = request.GET.get('page')
+    page_obj=paginator.get_page(page_number)
+    return render(request, "home/home.html",{'key':page_obj})
 def addpost(request):
     if request.method=="POST":
         # print(category)
@@ -21,9 +29,14 @@ def addpost(request):
         author=request.POST['author']
         content =request.POST['content']
         slug =request.POST['slug']
+        pic=request.FILES['pic']
+        filename = str(random())+pic.name
+        # print(filename)
+        photo=FileSystemStorage()
+        photo.save(filename, pic)
         category_id=request.POST.get('category')
         category =blogcategory.objects.get(id=category_id)
-        post=Post(category=category, title=title, author=author, slug=slug, content=content)
+        post=Post(category=category, title=title, author=author, picture=filename,slug=slug, content=content)
         post.save()
         # return render(request, "home/addpost.html")
         return render(request, "home/addpost.html",{'message': 'Your Blog has been Added'})
@@ -62,9 +75,14 @@ def updatepost(request, id):
         author=request.POST['author']
         content =request.POST['content']
         slug =request.POST['slug']
+        pic=request.FILES['pic']
+        filename = str(random())+pic.name
+        # print(filename)
+        photo=FileSystemStorage()
+        photo.save(filename, pic)
         category_id=request.POST.get('category')
         category =blogcategory.objects.get(id=category_id)
-        Post.objects.filter(id=id).update(category=category, title=title, author=author, slug=slug, content=content)
+        Post.objects.filter(id=id).update(category=category, title=title, author=author, slug=slug, content=content , picture=filename)
         return redirect('/blogposts')
     postinfo=Post.objects.get(id=id)
     bcat = blogcategory.objects.all() 
@@ -96,6 +114,7 @@ def handleSignup(request):
         fname=request.POST['fname']
         lname=request.POST['lname']
         username =request.POST['username']
+        phone =request.POST['phone']
         email =request.POST['email']
         password =request.POST['password']
         cpassword =request.POST['c_password']
@@ -104,6 +123,8 @@ def handleSignup(request):
         myuser = User.objects.create_user(username=username, email=email, password=password, first_name=fname)
         myuser.last_name=lname
         myuser.save()
+
+        info=userinfo.objects.create(user=myuser,phone=phone)
         messages.success(request, "Your Account has been successfully created")
         return render(request, 'home/home.html')
 
@@ -138,7 +159,8 @@ def profile(request):
 def dashboard(request):
     if request.user.is_authenticated:
         if request.user.is_superuser == True:
-            return render(request, "home/dashboard.html")
+            posts = Post.objects.order_by('-timeStamp')
+            return render(request, "home/dashboard.html",{'key':posts})
         else:
             return HttpResponse("Error 404 NOT Found!!!")
     return HttpResponse("Login Required !!!")
@@ -148,22 +170,14 @@ def editprofile(request):
             fname=request.POST['fname']
             lname=request.POST['lname']
             email =request.POST['email']
+            phone=request.POST['phone']
             location=request.POST['location']
             about=request.POST['about']
-            if len(fname)<2 or len(lname)<1 or len(email)<5 :
+            if len(fname)<2 or len(lname)<1 or len(email)<5 or len(phone)<5:
                 messages.error(request, "Please fill the form correctly")
             else:
                 User.objects.filter(id=request.user.id).update(first_name=fname,last_name=lname,email=email)
-                # user_edit=user_details.objects.filter(user__id=request.user.id)
-                # user_edit.location= location
-                # user_edit.about=about
-               
-                # print(user_edit)
-            # user_edit.last_name= lname
-            # user_edit.email= email
-            # user_edit.save()
-
-                user_details.objects.filter(user__id=request.user.id).update(about=about,location=location)
+                userinfo.objects.filter(user__id=request.user.id).update(about=about,location=location,phone=phone)
                 messages.success(request, "Your Profile has been successfully updated!!")
             return render(request, 'home/editprofile.html')
         return render(request, 'home/editprofile.html')

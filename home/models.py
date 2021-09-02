@@ -26,13 +26,15 @@ class Post(models.Model):
     slug=models.CharField(max_length=130)
     timeStamp=models.DateTimeField(auto_now_add=True)
     content=models.TextField()
+    picture= models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.title + " by " + self.author
 
 
-class user_details(models.Model):
-    user=models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+class userinfo(models.Model):
+    user=models.OneToOneField(User, on_delete=models.CASCADE)
+    phone=models.IntegerField()
     about=models.TextField(max_length=200, blank=True)
     location=models.CharField(max_length=200, blank=True)
 
