@@ -1,0 +1,4003 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add mytable",
+        "content_type": [
+            "home",
+            "mytable"
+        ],
+        "codename": "add_mytable"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change mytable",
+        "content_type": [
+            "home",
+            "mytable"
+        ],
+        "codename": "change_mytable"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete mytable",
+        "content_type": [
+            "home",
+            "mytable"
+        ],
+        "codename": "delete_mytable"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view mytable",
+        "content_type": [
+            "home",
+            "mytable"
+        ],
+        "codename": "view_mytable"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "home",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "home",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "home",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "home",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add contactus",
+        "content_type": [
+            "home",
+            "contactus"
+        ],
+        "codename": "add_contactus"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change contactus",
+        "content_type": [
+            "home",
+            "contactus"
+        ],
+        "codename": "change_contactus"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete contactus",
+        "content_type": [
+            "home",
+            "contactus"
+        ],
+        "codename": "delete_contactus"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view contactus",
+        "content_type": [
+            "home",
+            "contactus"
+        ],
+        "codename": "view_contactus"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add fbuser",
+        "content_type": [
+            "home",
+            "fbuser"
+        ],
+        "codename": "add_fbuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change fbuser",
+        "content_type": [
+            "home",
+            "fbuser"
+        ],
+        "codename": "change_fbuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete fbuser",
+        "content_type": [
+            "home",
+            "fbuser"
+        ],
+        "codename": "delete_fbuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view fbuser",
+        "content_type": [
+            "home",
+            "fbuser"
+        ],
+        "codename": "view_fbuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add user login",
+        "content_type": [
+            "home",
+            "userlogin"
+        ],
+        "codename": "add_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change user login",
+        "content_type": [
+            "home",
+            "userlogin"
+        ],
+        "codename": "change_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete user login",
+        "content_type": [
+            "home",
+            "userlogin"
+        ],
+        "codename": "delete_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view user login",
+        "content_type": [
+            "home",
+            "userlogin"
+        ],
+        "codename": "view_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add user reg",
+        "content_type": [
+            "home",
+            "userreg"
+        ],
+        "codename": "add_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change user reg",
+        "content_type": [
+            "home",
+            "userreg"
+        ],
+        "codename": "change_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete user reg",
+        "content_type": [
+            "home",
+            "userreg"
+        ],
+        "codename": "delete_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view user reg",
+        "content_type": [
+            "home",
+            "userreg"
+        ],
+        "codename": "view_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add registration",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "add_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change registration",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "change_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete registration",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "delete_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view registration",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "view_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add contact",
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "codename": "add_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change contact",
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "codename": "change_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete contact",
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "codename": "delete_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view contact",
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "codename": "view_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add post",
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "codename": "add_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change post",
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "codename": "change_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete post",
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "codename": "delete_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view post",
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "codename": "view_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add messages",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "add_messages"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change messages",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "change_messages"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete messages",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "delete_messages"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view messages",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "view_messages"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add message",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "add_message"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change message",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "change_message"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete message",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "delete_message"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view message",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "view_message"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+        "name": "Can add datas",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "add_datas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+        "name": "Can change datas",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "change_datas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+        "name": "Can delete datas",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "delete_datas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+        "name": "Can view datas",
+        "content_type": [
+            "home",
+            "datas"
+        ],
+        "codename": "view_datas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+        "name": "Can add mesg",
+        "content_type": [
+            "home",
+            "mesg"
+        ],
+        "codename": "add_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+        "name": "Can change mesg",
+        "content_type": [
+            "home",
+            "mesg"
+        ],
+        "codename": "change_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+        "name": "Can delete mesg",
+        "content_type": [
+            "home",
+            "mesg"
+        ],
+        "codename": "delete_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+        "name": "Can view mesg",
+        "content_type": [
+            "home",
+            "mesg"
+        ],
+        "codename": "view_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+        "name": "Can add reg",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "add_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+        "name": "Can change reg",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "change_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can delete reg",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "delete_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can view reg",
+        "content_type": [
+            "home",
+            "reg"
+        ],
+        "codename": "view_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+        "name": "Can add mesg",
+        "content_type": [
+            "icoder",
+            "mesg"
+        ],
+        "codename": "add_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+        "name": "Can change mesg",
+        "content_type": [
+            "icoder",
+            "mesg"
+        ],
+        "codename": "change_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+        "name": "Can delete mesg",
+        "content_type": [
+            "icoder",
+            "mesg"
+        ],
+        "codename": "delete_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+        "name": "Can view mesg",
+        "content_type": [
+            "icoder",
+            "mesg"
+        ],
+        "codename": "view_mesg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+        "name": "Can add reg",
+        "content_type": [
+            "icoder",
+            "reg"
+        ],
+        "codename": "add_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+        "name": "Can change reg",
+        "content_type": [
+            "icoder",
+            "reg"
+        ],
+        "codename": "change_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+        "name": "Can delete reg",
+        "content_type": [
+            "icoder",
+            "reg"
+        ],
+        "codename": "delete_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+        "name": "Can view reg",
+        "content_type": [
+            "icoder",
+            "reg"
+        ],
+        "codename": "view_reg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "icoder",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "icoder",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "icoder",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "icoder",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+        "name": "Can add user login",
+        "content_type": [
+            "icoder",
+            "userlogin"
+        ],
+        "codename": "add_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+        "name": "Can change user login",
+        "content_type": [
+            "icoder",
+            "userlogin"
+        ],
+        "codename": "change_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+        "name": "Can delete user login",
+        "content_type": [
+            "icoder",
+            "userlogin"
+        ],
+        "codename": "delete_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+        "name": "Can view user login",
+        "content_type": [
+            "icoder",
+            "userlogin"
+        ],
+        "codename": "view_userlogin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 97,
+    "fields": {
+        "name": "Can add user reg",
+        "content_type": [
+            "icoder",
+            "userreg"
+        ],
+        "codename": "add_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 98,
+    "fields": {
+        "name": "Can change user reg",
+        "content_type": [
+            "icoder",
+            "userreg"
+        ],
+        "codename": "change_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 99,
+    "fields": {
+        "name": "Can delete user reg",
+        "content_type": [
+            "icoder",
+            "userreg"
+        ],
+        "codename": "delete_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 100,
+    "fields": {
+        "name": "Can view user reg",
+        "content_type": [
+            "icoder",
+            "userreg"
+        ],
+        "codename": "view_userreg"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 101,
+    "fields": {
+        "name": "Can add page",
+        "content_type": [
+            "home",
+            "page"
+        ],
+        "codename": "add_page"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 102,
+    "fields": {
+        "name": "Can change page",
+        "content_type": [
+            "home",
+            "page"
+        ],
+        "codename": "change_page"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 103,
+    "fields": {
+        "name": "Can delete page",
+        "content_type": [
+            "home",
+            "page"
+        ],
+        "codename": "delete_page"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 104,
+    "fields": {
+        "name": "Can view page",
+        "content_type": [
+            "home",
+            "page"
+        ],
+        "codename": "view_page"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 105,
+    "fields": {
+        "name": "Can add upload",
+        "content_type": [
+            "icoder",
+            "upload"
+        ],
+        "codename": "add_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 106,
+    "fields": {
+        "name": "Can change upload",
+        "content_type": [
+            "icoder",
+            "upload"
+        ],
+        "codename": "change_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 107,
+    "fields": {
+        "name": "Can delete upload",
+        "content_type": [
+            "icoder",
+            "upload"
+        ],
+        "codename": "delete_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 108,
+    "fields": {
+        "name": "Can view upload",
+        "content_type": [
+            "icoder",
+            "upload"
+        ],
+        "codename": "view_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 109,
+    "fields": {
+        "name": "Can add student",
+        "content_type": [
+            "icoder",
+            "student"
+        ],
+        "codename": "add_student"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 110,
+    "fields": {
+        "name": "Can change student",
+        "content_type": [
+            "icoder",
+            "student"
+        ],
+        "codename": "change_student"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 111,
+    "fields": {
+        "name": "Can delete student",
+        "content_type": [
+            "icoder",
+            "student"
+        ],
+        "codename": "delete_student"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 112,
+    "fields": {
+        "name": "Can view student",
+        "content_type": [
+            "icoder",
+            "student"
+        ],
+        "codename": "view_student"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 113,
+    "fields": {
+        "name": "Can add uhj",
+        "content_type": [
+            "home",
+            "uhj"
+        ],
+        "codename": "add_uhj"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 114,
+    "fields": {
+        "name": "Can change uhj",
+        "content_type": [
+            "home",
+            "uhj"
+        ],
+        "codename": "change_uhj"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 115,
+    "fields": {
+        "name": "Can delete uhj",
+        "content_type": [
+            "home",
+            "uhj"
+        ],
+        "codename": "delete_uhj"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 116,
+    "fields": {
+        "name": "Can view uhj",
+        "content_type": [
+            "home",
+            "uhj"
+        ],
+        "codename": "view_uhj"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 117,
+    "fields": {
+        "name": "Can add upload",
+        "content_type": [
+            "home",
+            "upload"
+        ],
+        "codename": "add_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 118,
+    "fields": {
+        "name": "Can change upload",
+        "content_type": [
+            "home",
+            "upload"
+        ],
+        "codename": "change_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 119,
+    "fields": {
+        "name": "Can delete upload",
+        "content_type": [
+            "home",
+            "upload"
+        ],
+        "codename": "delete_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 120,
+    "fields": {
+        "name": "Can view upload",
+        "content_type": [
+            "home",
+            "upload"
+        ],
+        "codename": "view_upload"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 121,
+    "fields": {
+        "name": "Can add blogcategory",
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "codename": "add_blogcategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 122,
+    "fields": {
+        "name": "Can change blogcategory",
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "codename": "change_blogcategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 123,
+    "fields": {
+        "name": "Can delete blogcategory",
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "codename": "delete_blogcategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 124,
+    "fields": {
+        "name": "Can view blogcategory",
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "codename": "view_blogcategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 125,
+    "fields": {
+        "name": "Can add profile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 126,
+    "fields": {
+        "name": "Can change profile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 127,
+    "fields": {
+        "name": "Can delete profile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 128,
+    "fields": {
+        "name": "Can view profile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 129,
+    "fields": {
+        "name": "Can add userprofile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "add_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 130,
+    "fields": {
+        "name": "Can change userprofile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "change_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 131,
+    "fields": {
+        "name": "Can delete userprofile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "delete_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 132,
+    "fields": {
+        "name": "Can view userprofile",
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "codename": "view_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 133,
+    "fields": {
+        "name": "Can add user_details",
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "codename": "add_user_details"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 134,
+    "fields": {
+        "name": "Can change user_details",
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "codename": "change_user_details"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 135,
+    "fields": {
+        "name": "Can delete user_details",
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "codename": "delete_user_details"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 136,
+    "fields": {
+        "name": "Can view user_details",
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "codename": "view_user_details"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 137,
+    "fields": {
+        "name": "Can add userinfo",
+        "content_type": [
+            "home",
+            "userinfo"
+        ],
+        "codename": "add_userinfo"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 138,
+    "fields": {
+        "name": "Can change userinfo",
+        "content_type": [
+            "home",
+            "userinfo"
+        ],
+        "codename": "change_userinfo"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 139,
+    "fields": {
+        "name": "Can delete userinfo",
+        "content_type": [
+            "home",
+            "userinfo"
+        ],
+        "codename": "delete_userinfo"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 140,
+    "fields": {
+        "name": "Can view userinfo",
+        "content_type": [
+            "home",
+            "userinfo"
+        ],
+        "codename": "view_userinfo"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$tBHQvfWeac8D$ZjNn/dcEzGmNHLJzHiGhhJ8Hp/1AMLQYnz1dQ+qedNU=",
+        "last_login": "2021-09-05T12:31:01.846Z",
+        "is_superuser": true,
+        "username": "anargha",
+        "first_name": "Anargha",
+        "last_name": "M",
+        "email": "anarghasanon04@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-06-16T13:09:09Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 42,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$Sb7dPW8NuVAf$Xukuxs5MQCYSIqScleQSLwTy7e6kVmOr+iA9B6PtfhM=",
+        "last_login": "2021-09-01T11:58:20.950Z",
+        "is_superuser": false,
+        "username": "harry@123",
+        "first_name": "harry",
+        "last_name": "harris",
+        "email": "harry@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-08-06T07:22:59.397Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 44,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$ZcWCvn38a9Cr$ozwDLZwC5UCXujBiIofDmYlox2EJuMn4gB9wUvMbX5U=",
+        "last_login": "2021-09-05T12:51:30.675Z",
+        "is_superuser": false,
+        "username": "james@123",
+        "first_name": "James",
+        "last_name": "Cole",
+        "email": "jamescole@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-09-02T07:40:42.113Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "3zgihz9h2ng7iwgr697sq6jo93qmlw0b",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHlFcCle7-BDDODVA0kpV0Z_12bdKHbe865L5FgW2vaBi9pJnEWSpx-twz44LYDukO7dYm9rcuc5a7Igw557cTPy-H-HVQY9VtnIiTQhlxwqgTtyE3O5sI6-sgcnS2UjUWyUYFR6LFgJA1lUtoUH8T7AwXLOJo:1mL6v1:usME2WFxTes0yLlH-Mi9kkz8DbtBOd2c5CdZbaUak6Q",
+        "expire_date": "2021-09-14T16:47:27.291Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "c2qnozwts8kzq2mi0x42h07d61s59c8u",
+    "fields": {
+        "session_data": ".eJxVjEsOwiAUAO_C2hAe39al-56BPHggVQNJaVfGuxuSLnQ7M5k383jsxR89bX4ldmUA7PILA8ZnqsPQA-u98djqvq2Bj4SftvOlUXrdzvZvULCX8ZWEk5tJaJ3ELKRy0eZJyAhgQAaTyCUgsspkLYOLGJxVoJSO2QorMvt8Aeg_N14:1m3ajI:ZrlmuTzFmF6f1yn97VD3VJY5kNa1hELf3xL-ZdLu-SQ",
+        "expire_date": "2021-07-28T08:58:56.441Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "dqs36o13wfppfnbw1e71shcwbcjyipvd",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQRO9CHSHzEyZl-pzBWnaX4HxAMnYV5e7BkoukG828eW8xwbbmaWu8TDOJs1Di9NtFwAeXfaA7lFuVWMu6zFHuiDzWJq-V-Hk52D9Bhpb7OxIhgTbkRqfSqB25wdmYWAcfmIOziaKxSDYoMAo9JgykIQ1Km-THLi3w4m5qtQfx-QJ4Lz1H:1m1uDO:bhHCRWBXcsabh4JLBUu2sWCtzfwWjH0x0cqjhOKaq0g",
+        "expire_date": "2021-07-23T17:23:02.504Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "fikv0hqakmc78ws2pvagxvfhgkpd3cdg",
+    "fields": {
+        "session_data": ".eJxVjEkOAiEUBe_C2hBAJl269wyEPyCtBpIeVsa7K0kvdPuq6r1Eytta07bwnCYSZ2GtOPyOkPHBbRC653brEntb5wnkUOROF3ntxM_L7v4d1LzUUdtAzmRjFZK22gYEReakvFaM7gsLBQCvuUBEwwpiIB2LM9HTUYER7w8JCzgj:1mMrcQ:JzueWuSxpWBi_6iHhHAbprUMqNRCJqvkphKp4WeeLGQ",
+        "expire_date": "2021-09-19T12:51:30.698Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "jdisrn5v58nzbof02h50fcevhs6zhdfn",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHlFcCle7-BDDODVA0kpV0Z_12bdKHbe865L5FgW2vaBi9pJnEWSpx-twz44LYDukO7dYm9rcuc5a7Igw557cTPy-H-HVQY9VtnIiTQhlxwqgTtyE3O5sI6-sgcnS2UjUWyUYFR6LFgJA1lUtoUH8T7AwXLOJo:1ltVJX:XsEm6pOln2Egqpiz2p9rXU2cvnuHhWZ1na9bHmPGBRk",
+        "expire_date": "2021-06-30T13:10:39.401Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "lo7ig04avsh7yvcv2t57sped4tr1cect",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHlFcCle7-BDDODVA0kpV0Z_12bdKHbe865L5FgW2vaBi9pJnEWSpx-twz44LYDukO7dYm9rcuc5a7Igw557cTPy-H-HVQY9VtnIiTQhlxwqgTtyE3O5sI6-sgcnS2UjUWyUYFR6LFgJA1lUtoUH8T7AwXLOJo:1luXnz:LlyCGa4VuOOUA5ADAN1zoG8soP707mCBHgkOh1BwGk0",
+        "expire_date": "2021-07-03T10:02:23.581Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "m1jsxary0sif3168izg726m6clcmd48q",
+    "fields": {
+        "session_data": ".eJxVjjsKwzAQRO-iOgjrh6yU6XMGs9pdyU6MBf5UJnePBC6Sdt7MY04xwLGPw7HxOkwk7kKJ228WAd-8NEAvWHKRWJZ9naJsFXnRTT4L8fy4un-CEbaxriMREmhDrncq9dqR65yNiXXwgTk4mygai2SDAqPQY8JAGlKntEm-r9Kmm0vOXN_ozxd-XD2n:1m2u7y:5LYxFzlr8T5sVRuhAnnvNCT4HCe45YT3pjOQgcg1V0M",
+        "expire_date": "2021-07-26T11:29:34.339Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "shydbx5mssufmz919z3onc3m9u648ccf",
+    "fields": {
+        "session_data": ".eJxVjE0OwiAYBe_C2hBoQYpL9z0D-f6QqqFJaVfGu2uTLnT7Zua9VIJtLWlrsqSJ1UW5Xp1-RwR6SN0J36HeZk1zXZcJ9a7ogzY9zizP6-H-HRRo5VsHjjkikbDlwWZyzgYvkcUSefAgFDifAQZjeqIuCBsjDsHZnDtkVO8PTMw6CA:1mLSAe:qSsRdd35k4QWC4aWmorSJhZs4HkbvzcSsr8AIqeAYyY",
+        "expire_date": "2021-09-15T15:29:00.014Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ugvj6vmkv1e58qhywamv9150v3is8a0x",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHlFcCle7-BDDODVA0kpV0Z_12bdKHbe865L5FgW2vaBi9pJnEWSpx-twz44LYDukO7dYm9rcuc5a7Igw557cTPy-H-HVQY9VtnIiTQhlxwqgTtyE3O5sI6-sgcnS2UjUWyUYFR6LFgJA1lUtoUH8T7AwXLOJo:1m55oo:_WBRpiXlve9-XaKzmzxZ03mntDneav_YVJKzYxcahxc",
+        "expire_date": "2021-08-01T12:22:50.212Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "uiup3z5s9bidz0apd43lb8pnvrjumky0",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHlFcCle7-BDDODVA0kpV0Z_12bdKHbe865L5FgW2vaBi9pJnEWSpx-twz44LYDukO7dYm9rcuc5a7Igw557cTPy-H-HVQY9VtnIiTQhlxwqgTtyE3O5sI6-sgcnS2UjUWyUYFR6LFgJA1lUtoUH8T7AwXLOJo:1mHnd1:0lfgWDIMBVhPht-CGOGNbu9Izh6oiHAiuB4ZU_5VAKo",
+        "expire_date": "2021-09-05T13:35:11.966Z"
+    }
+},
+{
+    "model": "home.contact",
+    "pk": 1,
+    "fields": {
+        "name": "Ammu",
+        "email": "ammu@ammu.com",
+        "content": "You are Awesome...!!!!!!",
+        "timeStamp": "2021-07-04T12:47:35.347Z"
+    }
+},
+{
+    "model": "home.contact",
+    "pk": 2,
+    "fields": {
+        "name": "harry",
+        "email": "harry@gmail.com",
+        "content": "This is awesome..............!!!!!!!!!!!!!!!!!!!!1",
+        "timeStamp": "2021-07-04T16:04:57.289Z"
+    }
+},
+{
+    "model": "home.contact",
+    "pk": 3,
+    "fields": {
+        "name": "Peter Jacob",
+        "email": "Peter@jac.com",
+        "content": "hello, This is Peter",
+        "timeStamp": "2021-07-04T16:05:37.153Z"
+    }
+},
+{
+    "model": "home.contact",
+    "pk": 23,
+    "fields": {
+        "name": "ammmu amu",
+        "email": "awe@12",
+        "content": "111111111111111111111111111",
+        "timeStamp": "2021-07-09T13:07:19.516Z"
+    }
+},
+{
+    "model": "home.contact",
+    "pk": 44,
+    "fields": {
+        "name": "harry",
+        "email": "harry@gmail.com",
+        "content": "this is a dummy message",
+        "timeStamp": "2021-08-26T08:42:42.067Z"
+    }
+},
+{
+    "model": "home.blogcategory",
+    "pk": 1,
+    "fields": {
+        "name": "General"
+    }
+},
+{
+    "model": "home.blogcategory",
+    "pk": 2,
+    "fields": {
+        "name": "IT"
+    }
+},
+{
+    "model": "home.blogcategory",
+    "pk": 3,
+    "fields": {
+        "name": "Sports"
+    }
+},
+{
+    "model": "home.blogcategory",
+    "pk": 4,
+    "fields": {
+        "name": "TV/Web Series"
+    }
+},
+{
+    "model": "home.blogcategory",
+    "pk": 5,
+    "fields": {
+        "name": "Movies"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 63,
+    "fields": {
+        "category": 5,
+        "title": "The Red Forest",
+        "author": "Harry",
+        "slug": "recap3",
+        "timeStamp": "2021-07-04T15:05:59.996Z",
+        "content": "<p>Cole learns that in the alternate 2043's history, Cassie was killed in 2015, causing drastic changes to the timeline: the plague emerged earlier and was linked to an event called Operation Troy. Cole convinces the leader of the West VII&mdash;who, in this timeline, is Ramse,to let Jones send him back in time so he can prevent Cassie's death. After being shot in an argument, the dying Jones sends Cole back to 2015, telling him to ask his version of Jones about \"sacrifice.\" In 2015, Cole kidnaps Aaron Marker and forces him to help him rescue Cassie. The Pallid Man drugs Cassie with a hallucinogen, and an unnamed female member of the Army guides her through the hallucinations, saying that she is taking Cassie to meet \"the Witness.\" Cole and Aaron track down and free Cassie, and Cole splinters in front of Aaron. Aaron apologizes to Cassie for not believing her, and they resolve to investigate Operation Troy. Back in 2043, Cole finds his timeline has been restored. He asks Jones about the alternate Jones's last words, and Jones admits that traveling through time is slowly destroying his body and will eventually kill him.</p>",
+        "picture": "0.2015912711390766jms.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 64,
+    "fields": {
+        "category": 5,
+        "title": "The Keys  Yesterday",
+        "author": "Harsha Kp",
+        "slug": "recap4",
+        "timeStamp": "2021-07-04T15:06:46.528Z",
+        "content": "<p>Cassie and Marker investigate Operation Troy and the artefact fragments Cole found, and deduce that Markridge Group's M5-10 is being used to kill CIA-leaker Adam Wexler in Chechnya. Cole splinters away and hours later calls Cassie from Chechnya, explaining that information she and Marker will give him one week in the future allowed him to take possession of the virus before the Army of the 12 Monkeys. However, mercenaries capture Cole and Wexler opens the case, exposing them all to the virus. As the mercenaries begin dying, they offer to trade Wexler for medical aid and Cole convinces Wexler to open fire on the mercenaries. Before dying, Wexler tells Cole that the Army of the 12 Monkeys were involved in a 1987 yakuza war in Tokyo. Cole calls Cassie, allowing the CIA to trace his location to burn the virus with Predator drones, and begs her not to tell him of his fate when they meet in a week. Marker threatens the CIA with exposure to gain his and Cassie's release, and Cassie follows-through with Cole's wishes to not let him know he's going to his death.!</p>",
+        "picture": "0.4536566150671388412mk.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 65,
+    "fields": {
+        "category": 5,
+        "title": "Divine Move",
+        "author": "spidy",
+        "slug": "recap5",
+        "timeStamp": "2021-07-04T15:07:25.452Z",
+        "content": "<p>In 2043, Jones orders her team to seize Spearhead's energy core. She kills Foster, and her group captures the core and reenergizes the time machine, but at the cost of many lives, including Whitley's father. Ramse takes Sam and Elena to safety; the latter claims Foster had a cure for the virus and suggests Jones is lying. Jones is seen destroying a page from Foster's research showing that the 2040 virus was cured. Flashbacks to 2041 reveal how Cole and Ramse met Jones, and how Ramse coerced Cole into joining Project Splinter. In 2017, Cole is brought to the CDC to see a dying Cassie. She tells him that a lot happened between them after 2015, and gives him an important address before dying. Jennifer appears, preaching to a group of refugees about \"daughters\" and an \"army.\" As Cole splinters away, the scratch he made on Cassie's watch in 2013 disappears. Back in 2043, he argues with Ramse, who says Jones lied about Foster's cure, and wants to end Project Splinter to ensure his family is not erased from the timeline. Cole retorts that the project is the only way to stop the virus and save Cassie, and the two come to blows.</p>",
+        "picture": "0.8032791451384446dec.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 66,
+    "fields": {
+        "category": 5,
+        "title": "Year of the Monkey",
+        "author": "Harry",
+        "slug": "recap6",
+        "timeStamp": "2021-07-04T15:07:58.386Z",
+        "content": "<p>In 2015, Cole and Cassie interrogate Aaron about the Army; after attempting to flee, Aaron is caught in a fire and apparently killed. Acting on information gained from Jennifer, Cole and Cassie break into Raritan National Laboratories, which houses the operational time machine, and come face-to-face with Ramse, who plans to return to 2043. It is revealed that Ramse is not the Witness, and both Cassie and Ramse are shot. Cole uses the machine to send Cassie to 2043, in the hope that Jones will be able to save her, and helps the less-gravely wounded Ramse escape. Olivia readies 12 mysterious newborn infants for the Army's plans, which will come to fruition in 28 years. Jennifer embarks on a plane trip, apparently to spread the plague virus around the world. In 2043, Deacon and the group of 12 he is guiding storm the temporal facility and attempt to seize the time machine. By threatening to blow it up, Jones negotiates the release of her subordinates and then turns the machine over to the group of 12, just as the injured Cassie arrives from 2015.</p>",
+        "picture": "0.1638742289644623512mk.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 81,
+    "fields": {
+        "category": 5,
+        "title": "One Hundred Years",
+        "author": "Harry",
+        "slug": "12monkeys-e3",
+        "timeStamp": "2021-08-28T14:57:34.990Z",
+        "content": "<p>Cole and Cassie travel to 1944 to stop two of the Messengers from murdering a scientist, Thomas Crawford. They are unable to prevent Crawford's death, but deduce that the Messengers' real target is his son Tommy Jr., who, like Jennifer, is a \"Primary\" with a special connection to time. They manage to get to Tommy first; he addresses both of them by name and says he is fated to be killed by the Messengers. One of the Messengers takes Cole hostage and tortures him, forcing Cassie to surrender Tommy. The Messenger kills Tommy in a ceremonial ritual using bone taken from his remains in the future, triggering an explosive temporal paradox that renders her, Cole, and Cassie unconscious and strands the latter two in 1944. In 2044, Jones allows Deacon to do as he wishes with Ramse. Just as he is about to kill Ramse, a massive temporal anomaly erupts, and Ramse runs to escape it, dragging Deacon along with him.</p>",
+        "picture": "0.562529244145773912mk.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 83,
+    "fields": {
+        "category": 5,
+        "title": "A Blog With Django",
+        "author": "Harsha Kp",
+        "slug": "django-tuts",
+        "timeStamp": "2021-08-31T18:50:20.157Z",
+        "content": "<p>In this tutorial, we&rsquo;ll build a Blog application with Django that allows users to create, edit, and delete posts. The homepage will list all blog posts, and there will be a dedicated detail page for each individual post. Django is capable of making more advanced stuff but making a blog is an excellent first step to get a good grasp over the framework. The purpose of this chapter is to get a general idea about the working of Django.</p>\r\n<p>Here is a sneak peek of what we are going to make</p>\r\n<p>Before kicking off, I hope you already have a brief idea about the framework we are going to use for this project if not then read the following article:&nbsp;<a href=\"https://djangocentral.com/django-introduction/\" rel=\"noopener noreferrer\">Django &ndash; Web Framework For Perfectionists</a>.</p>\r\n<h2>Pre-Requirements</h2>\r\n<p>Django is an open-source web framework, written in Python, that follows the model-view-template architectural pattern. So Python is needed to be installed in your machine. Unfortunately, there was a significant update to Python several years ago that created a big split between Python versions namely Python 2 the legacy version and Python 3 the version in active development.</p>\r\n<p>Since Python 3 is the current version in active development and addressed as the future of Python, Django rolled out a significant update, and now all the releases after Django 2.0 are only compatible with Python 3.x. Therefore this tutorial is&nbsp;<strong>strictly for Python 3.x</strong>. Make sure you have Python 3 installed on your machine if not follow the below guides.</p>\r\n<h3>Windows Users</h3>\r\n<ul>\r\n<li><a href=\"https://djangocentral.com/how-to-install-python-on-windows/\" rel=\"noopener noreferrer\">How To Install Python On Windows</a></li>\r\n</ul>\r\n<h2>Mac And Unix Users</h2>\r\n<ul>\r\n<li><a href=\"https://djangocentral.com/how-to-install-python-3-and-set-up-a-local-programming-environment-on-mac-os/\" rel=\"noopener noreferrer\">How To Install Python 3 on Mac OS</a></li>\r\n</ul>\r\n<h2>Creating And Activating A Virtual Environment</h2>\r\n<p>While building python projects, it&rsquo;s a good practice to work in virtual environments to keep your project, and it&rsquo;s dependency isolated on your machine. There is an entire article on the importance of virtual environments Check it out here:&nbsp;<a href=\"https://djangocentral.com/how-to-a-create-virtual-environment-for-python/\" rel=\"noopener noreferrer\">How To A Create Virtual Environment for Python</a></p>\r\n<p>&nbsp;</p>",
+        "picture": "0.8644081465267196cr4.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 88,
+    "fields": {
+        "category": 5,
+        "title": "Django Tutorial",
+        "author": "harsha",
+        "slug": "django-tuts",
+        "timeStamp": "2021-09-01T05:52:40.504Z",
+        "content": "<p>Django web applications access and manage data through Python objects referred to as models. Models define the&nbsp;<em>structure</em>&nbsp;of stored data, including the field&nbsp;<em>types</em>&nbsp;and possibly also their maximum size, default values, selection list options, help text for documentation, label text for forms, etc. The definition of the model is independent of the underlying database &mdash; you can choose one of several as part of your project settings. Once you've chosen what database you want to use, you don't need to talk to it directly at all &mdash; you just write your model structure and other code, and Django handles all the dirty work of communicating with the database for you.</p>\r\n<p>This tutorial shows how to define and access the models for the&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website\">LocalLibrary website</a>&nbsp;example.</p>\r\n<h2 id=\"designing_the_locallibrary_models\"><a title=\"Permalink to Designing the LocalLibrary models\" href=\"https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models#designing_the_locallibrary_models\">Designing the LocalLibrary models</a></h2>\r\n<div>\r\n<p>Before you jump in and start coding the models, it's worth taking a few minutes to think about what data we need to store and the relationships between the different objects.</p>\r\n<p>We know that we need to store information about books (title, summary, author, written language, category, ISBN) and that we might have multiple copies available (with globally unique id, availability status, etc.). We might need to store more information about the author than just their name, and there might be multiple authors with the same or similar names. We want to be able to sort information based on book title, author, written language, and category.</p>\r\n<p>When designing your models it makes sense to have separate models for every \"object\" (a group of related information). In this case, the obvious objects are books, book instances, and authors.</p>\r\n<p>You might also want to use models to represent selection-list options (e.g. like a drop down list of choices), rather than hard coding the choices into the website itself &mdash; this is recommended when all the options aren't known up front or may change. Obvious candidates for models, in this case, include the book genre (e.g. Science Fiction, French Poetry, etc.) and language (English, French, Japanese).</p>\r\n<p>Once we've decided on our models and field, we need to think about the relationships. Django allows you to define relationships that are one to one (<code>OneToOneField</code>), one to many (<code>ForeignKey)</code></p>\r\n</div>",
+        "picture": "0.675452304946367cr1.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 89,
+    "fields": {
+        "category": 5,
+        "title": "EnglandÆs win at Leeds",
+        "author": "spidy",
+        "slug": "cricket-cric",
+        "timeStamp": "2021-09-01T05:57:26.256Z",
+        "content": "<p>To coin a phrase, a week is a long time in cricket. Just tell that to Joe Root. As he did the obligatory post-match media duties on the Headingley outfield on Saturday, with his bowlers having just reduced India from 215-2 to 278 all out, Root probably wondered if events at Lords had taken place in an alternate universe.</p>\r\n<p>To coin a phrase, a week is a long time in cricket. Just tell that to Joe Root. As he did the obligatory post-match media duties on the Headingley outfield on Saturday, with his bowlers having just reduced India from 215-2 to 278 all out, Root probably wondered if events at Lords had taken place in an alternate universe.</p>\r\n<p><a class=\"typology-featured-image\" href=\"https://www.thefulltoss.com/england-cricket-blog/temporary-relief-or-signs-of-redemption-englands-win-at-leeds/\">&lt;img class=\"attachment-typology-a size-typology-a wp-post-image\" src=\"https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-720x618.jpg\" sizes=\"(max-width: 720px) 100vw, 720px\" srcset=\"https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-720x618.jpg 720w, https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-280x240.jpg 280w, https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-1024x879.jpg 1024w, https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-580x498.jpg 580w, https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-320x275.jpg 320w, https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o.jpg 1165w, https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-280x240@2x.jpg 560w\" alt=\"\" width=\"720\" height=\"618\" loading=\"lazy\" data-attachment-id=\"20185\" data-permalink=\"https://www.thefulltoss.com/25125543413_179997a1b5_o/\" data-orig-file=\"https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o.jpg\" data-orig-size=\"1165,1000\" data-comments-opened=\"1\" data-image-meta=\"{\"aperture\":\"10\",\"credit\":\"\",\"camera\":\"Canon EOS 40D\",\"caption\":\"\",\"created_timestamp\":\"1452861511\",\"copyright\":\"\",\"focal_length\":\"400\",\"iso\":\"400\",\"shutter_speed\":\"0.0015625\",\"title\":\"\",\"orientation\":\"1\"}\" data-image-title=\"25125543413_179997a1b5_o\" data-image-description=\"\" data-image-caption=\"\" data-medium-file=\"https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-280x240.jpg\" data-large-file=\"https://www.thefulltoss.com/wp-content/uploads/2021/03/25125543413_179997a1b5_o-1024x879.jpg\" /&gt;</a></p>\r\n<p>In that alternate universe, Mohammad Shami played the square cut like Kapil Dev and Ollie Robinson was physically unable to bowl an off stump line. In that alternate universe, England also lost their collective nerve and India emotionally rose to a pressurised occasion.</p>\r\n<p>Refreshingly, however, on this occasion England&rsquo;s reality was sweet. Unlike at Lords, England were clinical and ruthless at nearly every opportunity. &nbsp;They started by rolling a suddenly ill-disciplined India batting order and pressed this early advantage home, with a captain in the form of his batting life.</p>\r\n<p>After the Ben Stokes heroics against Australia 2019 on the same ground, nobody needs reminding of how test match comebacks can be mounted. As India came back for another go with the bat on Saturday morning, it did not quite resemble Root and Joe Denly&rsquo;s Saturday evening defiance two years ago, but it did evidence some stoic resistance.</p>\r\n<p>The situation was different here. A monumental first innings lead meant that the only real question on everyone&rsquo;s mind was whether the hosts would need to bat again to achieve victory. Yet, England were offered a chance to right their wrongs and bowl with their heads, not hearts.</p>\r\n<p>The innings victory &ndash; achieved by Saturday lunchtime &ndash; could not have exorcised the St. John&rsquo;s Wood demons more emphatically. Clear thinking prevailed where hot heads had burned through on that Lords Monday morning. Fields were set and bowlers stuck to their plans.</p>\r\n<p>Robinson was the focal point of England&rsquo;s redemption with the ball and achieved some individual accolade in the process, after what has been far from a straightforward start to his test career. The social media revelations that marred his promising debut in June are now seemingly in the rear view mirror. The young Sussex seamer looks like he is here to stay at this level and a combination of nagging off stump lines and booming inswingers proved too good for the messrs. Pujara and Kholi. Robinson is already reaping the rewards of test match cricket, revealing afterwards that he had recently learned the latter delivery from Jimmy Anderson.</p>\r\n<p>Once again, Root stood above everyone on either side with the bat, this time in a winning cause. He finally found support from his top order colleagues. Hameed and Burns were steady, if not imperious, and Malan&rsquo;s assured 80 is remarkable, considering he has hopped off the conveyor belt of white ball cricket.</p>\r\n<p>Against all the odds, England&rsquo;s test summer can be saved. The ECB may yet be able to claim to have its cake and eat it too, with the red ball side achieving success alongside the behemoth of The Hundred. Amidst the one-day myriad has emerged another quality (and fit) test match fast bowler to take up arms with Anderson and Broad. Runs have also started to flow from top order batsmen.</p>\r\n<p>After this series, the next scheduled test match for this side will be the first Ashes test in Brisbane on 8<sup>th</sup> December 2021. A lot is yet to be decided with that tour in the coming months, but results the Oval and Old Trafford seem to be pivotal to what this England side will look like in Australia and beyond.</p>",
+        "picture": "0.697547184759216img4.jpg"
+    }
+},
+{
+    "model": "home.post",
+    "pk": 90,
+    "fields": {
+        "category": 5,
+        "title": "Mind Over Matter",
+        "author": "harrry",
+        "slug": "cricket-cric-5",
+        "timeStamp": "2021-09-01T06:00:38.975Z",
+        "content": "<p>A few years ago my employer sent everyone off on a stress awareness course; previously happy people came back as nervous wrecks because they never realised how stressed they were. In all truth we had been fooling ourselves. An increasingly hectic lifestyle was taking its toll on our mental health. The ranks of&nbsp;<em>Joe Public</em>&nbsp;can manage their emotional wellbeing in private, free from scrutiny and judgement. But what about elite athletes who ply their trade in the public eye, where every move is captured by social media and analysed under a microscope. Why do our cricketers seem so vulnerable; are there mental pressures unique to this most genteel of sports?</p>\r\n<p>Ben Stokes&rsquo; withdrawal from the upcoming test series against India was a shock to many observers. A statement was issued with the cold precision of a straight drive off the back foot. Stokes was taking an indefinite break from the game to prioritise his mental wellbeing. While newspaper headlines screamed louder for effect nobody could be remotely surprised. Emotional rollercoaster doesn&rsquo;t begin to explain Stokes&rsquo; life in recent years.</p>\r\n<p>In September 2017 Stokes was arrested and charged with affray during a night out in Bristol. His acquittal and apparent redemption begs one simple question: would events have escalated as they did if it was Ben Stokes&nbsp;<em>the plumber</em>&nbsp;and not the&nbsp;<em>world class cricketer</em>? Not only is Stokes being held to a higher standard of propriety but is a natural target even when he is&nbsp;<em>off duty</em>. You only appreciate the highs when you feel the lows and Stokes has claimed his share of magic moments. He was a key factor in England&rsquo;s World Cup win and played a sensational innings in the 3<sup>rd</sup>&nbsp;Ashes Test, both in 2019. But then suffered a crushing blow when his father Ged died after a long battle with cancer.</p>\r\n<p>Are these not the challenges that life regularly throws our way; you just get on with it like anyone else would. However, not everyone lives their life through a lens and marked as public property. Ben Stokes does not have the luxury of anonymity; one false move and adulation quickly turns to ridicule. Such pressures might appear no different to those faced by athletes in other sports. But it is the very nature of the game that cranks up the pressure to intolerable levels.</p>\r\n<p>A top international travels the world playing cricket and can earn &pound;625,000 annually from a central ECB contract. They may also have an additional deal for white ball cricket which can net a further &pound;275,000. For a single man it is a dream scenario and really couldn&rsquo;t get much better than that. But when that player settles down, marries and starts a family everything changes. A gruelling schedule of touring will force long periods of separation from close family. Stokes suffered when confined to a bio bubble during the 2020 series against the West Indies and Pakistan.&nbsp;</p>\r\n<p>Yet again the same question nags that he&rsquo;s not the only one going through it; although some players will handle periods of isolation better than others. But how many more suffer in silence, and for various reasons decline to go public with their concerns. Such anxieties are nothing new and have always hovered in the background. When Ian Botham quit touring in the mid-80s he spoke candidly about the benefits:&nbsp;<em>I get to see my kids open their presents on Christmas Day.</em>&nbsp;Elite cricket takes its toll on players and inhibits the basic rights we all take for granted.</p>\r\n<p>The structure of the game creates a singular mental impact and can have far reaching consequences for the participants.&nbsp; A game of football usually lasts for 90 minutes, rugby is 80 minutes and a tennis match will typically last for 2-3 hours. In total contract, a test match can last for 5 days. Whilst lunch and tea breaks are included, a player has to maintain a competitive mindset for around 8 hours each day. They will spend long periods in the field and sit for hours in the pavilion waiting to bat. There&rsquo;s too much time to think and dwell on the detail. Errors are analysed to the nth degree in a game already drenched by tactics. Other sports contain the intensity of competition within a limited timeframe; with cricket the power of concentration is stretched to its very limits.</p>\r\n<p>The practical effects are laid painfully bare in the excellent Barney Douglas documentary&nbsp;<em>The Edge</em>. Toby Jones narrates the film with forensic clarity as the opening frames leave no doubt where the deepest scars are left.&nbsp;<em>Cricket is a duel between mind and time</em>; a batsman&rsquo;s helmet gently sinks into deep waters leaving air bubbles in its wake. The imagery of suffocation and drowning may be hyperbole; but it is undeniably a game played in the mind where cerebral fitness is the key to success.</p>\r\n<p>It tells the story of England&rsquo;s journey to the title of top ranked test nation in 2011. Two years previously the team was in complete disarray; without a captain or coach England were 7<sup>th</sup>&nbsp;in the table of test nations. Critics pounced on their shortcomings; they lacked direction and were mentally weak in tough situations. Enter implacable coach Andy Flower and new captain Andrew Strauss; a re-discovered sense of purpose was close at hand.</p>\r\n<p>A major ingredient in this feat of alchemy was the introduction of South African Jonathan Trott. The inscrutable top order batsman was just what England needed. With granite like toughness he found quiet sanctuary each time he took the crease. In Trott&rsquo;s words&nbsp;<em>concentration was the absence of irrelevant thought.</em>&nbsp;A player with excellent technique, team mates marvelled at his fastidious pre-match rituals. It was a thrilling ride to the top as England took the Ashes twice before a 4-0 whitewash of India confirmed their status as ICC Test Champions.</p>\r\n<figure class=\"wp-block-image size-large\">&lt;img class=\"wp-image-15577\" style=\"box-sizing: inherit; vertical-align: middle; max-width: 100%; border-style: none; height: auto; border-radius: inherit;\" src=\"https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-1024x662.jpg\" sizes=\"(max-width: 1024px) 100vw, 1024px\" srcset=\"https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-1024x662.jpg 1024w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-280x181.jpg 280w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-200x129.jpg 200w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-400x259.jpg 400w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-600x388.jpg 600w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-800x517.jpg 800w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-1200x776.jpg 1200w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-500x323.jpg 500w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-700x453.jpg 700w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking.jpg 1376w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-280x181@2x.jpg 560w, https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-500x323@2x.jpg 1000w\" alt=\"\" width=\"1024\" height=\"662\" loading=\"lazy\" data-attachment-id=\"15577\" data-permalink=\"https://www.thefulltoss.com/england-cricket-blog/watch-the-ball-play-it-late-dont-be-scared/trott-ducking/\" data-orig-file=\"https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking.jpg\" data-orig-size=\"1376,890\" data-comments-opened=\"1\" data-image-meta=\"{\"aperture\":\"0\",\"credit\":\"SJT\",\"camera\":\"\",\"caption\":\"\",\"created_timestamp\":\"0\",\"copyright\":\"\",\"focal_length\":\"0\",\"iso\":\"0\",\"shutter_speed\":\"0\",\"title\":\"\",\"orientation\":\"0\"}\" data-image-title=\"Trott ducking\" data-image-description=\"\" data-image-caption=\"\r\n<p>Copyright, Simon Taylor</p>\r\n\" data-medium-file=\"https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-280x181.jpg\" data-large-file=\"https://www.thefulltoss.com/wp-content/uploads/2018/04/Trott-ducking-1024x662.jpg\" /&gt;\r\n<figcaption>Copyright, Simon Taylor</figcaption>\r\n</figure>\r\n<p>But like Astronauts who fly to the moon how do you follow the pinnacle of achievement? The short answer is to stay at the top by maintaining the same standard. Which is much easier said than done; success and failure elicit the same level of pressure; if anything the former is more challenging because improvement is difficult to measure. Andrew Strauss confessed to a feeling of anti-climax, while Kevin Pietersen felt jaded by a punishing schedule of commitments. Moreover, his combative personality was grating and beginning to cause division. Suddenly there were meltdowns in every corner of the dressing room. Strauss felt undermined by texts from Pietersen to South African opponents. Others sensed a fear of failure had gripped the team&rsquo;s psyche.</p>\r\n<p>Most surprising of all was the breakdown suffered by Jonathan Trott. The hitherto cool, calculating run machine was haunted by self-doubt and losing focus. Matters came to a head during the 1<sup>st</sup>&nbsp;Ashes Test down under in November 2013. A fearsome Aussie attack was led by the wickedly fast Mitchell Johnson. Trott described his feelings in an interview with Donald McRae of the Guardian: &lsquo;<em>they circled like hyenas round a dying zebra&rsquo;</em>. Johnson dismissed him in both innings for a combined score of 19. Alastair Cook later commented that Trott had tears in his eyes upon joining him at the crease.</p>\r\n<p>Trott subsequently left the tour citing a long term stress related illness as the cause. He was pilloried in many quarters for a perceived lack of commitment. Ex-England captain Michael Vaughan questioned his motivation when Trott later revealed it was&nbsp;<em>burnout&nbsp;</em>and not depression that forced his hand. Vaughan and others believe he simply did a runner when the going got tough. Whilst there is logic in this argument, burnout and depression would appear to be symptoms of the same condition. In any event people are entitled to their opinion, but not everyone is qualified to diagnose Trott&rsquo;s mental condition.</p>\r\n<p>It certainly doesn&rsquo;t appear to have affected his career record. In 52 tests Trott scored 3,835 runs with an average of 44. He scored 19 half centuries and 9 tons with a top score of 226. They are pretty good figures by anyone&rsquo;s standards, but simple stats don&rsquo;t tell the story of what a player might be experiencing on a daily basis.</p>\r\n<p>Marcus Trescothick broke into the test side as a sound opening bat. By 2002, he had emerged as England&rsquo;s top batsman during a highly successful tour of India. The calm and composed left hander steadily built his reputation, and even had a brief stint as captain when Michael Vaughan was injured. Trescothick was a member of the 2005 Ashes team and second only to Kevin Pietersen in runs scored. But in a curious parallel with Jonathan Trott seven years later, he returned from the tour of India in 2006 for personal reasons. The root cause became clear during the 2006-07 Ashes series as he flew home early due to a stress related illness.</p>\r\n<p>In March 2008 Tresco announced his retirement from international cricket, having&nbsp;<em>tried on numerous occasions to make it back to the international stage it has proved a lot more difficult than expected.</em>&nbsp;In his autobiography,&nbsp;<em>Coming Back to Me</em>, he explained that anxiety had been an issue since his early childhood. Such candour underlines how poor mental health can only be managed and not necessarily cured. In an interview with BBC Radio 5 Live his honesty was impressive,&nbsp;<em>I live with depression and anxiety pretty much every day of my life, but I just manage it with medication and keep on top of it that way.</em></p>\r\n<p>There is no question that competing at the highest level of sport can trigger extreme levels of anxiety; cricket generates its own brand of examination unknown in other sports.&nbsp; Trott and Trescothick are opposite sides of the same coin in the way mental health can affect people&rsquo;s lives. Trott&rsquo;s condition appears to have been triggered by exposure to elite competition; while Trescothick has fought similar demons all his life. In a society increasingly obsessed with self-analysis it&rsquo;s tempting to blame every failure on mental breakdown. It should never be used as an excuse for poor performance; but it&rsquo;s equally important we recognise the signs when someone is struggling.</p>",
+        "picture": "0.13095900410987216kohli.jpg"
+    }
+},
+{
+    "model": "home.userinfo",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "james@123"
+        ],
+        "phone": 2147483646,
+        "about": "Hey, Iam James",
+        "location": "India"
+    }
+},
+{
+    "model": "home.userinfo",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "anargha"
+        ],
+        "phone": 1235638752,
+        "about": "Hey, this is a sample bio..!!!",
+        "location": "India"
+    }
+},
+{
+    "model": "home.userinfo",
+    "pk": 3,
+    "fields": {
+        "user": [
+            "harry@123"
+        ],
+        "phone": 1234567894,
+        "about": "Hey iam Harry..!!!1",
+        "location": "USA"
+    }
+},
+{
+    "model": "icoder.reg",
+    "pk": 1,
+    "fields": {
+        "fname": "Rahul",
+        "lname": "Sharma",
+        "email": "rahul@123",
+        "pas": "123"
+    }
+},
+{
+    "model": "icoder.reg",
+    "pk": 2,
+    "fields": {
+        "fname": "anargha",
+        "lname": "",
+        "email": "an@gh",
+        "pas": "123"
+    }
+},
+{
+    "model": "icoder.reg",
+    "pk": 3,
+    "fields": {
+        "fname": "jkfabweq",
+        "lname": "eretet",
+        "email": "ab@cd",
+        "pas": "123"
+    }
+},
+{
+    "model": "icoder.mesg",
+    "pk": 1,
+    "fields": {
+        "name": "Ammu",
+        "phone": 2147483647,
+        "email": "ammu@ammu.com",
+        "content": "This is awesome!!!!!"
+    }
+},
+{
+    "model": "icoder.mesg",
+    "pk": 2,
+    "fields": {
+        "name": "harry",
+        "phone": 2147483647,
+        "email": "harry@gmail.com",
+        "content": "hello, iam harry"
+    }
+},
+{
+    "model": "icoder.upload",
+    "pk": 1,
+    "fields": {
+        "name": "Ammu",
+        "place": "clt",
+        "pic": "0.272409734094691512mk.jpg"
+    }
+},
+{
+    "model": "icoder.upload",
+    "pk": 2,
+    "fields": {
+        "name": "kkk",
+        "place": "clt",
+        "pic": "0.7504415752766398alexx.jpg"
+    }
+},
+{
+    "model": "icoder.student",
+    "pk": 15,
+    "fields": {
+        "name": "Athen",
+        "email": "athen@cole",
+        "password": "123"
+    }
+},
+{
+    "model": "icoder.student",
+    "pk": 16,
+    "fields": {
+        "name": "amaal",
+        "email": "amaal@gmail",
+        "password": "123"
+    }
+},
+{
+    "model": "icoder.student",
+    "pk": 18,
+    "fields": {
+        "name": "Khurram",
+        "email": "sjk@gmail",
+        "password": "123"
+    }
+},
+{
+    "model": "icoder.student",
+    "pk": 28,
+    "fields": {
+        "name": "bjbds",
+        "email": "fhf@hvjf",
+        "password": "fg12"
+    }
+},
+{
+    "model": "icoder.student",
+    "pk": 29,
+    "fields": {
+        "name": "dghay",
+        "email": "gysad@hjlfg",
+        "password": "wyfdk"
+    }
+},
+{
+    "model": "icoder.student",
+    "pk": 30,
+    "fields": {
+        "name": "dghay",
+        "email": "gysad@hjlf",
+        "password": "wyfdk"
+    }
+},
+{
+    "model": "icoder.student",
+    "pk": 31,
+    "fields": {
+        "name": "dgha",
+        "email": "gysad@hjlf",
+        "password": "wyfdk"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2021-06-19T10:08:20.108Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "object_id": "2",
+        "object_repr": "Message from harry - asbad@gjdd.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2021-06-19T10:08:20.362Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "object_id": "1",
+        "object_repr": "Message from harry - asbad@gjdd.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2021-07-02T11:38:26.595Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "object_id": "7",
+        "object_repr": "Message from prithvi - prithvi@pri.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2021-07-02T11:38:35.292Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "contact"
+        ],
+        "object_id": "6",
+        "object_repr": "Message from prithvi - prithvi@pri.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2021-07-02T11:39:31.965Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "1",
+        "object_repr": "Python by Ammu",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2021-07-03T11:30:29.526Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "7",
+        "object_repr": "code with meeeeeeeeeee by mummu",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2021-07-03T15:42:18.430Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "6",
+        "object_repr": "Creating Blog Model to Store Blog Posts by Harry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Slug\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2021-07-03T15:42:28.141Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "5",
+        "object_repr": "What is a Filesystem? by Harsha Kp",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Slug\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2021-07-07T11:37:32.746Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "9",
+        "object_repr": "anu",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2021-07-07T11:37:32.817Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "10",
+        "object_repr": "anuu",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2021-07-07T11:37:32.857Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "rahul",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2021-07-07T11:37:32.969Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "4",
+        "object_repr": "rahulw",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2021-07-07T11:37:32.991Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "5",
+        "object_repr": "rrr1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2021-07-07T11:37:33.013Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "7",
+        "object_repr": "rrr12",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2021-07-07T11:37:33.035Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "8",
+        "object_repr": "rrr122",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2021-07-10T08:22:44.583Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "72",
+        "object_repr": "A Quick Pip Guide: How to Install Python Modules by Harry",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2021-07-10T08:23:51.063Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "72",
+        "object_repr": "A Quick Pip Guide: How to Install Python Modules by Harry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2021-07-10T08:27:03.934Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "72",
+        "object_repr": "A Quick Pip Guide: How to Install Python Modules by Harry",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2021-07-10T09:01:33.294Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "72",
+        "object_repr": "A Quick Pip Guide: How to Install Python Modules by Harry",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2021-07-10T12:24:02.251Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "72",
+        "object_repr": "A Quick Pip Guide: How to Install Python Modules by Harry",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2021-07-10T12:26:50.010Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "73",
+        "object_repr": "anjjjssa by saaaaaaaaaaaa",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2021-07-10T12:53:30.342Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "73",
+        "object_repr": "anjjjssa by saaaaaaaaaaaa",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2021-07-10T12:54:17.688Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "74",
+        "object_repr": "hghdvhjhsd by iun cicb",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2021-07-18T12:28:12.834Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "13",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2021-07-18T12:34:43.263Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "15",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2021-07-18T12:36:15.560Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "16",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2021-07-18T12:40:57.283Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "20",
+        "object_repr": "harry123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2021-07-18T12:40:57.367Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "17",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2021-07-18T12:40:57.490Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "19",
+        "object_repr": "harry@321",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2021-07-28T06:55:17.836Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "24",
+        "object_repr": "anargha123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2021-07-28T06:55:17.884Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "21",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2021-07-28T07:49:05.270Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "25",
+        "object_repr": "anargha123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2021-07-28T07:49:05.366Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "27",
+        "object_repr": "anrgha123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2021-07-28T07:49:05.398Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "26",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2021-07-28T07:51:17.506Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "28",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2021-07-28T09:40:26.483Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "31",
+        "object_repr": "1234",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2021-07-28T09:40:26.526Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "30",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2021-07-28T09:48:17.226Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "33",
+        "object_repr": "anargha@98",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2021-07-28T09:48:17.289Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "32",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2021-08-03T09:02:19.773Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "36",
+        "object_repr": "amu@123",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2021-08-03T09:02:28.363Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "36",
+        "object_repr": "amu@123",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2021-08-06T05:59:27.686Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "anargha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2021-08-06T05:59:51.663Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "36",
+        "object_repr": "amu@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2021-08-06T05:59:51.714Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "37",
+        "object_repr": "anargha123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2021-08-06T05:59:51.759Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "34",
+        "object_repr": "harry123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2021-08-06T05:59:51.815Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "35",
+        "object_repr": "harry@1234",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2021-08-06T07:21:33.095Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "41",
+        "object_repr": "aass@265113",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2021-08-06T07:21:33.153Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "39",
+        "object_repr": "fcc@1345",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2021-08-06T07:21:33.264Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "38",
+        "object_repr": "harry@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2021-08-06T07:21:33.286Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "40",
+        "object_repr": "harry@1234",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2021-08-26T09:18:15.406Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "75",
+        "object_repr": "wwwwwwwwwwwwwww by wwwwwwwwwwwwww",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2021-08-26T09:18:35.699Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "75",
+        "object_repr": "wwwwwwwwwwwwwww by wwwwwwwwwwwwww",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2021-08-31T16:47:43.103Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "object_id": "1",
+        "object_repr": "General",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2021-08-31T16:47:49.064Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "object_id": "2",
+        "object_repr": "IT",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2021-08-31T16:47:55.463Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "object_id": "3",
+        "object_repr": "Sports",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2021-08-31T16:48:06.476Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "object_id": "4",
+        "object_repr": "TV/Web Series",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2021-08-31T16:48:12.344Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "blogcategory"
+        ],
+        "object_id": "5",
+        "object_repr": "Movies",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2021-09-01T05:42:46.276Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "84",
+        "object_repr": "Django Tutorial Part 9: Working with forms by harsha",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2021-09-01T05:44:20.203Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "85",
+        "object_repr": "Django Tutorial Part 3: Using models by harrry",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2021-09-01T05:44:33.207Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "84",
+        "object_repr": "Django Tutorial Part 9: Working with forms by harsha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2021-09-01T05:44:41.265Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "83",
+        "object_repr": "Building A Blog Application With Django by Harsha Kp",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2021-09-01T05:46:18.697Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "86",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by spidy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2021-09-01T05:48:29.739Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "86",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by spidy",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2021-09-01T05:50:09.659Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "85",
+        "object_repr": "Django Tutorial Part 3: Using models by harrry",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2021-09-01T05:50:09.727Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "84",
+        "object_repr": "Django Tutorial Part 9: Working with forms by harsha",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2021-09-01T05:51:18.107Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "87",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by harsha",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2021-09-01T05:51:44.953Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "87",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by harsha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2021-09-01T05:52:20.883Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "87",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by harsha",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2021-09-01T05:52:40.568Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "88",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by harsha",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2021-09-01T05:54:46.826Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "88",
+        "object_repr": "Django Tutorial Part 3: Using models by harsha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2021-09-01T05:55:13.629Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "88",
+        "object_repr": "Django Tutorial Part 3: Using models by harsha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+        "action_time": "2021-09-01T05:57:26.289Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "89",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by spidy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+        "action_time": "2021-09-01T05:58:51.572Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "89",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by spidy",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+        "action_time": "2021-09-01T05:59:13.938Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "89",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by spidy",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+        "action_time": "2021-09-01T06:00:38.998Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "90",
+        "object_repr": "Mind Over Matter: The Curse of Elite Cricket by harrry",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+        "action_time": "2021-09-01T06:03:12.248Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "91",
+        "object_repr": "The Hundred. A Positive Spin. by harrry",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+        "action_time": "2021-09-01T06:04:09.118Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "91",
+        "object_repr": "The Hundred. A Positive Spin. by harrry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+        "action_time": "2021-09-01T06:04:36.447Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "91",
+        "object_repr": "The Hundred. A Positive Spin. by harrry",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+        "action_time": "2021-09-01T07:46:31.948Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "89",
+        "object_repr": "Temporary relief or signs of redemption? EnglandÆs win at Leeds by spidy",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+        "action_time": "2021-09-01T09:55:05.366Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "object_id": "2",
+        "object_repr": "harry@123",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+        "action_time": "2021-09-01T09:56:09.357Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "object_id": "3",
+        "object_repr": "anargha",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+        "action_time": "2021-09-01T11:51:35.269Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "userprofile"
+        ],
+        "object_id": "3",
+        "object_repr": "harsha@123",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"User\", \"About\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+        "action_time": "2021-09-01T12:04:43.603Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "1",
+        "object_repr": "harry@123",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+        "action_time": "2021-09-01T12:05:03.608Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "2",
+        "object_repr": "anargha",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+        "action_time": "2021-09-01T12:15:07.261Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "2",
+        "object_repr": "anargha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"About\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+        "action_time": "2021-09-01T14:07:32.159Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "4",
+        "object_repr": "None",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+        "action_time": "2021-09-01T14:07:32.248Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "3",
+        "object_repr": "None",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+        "action_time": "2021-09-01T15:21:07.540Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "7",
+        "object_repr": "None",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+        "action_time": "2021-09-01T15:21:07.619Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "6",
+        "object_repr": "None",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+        "action_time": "2021-09-01T15:21:07.658Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "user_details"
+        ],
+        "object_id": "5",
+        "object_repr": "None",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+        "action_time": "2021-09-02T08:29:34.846Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "userinfo"
+        ],
+        "object_id": "2",
+        "object_repr": "anargha",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+        "action_time": "2021-09-02T08:30:43.060Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "userinfo"
+        ],
+        "object_id": "3",
+        "object_repr": "harry@123",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+        "action_time": "2021-09-02T08:30:55.304Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "43",
+        "object_repr": "harsha@123",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+        "action_time": "2021-09-02T10:05:58.101Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "89",
+        "object_repr": "EnglandÆs win at Leeds by spidy",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+        "action_time": "2021-09-02T10:06:18.986Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "88",
+        "object_repr": "Django Tutorial Part 3 by harsha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+        "action_time": "2021-09-02T10:06:49.071Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "90",
+        "object_repr": "The Curse of Elite Cricket by harrry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+        "action_time": "2021-09-02T10:08:40.767Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "83",
+        "object_repr": "Building A Blog With Django by Harsha Kp",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+        "action_time": "2021-09-02T10:09:11.908Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "90",
+        "object_repr": "Mind Over Matter by harrry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+        "action_time": "2021-09-02T10:09:37.480Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "83",
+        "object_repr": "A Blog With Django by Harsha Kp",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+        "action_time": "2021-09-02T10:15:28.029Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "88",
+        "object_repr": "Django Tutorial by harsha",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+        "action_time": "2021-09-02T14:21:01.597Z",
+        "user": [
+            "anargha"
+        ],
+        "content_type": [
+            "home",
+            "post"
+        ],
+        "object_id": "92",
+        "object_repr": "EnglandÆs win at Leeds by 1fffffffffffff",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}
+]

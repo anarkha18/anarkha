@@ -80,13 +80,19 @@ WSGI_APPLICATION = 'webapps.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'webapps',
+    #     'USER': 'root',
+    #     'PASSWORD': '',
+    #     'HOST':'localhost',
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'webapps',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
         'HOST':'localhost',
-        # 'PORT':'5432'
+        'PORT':'5432'
     }
 }
 
