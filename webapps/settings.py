@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os 
-import django_heroku
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -87,20 +86,14 @@ DATABASES = {
     #     'USER': 'root',
     #     'PASSWORD': '',
     #     'HOST':'localhost',
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dfbcbglmk9e1id',
-        'USER': 'favzpvmxfymajs',
-        'PASSWORD': '9bf3af7852ce12f4c67eb0f96d751dcc11e3931e4837dcc0342afc378c3b6176',
-        'HOST':'ec2-34-230-167-186.compute-1.amazonaws.com',
+        'NAME': 'webapps',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST':'localhost',
         'PORT':'5432'
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'webapps',
-    #     'USER': 'postgres',
-    #     'PASSWORD': '1234',
-    #     'HOST':'localhost',
-    #     'PORT':'5432'
     }
 }
 
@@ -155,4 +148,3 @@ MESSAGE_TAGS = {
 
 MEDIA_URL = '/icoder/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'icoder/media')
-django_heroku.settings(locals)
