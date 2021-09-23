@@ -34,7 +34,7 @@ class Post(models.Model):
 
 class userinfo(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE)
-    phone=models.BigIntegerFeild()
+    phone=models.BigIntegerField()
     about=models.TextField(max_length=200, blank=True)
     location=models.CharField(max_length=200, blank=True)
 
