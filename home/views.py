@@ -185,3 +185,14 @@ def editprofile(request):
         return HttpResponse("Login Required !!!")
 def settings(request):
     return render(request, "home/settings.html")
+
+# def postComment(request):
+#     if request.method == "POST":
+#         comment=request.POST.get('comment')
+#         user=request.user
+#         postSno =request.POST.get('postSno')
+#         post= Post.objects.get(sno=postSno)
+#         comment=BlogComment(comment= comment, user=user, post=post)
+#         comment.save()
+#         messages.success(request, "Your comment has been posted successfully")     
+#     return redirect("/blog/{post.slug}")

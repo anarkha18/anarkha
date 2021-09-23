@@ -7,6 +7,7 @@ from .models import *
 admin.site.register(Contact)
 admin.site.register(blogcategory)
 admin.site.register(userinfo)
+# admin.site.register(BlogComment)
 # admin.site.register(Post)
 @admin.register(Post)
 

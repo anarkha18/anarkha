@@ -24,4 +24,5 @@ urlpatterns = [
     path('editprofile', views.editprofile, name="editprofile"),
     # path('profileedit', views.profileedit, name="profileedit"),
     path('settings', views.settings, name="settings"),
+    # path('postComment', views.postComment, name="postComment"),
 ]
