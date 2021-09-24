@@ -237,7 +237,7 @@
         <div class="container my-3">
             <div class="row my-4">
                 {% for x in key %}
-                <div class="col-md-6">
+                <div class="col-md-6 ">
                     <div class="card bg-dark text-white shadow mb-1">
                         <img class="card-img" src="/icoder/media/{{x.picture}}" height="300" width="200"
                             alt="Card image">
@@ -252,6 +252,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- </div> -->
                 {% if forloop.counter|divisibleby:2%}
             </div>
             <div class="row my-4">
@@ -259,5 +260,6 @@
                 {% endfor %}
             </div>
         </div>
+
     </section>
     {% endblock %}
