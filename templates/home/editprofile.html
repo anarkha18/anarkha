@@ -14,7 +14,9 @@
                     <div class="mx-auto" style="width: 140px;">
                         <div class="d-flex justify-content-center align-items-center rounded"
                             style="height: 140px; background-color: rgb(233, 236, 239);">
-                            <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                            <img src="/icoder/media/propic/{{request.user.userinfo.propic}}" height="140"
+                                width="140" alt="">
+                            <!-- <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span> -->
                         </div>
                     </div>
                 </div>
@@ -25,12 +27,14 @@
                         <p class="mb-0">{{request.user.username}}</p>
                         <div class="text-muted"><small>Last seen 2 hours ago</small></div>
                         <div class="mt-2">
-                            <!-- <form class="form" action="/propic" method="POST" enctype="multipart/form-data"> -->
-                                <button class="btn btn-primary" type="button">
+                            <form class="form" action="/propic" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="file" accept="image/*" name="image" id="image">
+                                <button class="btn btn-primary mt-2" type="submit">
                                     <i class="fa fa-fw fa-camera"></i>
                                     <span>Change Photo</span>
                                 </button>
-                            <!-- </form> -->
+                            </form>
                         </div>
                     </div>
                     <div class="text-center text-sm-right">

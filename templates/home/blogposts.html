@@ -1,6 +1,6 @@
 {% extends 'home/dash_base.html' %}
 {% load static %}
-{% block bpactive %} active {% endblock %} 
+{% block bpactive %} active {% endblock %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/blogposts.css' %}">
 {% endblock %}
@@ -63,7 +63,8 @@
                             </td> -->
                     <td style="width: 2%;">{{x.id}}</td>
                     <td style="width: 8%;">{{x.title}}</td>
-                    <td style="width: 8%;"><img src="/icoder/media/{{x.picture}}" alt="" height="100;" width="100;">
+                    <td style="width: 8%;"><img src="{{x.picture.url}}" alt="" height="100;"
+                            width="100;">
                     </td>
                     <td style="width: 8%;">{{x.author}}</td>
                     <td style="width: 8%;">{{x.category}}</td>

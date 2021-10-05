@@ -97,9 +97,8 @@
                     <div class="card">
                         <div class="card-body text-center bg-primary rounded-top">
                             <div class="user-box">
-                                <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="110" width="110"
-                                alt="user avatar"> -->
-                                <img src="{% static 'images/cr3.jpg' %}" height="110" width="110">
+                                <img src="/icoder/media/propic/{{request.user.userinfo.propic}}" height="110" width="110" alt="user avatar">
+                                <!-- <img src="{% static 'images/cr3.jpg' %}" height="110" width="110"> -->
                             </div>
                             <h5 class="mb-1 text-white"> {{request.user.first_name}}
                                 {{request.user.last_name}}</h5>

@@ -29,14 +29,15 @@ def addpost(request):
         author=request.POST['author']
         content =request.POST['content']
         slug =request.POST['slug']
+        # if "pic" in request.FILES:
         pic=request.FILES['pic']
-        filename = str(random())+pic.name
+        # filename = str(random())+pic.name
         # print(filename)
-        photo=FileSystemStorage()
-        photo.save(filename, pic)
+        # photo=FileSystemStorage()
+        # photo.save(filename, pic)
         category_id=request.POST.get('category')
         category =blogcategory.objects.get(id=category_id)
-        post=Post(category=category, title=title, author=author, picture=filename,slug=slug, content=content)
+        post=Post(category=category, title=title, author=author, picture=pic,slug=slug, content=content)
         post.save()
         # return render(request, "home/addpost.html")
         return render(request, "home/addpost.html",{'message': 'Your Blog has been Added'})
@@ -75,14 +76,15 @@ def updatepost(request, id):
         author=request.POST['author']
         content =request.POST['content']
         slug =request.POST['slug']
-        pic=request.FILES['pic']
-        filename = str(random())+pic.name
+        pic = request.FILES['pic']
+        # print(pic)
+        # filename = str(random())+pic.name
         # print(filename)
-        photo=FileSystemStorage()
-        photo.save(filename, pic)
+        # photo=FileSystemStorage()
+        # photo.save(filename, pic)
         category_id=request.POST.get('category')
         category =blogcategory.objects.get(id=category_id)
-        Post.objects.filter(id=id).update(category=category, title=title, author=author, slug=slug, content=content , picture=filename)
+        Post.objects.filter(id=id).update(category=category, title=title, author=author, slug=slug, content=content , picture=pic)
         return redirect('/blogposts')
     postinfo=Post.objects.get(id=id)
     bcat = blogcategory.objects.all() 
@@ -185,6 +187,14 @@ def editprofile(request):
         return HttpResponse("Login Required !!!")
 def settings(request):
     return render(request, "home/settings.html")
+def propic(request):
+    # print(request.FILES)
+    if request.user.is_authenticated:
+        if "image" in request.FILES:
+            pic = request.FILES['image']
+            userinfo.objects.filter(user__id=request.user.id).update(propic=pic)
+            return render(request, "home/editprofile.html")
+    return render(request, "home/editprofile.html")
 
 # def postComment(request):
 #     if request.method == "POST":
