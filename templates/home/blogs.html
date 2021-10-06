@@ -5,9 +5,9 @@
 <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
 <style>
     .card-box {
-        padding: 20px;
+        padding: 10px;
         border-radius: 3px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         background-color: #fff;
     }
 
@@ -56,17 +56,15 @@
                                 <a href="#" class="tlink"
                                     style="text-decoration: none;">{{x.title|truncatechars:25|safe}}</a>
                             </h3>
-                            <div class="mb-1 text-muted times time" style="float: right; text-transform: uppercase;">
-                                {{x.timeStamp}}</div>
                             <div class="img-post my-3">
                                 <!-- <img class="d-block img-fluid" src="https://via.placeholder.com/800x280/FFB6C1/000000" -->
-                                <img class="d-block img-fluid screen" src="{{x.picture.url}}"
-                                    height="280" width="800" alt="First slide">
+                                <img class="d-block img-fluid screen" src="{{x.picture.url}}" height="280" width="800"
+                                    alt="First slide">
                             </div>
                             <strong class="d-inline-block mb-1 text-primary">Article by {{x.author}}</strong>
                             <strong class="pull-right d-inline-block mb-1 text-primary mr-3">{{x.category}}</strong>
                             &nbsp;
-                            <p class="card-text mb-auto my-2" style="text-align: justify;">
+                            <p class="card-text" style="text-align: justify;">
                                 {{x.content| truncatechars:300 |safe}}</p>
                         </div>
                         <div class="footer">
@@ -74,8 +72,11 @@
                                 <a href="{% url 'blogpage' x.slug %}" role="button" class="btn btn-outline-primary">Read
                                     More</a>
                             </div>
-                            <!-- <ul class="stats"> -->
-                            <!-- <ul style="display: inline-block; margin-left: 800px;"> -->
+                            <div class="mb-1 text-muted times pull-right mt-1" style="text-transform: uppercase;">
+                                {{x.timeStamp}}
+                            </div>
+                            <!-- <ul class="stats">
+                            <ul style="display: inline-block; margin-left: 800px;">
                             <div style="display: inline-block; margin-left: 350px;">
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
                                 &nbsp;
@@ -89,7 +90,7 @@
                                 &nbsp;
                                 <span>7</span>
                                 &nbsp;
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     {% endfor %}
@@ -179,8 +180,8 @@
                                         class="rounded-circle img-thumbnail" alt="profile-image">
                                 </div> -->
                                 <div class="thumb-lg member-thumb mx-auto">
-                                    <img src="/icoder/media/propic/{{request.user.userinfo.propic}}"
-                                        class="rounded-circle" alt="profile-image" height="110" width="110">
+                                    <img src="{{request.user.userinfo.propic.url}}" class="rounded-circle"
+                                        alt="profile-image" height="110" width="110">
                                 </div>
                                 <div class=" mx-auto mt-5">
                                     <h5>{{request.user.first_name}}</h5>
@@ -224,32 +225,36 @@
                         </div>
                         <div class="body widget">
                             <ul class="list-unstyled categories-clouds m-b-0">
-                                <li><a href="javascript:void(0);">eCommerce</a></li>
-                                <li><a href="javascript:void(0);">Microsoft Technologies</a></li>
-                                <li><a href="javascript:void(0);">Creative UX</a></li>
-                                <li><a href="javascript:void(0);">Wordpress</a></li>
+                                <li><a href="javascript:void(0);">Sports</a></li>
+                                <li><a href="javascript:void(0);">TV/Web Series</a></li>
+                                <li><a href="javascript:void(0);">Movies & Celebs</a></li>
+                                <li><a href="javascript:void(0);">IT & Tech</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="header">
+                    <div class="mb-3">
+                        <!-- <div class="header"> -->
                             <h2>Popular Posts</h2>
-                        </div>
+                        <!-- </div> -->
+                    </div>
+                    {% for x in key %}
+                    <div class="card">
                         <div class="body widget popular-post">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="single_post">
-                                        <p class="m-b-0">Apple Introduces Search Ads Basic</p>
-                                        <span>jun 22, 2018</span>
-                                        <div class="img-post">
-                                            <img src="https://via.placeholder.com/280x280/FFB6C1/000000"
-                                                alt="Awesome Image">
+                                        <h5 class="m-b-0">{{x.title}}</h5>
+                                        <span>{{x.timeStamp}}</span>
+                                        <div class="">
+                                            {{x.content|truncatechars:300 |safe}}
                                         </div>
+                                        <button class="btn btn-primary">View</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -38,5 +38,5 @@ urlpatterns = [
     path('studdata', views.studdata, name="studdata"),
     path('deletestud', views.deletestud, name="deletestud"),
     path('updatestud', views.updatestud, name="updatestud"),
-    # path('checkemail', views.checkemail, name="checkemail"),
+    path('updateimg/<int:id>/', views.updateimg, name="updateimg"),
 ]

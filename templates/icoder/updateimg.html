@@ -10,15 +10,14 @@
 
 <body>
     <div>
-        <form action="upload" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'updateimg' details.id %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            Name: <input type="text" name="name">
+            Name: <input type="text" name="name" value="{{details.name}}">
             <!-- place: <input type="text" name="place"> -->
             pic: <input type="file" accept="image/*" name="pic" id="pic">
+            current img: <img src="{{details.pic.url}}" alt="alt" height="40" width="50">
             <button type="submit">Submit</button>
             {{message}}
         </form>
     </div>
 </body>
-
-</html>

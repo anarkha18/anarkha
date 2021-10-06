@@ -6,7 +6,8 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.core.files.storage import FileSystemStorage
 from random import random
-
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 # Create your views here.
 def sd(request):
     return render(request, "home/sd.html")
@@ -52,13 +53,13 @@ def blogposts(request):
     return render(request, "home/blogposts.html",{'key':page_obj})
 def blogs(request):
     posts = Post.objects.order_by('-timeStamp')
-    # posts = Post.objects.all()
     paginator= Paginator(posts, 3)
     page_number = request.GET.get('page')
     page_obj=paginator.get_page(page_number)
-    # print(page_obj)
+    # posts = Post.objects.all()
     bcat = blogcategory.objects.all()
     return render(request, "home/blogs.html",{'key':page_obj, 'cat':bcat})
+    # return render(request, "home/blogs.html",{'pp':pp_obj})
     # return render(request, "home/blogs.html" ,{'key':posts})
 def deletepost(request, id):
     # if (request.method == 'POST'):
@@ -67,16 +68,22 @@ def deletepost(request, id):
         return redirect('/blogposts')
 def blogpage(request, slug):
     page = Post.objects.filter(slug=slug).first()
-    context= {'page':page}
-    return render(request, "home/blogpage.html", context)
-    # return render(request, "bloghome.html", {'key':page})
+    if page is not None:
+        postid=page.id
+        # print(postid)
+        # context= {'page':page}
+        comments= BlogComment.objects.filter(post=postid)
+        return render(request, "home/blogpage.html",{'page': page, 'comment':comments})
+        # return render(request, "home/blogpage.html", context, {'comment':comments})
+        # return render(request, "bloghome.html", {'key':page})
 def updatepost(request, id):
+    prod= Post.objects.get(id=id)
     if request.method=="POST":
         title=request.POST['title']
         author=request.POST['author']
         content =request.POST['content']
         slug =request.POST['slug']
-        pic = request.FILES['pic']
+        # pic = request.FILES['pic']
         # print(pic)
         # filename = str(random())+pic.name
         # print(filename)
@@ -84,7 +91,11 @@ def updatepost(request, id):
         # photo.save(filename, pic)
         category_id=request.POST.get('category')
         category =blogcategory.objects.get(id=category_id)
-        Post.objects.filter(id=id).update(category=category, title=title, author=author, slug=slug, content=content , picture=pic)
+        Post.objects.filter(id=id).update(category=category, title=title, author=author, slug=slug, content=content)
+        if 'pic' in request.FILES:
+            pic=request.FILES['pic']
+            prod.picture=pic
+            prod.save()
         return redirect('/blogposts')
     postinfo=Post.objects.get(id=id)
     bcat = blogcategory.objects.all() 
@@ -185,24 +196,37 @@ def editprofile(request):
         return render(request, 'home/editprofile.html')
     else:
         return HttpResponse("Login Required !!!")
+@login_required()
 def settings(request):
     return render(request, "home/settings.html")
+@login_required()
+def userstable(request):
+    users=User.objects.all()
+    return render(request, "home/users.html", {'key':users})
+@login_required()
 def propic(request):
-    # print(request.FILES)
-    if request.user.is_authenticated:
+    prod= userinfo.objects.get(user__id=request.user.id)
+    if request.method=="POST":
         if "image" in request.FILES:
-            pic = request.FILES['image']
-            userinfo.objects.filter(user__id=request.user.id).update(propic=pic)
+            pic=request.FILES['image']
+            prod.propic=pic
+            prod.save()
+            # userinfo.objects.filter(user__id=request.user.id).update(propic=pic)
             return render(request, "home/editprofile.html")
     return render(request, "home/editprofile.html")
-
-# def postComment(request):
-#     if request.method == "POST":
-#         comment=request.POST.get('comment')
-#         user=request.user
-#         postSno =request.POST.get('postSno')
-#         post= Post.objects.get(sno=postSno)
-#         comment=BlogComment(comment= comment, user=user, post=post)
-#         comment.save()
-#         messages.success(request, "Your comment has been posted successfully")     
-#     return redirect("/blog/{post.slug}")
+@login_required()
+def comment(request):
+    if request.method == "POST":
+        user=request.user
+        comments=request.POST['comment']
+        postSno =request.POST.get('postSno')
+        post= Post.objects.get(id=postSno)
+        if len(comments) < 2:
+            # messages.error(request, "please type more")  
+            return HttpResponse("There is an Error")
+        else: 
+            comment=BlogComment(comment= comments, user=user, post=post)
+            comment.save()
+            # messages.success(request, "Your comment has been posted successfully")     
+            return HttpResponse("Your comment has been posted")
+    # return render(request, "home/blogs.html")

@@ -35,7 +35,7 @@
     .comments {
         position: relative;
         display: flex;
-        padding: 20px;
+        padding: 15px;
         flex-direction: column;
         min-width: 0;
         word-wrap: break-word;
@@ -45,8 +45,8 @@
     }
 
     .media img {
-        width: 60px;
-        height: 60px
+        width: 50px;
+        height: 50px
     }
 
     .reply a {
@@ -110,43 +110,54 @@
         </div>
         <div class="container">
             <div class="card comments border-0">
+                {% for x in comment %}
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="media"> <img class="mr-3 rounded-circle" alt="Bootstrap Media Preview"
-                                src="https://i.imgur.com/stD0Q19.jpg" />
+                        <div class="media"> <img class="mr-3 rounded-circle" alt=""
+                                src="{{x.user.userinfo.propic.url}}">
                             <div class="media-body">
                                 <div class="row">
                                     <div class="col-8 d-flex">
-                                        <h5>Maria Smantha</h5>
+                                        <h5>{{x.user.first_name}}&nbsp;{{x.user.last_name}}</h5>
+                                        <span class="ml-2">({{x.user}})</span>
                                     </div>
 
                                 </div>
-                                <p>
-                                    It is a long established fact that a reader will be distracted by the
-                                    readable content of a page.
-                                </p>
-                                <span>2 hours ago</span>
+                                <p>{{x.comment}}</p>
+                                <span>{{x.timestamp}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <br>
+                {% endfor %}
             </div>
         </div>
     </div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+        <strong>Message : </strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
     {% if user.is_authenticated %}
     <div class="container mb-5">
         <div class="card comments border-0">
             <div class="row">
                 <div class="col-md-12">
                     <div class="media"> <img class="mr-2 rounded-circle" alt="Bootstrap Media Preview"
-                            src="/icoder/media/propic/{{request.user.userinfo.propic}}">
+                            src="{{request.user.userinfo.propic.url}}">
                         <div class="media-body col-8">
-                            <form action="">
+                            <form action="/comment" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="postSno" value="{{page.id}}">
                                 <textarea class="form-control" rows="3" style="width: 800px;"
                                     placeholder="Post your Comments..." name="comment" id="comment"></textarea>
                                 <button type="submit" class="btn btn-primary mt-2" style="width: 80px;">Post</button>
-                                <button type="button" class="btn  btn-outline-primary mt-2"
-                                    style="width: 80px;">Cancel</button>
+                                <!-- <button type="button" class="btn  btn-outline-primary mt-2"
+                                    style="width: 80px;">Cancel</button> -->
                             </form>
                         </div>
                     </div>

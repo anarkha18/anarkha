@@ -12,7 +12,6 @@ urlpatterns = [
     path('blogposts', views.blogposts, name="blogposts"),
     path('addpost', views.addpost, name="addpost"),
     path('deletepost<int:id>/', views.deletepost, name="deletepost"),
-    path('bloppage<str:slug>', views.blogpage, name="blogpage"),
     path('updatepost/<int:id>/', views.updatepost, name="updatepost"),
     path('inbox', views.inbox, name="inbox"),
     path('deletemsg<int:id>/', views.deletemsg, name="deletemsg"),
@@ -24,5 +23,7 @@ urlpatterns = [
     path('editprofile', views.editprofile, name="editprofile"),
     path('propic', views.propic, name="propic"),
     path('settings', views.settings, name="settings"),
-    # path('postComment', views.postComment, name="postComment"),
+    path('comment', views.comment, name="comment"),
+    path('userstable', views.userstable, name="userstable"),
+    path('blogpage<str:slug>', views.blogpage, name="blogpage"),
 ]

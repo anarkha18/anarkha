@@ -40,14 +40,19 @@
     <table>
         <tr>
             <th>Name</th>
-            <th>Place</th>
+            <!-- <th>Place</th> -->
             <th>Picture</th>
+            <th>edit</th>
         </tr>
         {% for x in key %}
         <tr>
             <td>{{x.name}}</td>
             <td>{{x.place}}</td>
-            <td><img src="/icoder/media/{{x.pic}}" alt="" height="100;" width="100;"></td>
+            <td><img src="{{x.pic.url}}" alt="" height="100;" width="100;"></td>
+            <!-- <td><img src="/icoder/media/{{x.pic}}" alt="" height="100;" width="100;"></td> -->
+            <td>
+                <a href="{% url 'updateimg' x.id %}"><button>Edit</button></a>
+            <td>
         </tr>
         {% endfor %}
     </table>

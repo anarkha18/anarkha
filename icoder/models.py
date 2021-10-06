@@ -40,3 +40,7 @@ class Student(models.Model):
     name = models.CharField(max_length=80)
     email = models.CharField(max_length=80)
     password = models.CharField(max_length=100)
+
+class images(models.Model):
+    name = models.CharField(max_length=80)
+    pic = models.ImageField(upload_to="media", blank=True, null=True)

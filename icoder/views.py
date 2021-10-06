@@ -4,6 +4,8 @@ from random import random
 from django.core.files.storage import FileSystemStorage
 from django.http.response import JsonResponse
 from rest_framework.decorators import api_view
+import os 
+
 
 # Create your views here.
 def assignment1(request):
@@ -133,19 +135,34 @@ def viewprofile(request):
 def upload(request):
     if request.method=="POST":
         name=request.POST['name']
-        place=request.POST['place']
+        # place=request.POST['place']
         pic=request.FILES['pic']
-        filename = str(random())+pic.name
+        # filename = str(random())+pic.name
         # print(filename)
-        photo=FileSystemStorage()
-        photo.save(filename, pic)
-        details=Upload(name=name, place=place, pic=filename)
+        # photo=FileSystemStorage()
+        # photo.save(filename, pic)
+        details=images(name=name, pic=pic)
+        # details=Upload(name=name, place=place, pic=filename)
         details.save()
         return render(request, "icoder/new.html",{'message': 'Your pic has been uploaded'})
     return render(request, "icoder/new.html")
 def img(request):
-    tables = Upload.objects.all()
+    tables = images.objects.all()
+    # tables = Upload.objects.all()
     return render(request, "icoder/img.html",{'key':tables})
+def updateimg(request, id):
+    prod= images.objects.get(id=id)
+    if request.method=="POST":
+        name=request.POST['name']
+        images.objects.filter(id=id).update(name=name) 
+        if 'pic' in request.FILES:
+            pic=request.FILES['pic']
+            prod.pic=pic
+            prod.save()
+            return redirect('/icoder/img')
+    details=images.objects.get(id=id) 
+    return render(request, 'icoder/updateimg.html',{'details':details})
+
 # def checkemail(request):
 #     email=request.POST['email']
 #     print(email)

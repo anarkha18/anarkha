@@ -7,16 +7,16 @@
         <h6>ACCOUNT SETTINGS</h6>
     </div>
     <div class="card-body">
-        <form>
+        <!-- <form> -->
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
+                <input disabled type="text" value="{{request.user}}" class="form-control" id="username" aria-describedby="usernameHelp"
                     placeholder="Enter your username" value="kennethvaldez">
-                <small id="usernameHelp" class="form-text text-muted">After changing your username, your
+                <!-- <small id="usernameHelp" class="form-text text-muted">After changing your username, your
                     old
-                    username becomes available for anyone else to claim.</small>
+                    username becomes available for anyone else to claim.</small> -->
             </div>
-            <div class="mt-4">
+            <!-- <div class="mt-4">
                 <h6>PASSWORD SETTINGS</h6>
             </div>
             <form>
@@ -46,6 +46,6 @@
                 </div>
                 <button class="btn btn-danger" type="button">Delete Account</button>
             </form>
-    </div>
+    </div> -->
 </div>
 {% endblock %}

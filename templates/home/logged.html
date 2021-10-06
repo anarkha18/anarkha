@@ -5,10 +5,11 @@
             src="" class="avatar" alt="Avatar"> Antonio
         Moreno <b class="caret"></b></a> -->
     <a href="#" data-toggle="dropdown" class="dropdown-toggle user-action"><img class="dp"
-            src="/icoder/media/propic/{{request.user.userinfo.propic}}" height="40" width="40">
-            <!-- src="{% static 'images/cr5.jpg' %}" height="40" width="40"> -->
+            src="{{request.user.userinfo.propic.url}}" height="40" width="40">
+        <!-- src="{% static 'images/cr5.jpg' %}" height="40" width="40"> -->
         <!-- src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg"> -->
-        <span class="name"> {{request.user.first_name}} </span><b class="caret"></b></a>
+        <span class="name"> {{request.user.first_name}} </span><b class="caret"></b>
+    </a>
     <div class="dropdown-menu dropdown-menu-right">
         <a href="{% url 'profile' %}" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
         <a href="{% url 'editprofile' %}" class="dropdown-item"><i class="fa fa-pencil"></i>Edit Profile</a>

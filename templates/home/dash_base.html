@@ -96,8 +96,8 @@
           <li>
             <div class="dropdown">
               <a href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                  class="rounded-circle ml-2" src="/icoder/media/propic/{{request.user.userinfo.propic}}" height="50"
-                  width="50" alt="" /></a>
+                  class="rounded-circle ml-2" src="{{request.user.userinfo.propic.url}}" height="50" width="50"
+                  alt="" /></a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="{% url 'profile' %}"><i class="fa fa-user-o"></i> Profile</a> <a
                   class="dropdown-item" href="{% url 'settings' %}"><i class="fa fa-sliders"></i> Settings</a> <a
@@ -115,8 +115,8 @@
       <div id="sidebar" class="active">
         <div class="py-4 px-3">
           <div class="media d-flex align-items-center">
-            <img src="/icoder/media/propic/{{request.user.userinfo.propic}}" height="50" width="50"
-              class="mr-2 rounded-circle shadow-sm" alt="..." />
+            <img src="{{request.user.userinfo.propic.url}}" height="50" width="50" class="mr-2 rounded-circle shadow-sm"
+              alt="..." />
             <div class="media-body">
               <h5 class="m-0">{{request.user.first_name}}&nbsp;{{request.user.last_name}}</h5>
               <p class="font-weight-light text-muted mb-0">Admin</p>
@@ -137,13 +137,13 @@
               blogs</a>
           </li>
           <li class="nav-item mt-1">
-            <a href="#" class="nav-link rounded-right text-dark shadow-sm"><i class="fa fa-user mr-3"></i>
+            <a href="{% url 'userstable' %}" class="nav-link {% block usersactive %}{% endblock %}  rounded-right text-dark shadow-sm"><i class="fa fa-user mr-3"></i>
               Users</a>
           </li>
-          <li class="nav-item mt-1">
-            <a href="#" class="nav-link rounded-right text-dark shadow-sm"><i class="fa fa-pencil mr-3"></i>
+          <!-- <li class="nav-item mt-1">
+            <a href="#" class="nav-link  rounded-right text-dark shadow-sm"><i class="fa fa-pencil mr-3"></i>
               Staff</a>
-          </li>
+          </li> -->
           <li class="nav-item mt-1">
             <a href="{% url 'inbox' %}"
               class=" nav-link {% block inboxactive %}{% endblock %} rounded-right text-dark shadow-sm"><i
@@ -151,24 +151,11 @@
               Inbox</a>
           </li>
         </ul>
-        <ul class="nav flex-column ml-3 mb-0 pr-3">
+        <!-- <ul class="nav flex-column ml-3 mb-0 pr-3">
           <li class="nav-item mt-1">
-            <a href="#" class="nav-link rounded-right text-dark bg-white shadow-sm collapsed" data-toggle="collapse"
-              data-target="#collapsibleNavbarSettings" aria-expanded="false"><i class="fa fa-cog mr-3"></i> Settings</a>
-            <div class="navbar-collapse collapse" id="collapsibleNavbarSettings">
-              <ul class="nav flex-column">
-                <li class="nav-item pr-3 mt-1">
-                  <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
-                      class="fa fa-globe mr-3"></i> Translations</a>
-                </li>
-                <li class="nav-item pr-3 mt-1">
-                  <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
-                      class="fa fa-money-bill mr-3"></i> Currencies</a>
-                </li>
-              </ul>
-            </div>
+            <a href="{% url 'settings' %}" class="nav-link rounded-right text-dark bg-white shadow-sm"><i class="fa fa-cog mr-3"></i> Settings</a>
           </li>
-        </ul>
+        </ul> -->
         <ul class="nav flex-column ml-3 mb-0 pr-3">
           <li class="nav-item mt-1">
             <a href="javascript:void(0)" class="nav-link rounded-right text-dark bg-white shadow-sm collapsed"
@@ -179,6 +166,10 @@
                 <li class="nav-item pr-3 mt-1">
                   <a href="{% url 'profile' %}" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
                       class="fa fa-users mr-3"></i> Profile</a>
+                </li>
+                <li class="nav-item pr-3 mt-1">
+                  <a href="{% url 'settings' %}" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
+                      class="fa fa-cog  mr-3"></i> Settings</a>
                 </li>
                 <li class="nav-item pr-3 mt-1">
                   <a href="/logout" class="nav-link rounded-right text-dark bg-white shadow-sm"><i
