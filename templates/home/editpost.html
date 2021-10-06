@@ -55,7 +55,7 @@
                                     {% for x in key %}
                                     <option value="{{x.id}}"> {{x.name}}</option>
                                     {% if x == postinfo.category %}
-                                    <option value="{{postinfo.category}}" selected>{{postinfo.category}}</option>
+                                    <option value="{{x.id}}" selected>{{postinfo.category}}</option>
                                     {% endif %}
                                     {% endfor %}
 
