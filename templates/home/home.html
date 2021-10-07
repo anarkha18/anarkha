@@ -228,10 +228,6 @@
         <div class="container my-3">
             <div class="">
                 <h3 style="display: inline-block;">Popular Blog Posts</h3>
-                <div class="mr-4" style="float: right;">
-                    <a href="{% url 'blogs' %}"> <button class="btn btn-primary"> Go to Blog Home</button></a>
-                </div>
-
             </div>
         </div>
         <div class="container my-3">
@@ -260,6 +256,12 @@
                 {% endfor %}
             </div>
         </div>
-
+        <div class="row">
+            <div class="container mb-3">
+                <div class="mr-4" style="float: right;">
+                    <a href="{% url 'blogs' %}"> <button class="btn btn-primary"> Go to Blog Home</button></a>
+                </div>
+            </div>
+        </div>
     </section>
     {% endblock %}

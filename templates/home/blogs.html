@@ -248,7 +248,10 @@
                                         <div class="">
                                             {{x.content|truncatechars:300 |safe}}
                                         </div>
-                                        <button class="btn btn-primary">View</button>
+                                        <a href="{% url 'blogpage' x.slug %}">
+                                            <button class="btn btn-primary">View</button>
+                                        </a>
+                                        <!-- <button class="btn btn-primary">View</button> -->
                                     </div>
                                 </div>
                             </div>

@@ -220,13 +220,16 @@ def comment(request):
         user=request.user
         comments=request.POST['comment']
         postSno =request.POST.get('postSno')
+        slug =request.POST.get('next')
+        print(slug)
         post= Post.objects.get(id=postSno)
         if len(comments) < 2:
-            # messages.error(request, "please type more")  
-            return HttpResponse("There is an Error")
+            messages.error(request, "please type more")  
+            return redirect(blogpage, slug=slug)
         else: 
             comment=BlogComment(comment= comments, user=user, post=post)
             comment.save()
-            # messages.success(request, "Your comment has been posted successfully")     
-            return HttpResponse("Your comment has been posted")
+            messages.success(request, "Your comment has been posted successfully")     
+            return redirect(blogpage, slug=slug)
+            # return HttpResponse("Your comment has been posted")
     # return render(request, "home/blogs.html")
